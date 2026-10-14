@@ -1,0 +1,4 @@
+scope	n_samples	raw	after_fastp	after_host	after_cluster	n_representatives	removed_fastp	removed_host	removed_cluster	removed_total	pct_retained
+HPV+	48	39,457,321	31,352,213	18,013,924	18,013,924	2,876,981	8,105,108	13,338,289	0	21,443,397	45.65%
+HPV-	52	28,021,757	22,812,456	12,720,041	12,720,041	2,231,152	5,209,301	10,092,415	0	15,301,716	45.39%
+TOTAL	100	67,479,078	54,164,669	30,733,965	30,733,965	5,108,133	13,314,409	23,430,704	0	36,745,113	45.55%

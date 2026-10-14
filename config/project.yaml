@@ -1,0 +1,86 @@
+# Jackalope cohort — phage community analysis by HPV status
+#
+# Question: does the phage community differ between HPV+ and HPV- samples?
+# HPV status is the GROUPING variable, not the readout.
+
+project: jackalope_phage_analysis
+cluster: htcf                       # ssh htcf
+
+# ---------------------------------------------------------------- data
+# ACTIVE cohort: bulk metagenome, ~40% host DNA. This is the one to analyse.
+cohort_dir: /scratch/sahlab/leran/jackalope_bulk
+metadata:   /scratch/sahlab/leran/jackalope_cohort/jackalope_clinical_metadata.csv
+
+# Superseded: the original VLP-enriched cohort. Its tangential-flow protocol has
+# nuclease_efficiency=0.98, which cut host DNA from 20% to 0.67% -- making the QC
+# host-removal step look like a no-op. Wrong lesson for a tutorial: real bulk
+# cervicovaginal metagenomes run 40-95% human (PMC9040584 measured 61%).
+# Kept for the VLP-vs-bulk comparison, not for the primary analysis.
+vlp_cohort_dir: /scratch/sahlab/leran/jackalope_cohort
+vlp_reads_dir:  /scratch/sahlab/leran/jackalope_cohort/READS
+
+# Measured read composition, bulk cohort (VIR_010, sampled):
+#   bacterial 47.6% | host_dna 40.1% | rRNA 6.5% | fungal 3.6% | viral ~1.0%
+# Matches the ~0.83% viral fraction published for vaginal viromes, and retains
+# the bacterial fraction prophage-pipeline needs for binning. source=viral_prophage
+# reads are present.
+composition_bulk:
+  bacterial: 47.6
+  host_dna:  40.1
+  rrna:       6.5
+  fungal:     3.6
+  viral:      1.0
+
+n_samples: 100
+generation:
+  tool: viroforge 0.20.0
+  env: /scratch/sahlab/leran/miniforge3/envs/vf_benchmark
+  mode: --no-vlp --contamination-level heavy    # bulk metagenome, no nuclease
+  platform: novaseq
+  script: scripts/generate_bulk_cohort.sh       # SLURM array, seeds/coverage from metadata
+  slurm_job: 48885443
+  date: 2026-09-30
+
+groups:
+  # Antler_Present in the metadata is the blinded HPV label
+  hpv_negative:                     # Antler_Present == No   -> ViroForge collection 16
+    n: 52
+    coverage: 10                    # flat
+  hpv_positive:                     # Antler_Present == Yes  -> ViroForge collection 24
+    n: 48
+    coverage: [5, 20]               # scales with Antler_Size_mm (8-63 mm)
+
+# CONFOUND: sequencing depth differs systematically by group (above).
+# Richness is depth-sensitive and richness is our leading signal, so every
+# comparison must rarefy to even depth or model depth as a covariate.
+confounds:
+  - depth_differs_by_group
+
+# ---------------------------------------------------------------- QC
+qc:
+  tool: hecatomb
+  version: v1.1.0
+  env: /ref/sahlab/software/anaconda3/envs/hecatomb_v1.1.0
+  activate: source /ref/sahlab/software/anaconda3/bin/activate hecatomb_v1.1.0
+  stage: preprocessing              # QC only; not the full virome pipeline
+  preprocess_mode: paired           # NOT roundAB — these are simulated Illumina reads
+  host: human                       # viral-masked; 21,029 papillomavirus fragments in the mask
+  outdir: /scratch/sahlab/leran/jackalope_cohort/qc_hecatomb
+
+# ---------------------------------------------------------------- pipelines
+pipelines:
+  prophage_pipeline:
+    repo: https://github.com/megjohnson1999/prophage-pipeline
+    local: pipelines/prophage-pipeline
+    input: reads                    # starts from FASTQ
+    steps: [fastp, megahit, binning(concoct/maxbin/metabat+dastool),
+            genomad, phispy, gtdbtk, mmseqs, checkv, checkm]
+  phage_analysis:
+    repo: https://github.com/megjohnson1999/phage-analysis
+    local: pipelines/phage-analysis
+    input: assembly                 # consumes prophage-pipeline assemblies
+    steps: [jaeger, genomad, phold, checkv, vOTU_clustering,
+            mmseqs2/phabox2/vcontact3, bacphlip, iphop, coverm]
+
+# All databases for both pipelines verified present on /ref/sahlab/data — no downloads needed.
+databases_verified: 2026-09-30

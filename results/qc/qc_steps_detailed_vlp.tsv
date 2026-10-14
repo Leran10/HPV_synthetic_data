@@ -1,0 +1,11 @@
+step	operation	software	version	native_unit	reads_in	pairs_in	reads_affected	pairs_affected	reads_discarded	pairs_discarded	pct_discarded	sequences_out	compression	type
+0	input reads	—	—	reads	135,304,106	67,652,053	—	—	0	0	0.000%	—	—	input
+1	fastp: trim + filter + deduplicate (single pass)	fastp	0.23.2	reads	135,304,106	67,652,053	36,926,084	18,463,042	36,926,084	18,463,042	27.291%	—	—	stage
+1 .1	  └ trimmed: adapter (--detect_adapter_for_pe)	fastp	0.23.2	reads	—	—	3,740,339	1,870,169	0	0	—	—	—	trim
+1 .2	  └ trimmed: poly-X tail (--trim_poly_x)	fastp	0.23.2	reads	—	—	786,119	393,059	0	0	—	—	—	trim
+1 .3	  └ discarded: low quality (Q<15, cut_tail w=25)	fastp	0.23.2	reads	—	—	418,402	209,201	418,402	209,201	—	—	—	reason
+1 .4	  └ discarded: too short (<90bp)	fastp	0.23.2	reads	—	—	2,144,966	1,072,483	2,144,966	1,072,483	—	—	—	reason
+1 .5	  └ discarded: too many N (>2)	fastp	0.23.2	reads	—	—	3,346	1,673	3,346	1,673	—	—	—	reason
+1 .6	  └ discarded: PCR/optical duplicate (--dedup acc=4)	fastp	0.23.2	reads	—	—	34,359,370	17,179,685	34,359,370	17,179,685	—	—	—	reason
+2	host removal: map to viral-masked GRCh38, keep unmapped	minimap2 + samtools	>=2.20 / >=1.13	pairs	98,378,022	49,189,011	1,162,254	581,127	1,162,254	581,127	1.181%	—	—	discard
+3	dereplication at 97% id (counts preserved)	MMseqs2 linclust	12.113e3	pairs	97,215,768	48,607,884	97,215,768	48,607,884	0	0	0.000%	7,111,211	6.8x	collapse

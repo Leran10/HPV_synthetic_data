@@ -1,0 +1,4 @@
+group	n_samples	raw_reads	raw_pairs	adapter_trimmed	polyx_trimmed	low_quality_removed	too_short_removed	too_many_n_removed	duplicates_removed	mean_duplication_rate	after_fastp_reads	after_fastp_pairs
+HPV+	48	78,914,642	39,457,321	2,691,401	623,323	243,980	1,569,884	24	14,396,328	0.1817	62,704,426	31,352,213
+HPV-	52	56,043,514	28,021,757	1,925,000	441,730	173,310	1,109,790	0	9,135,502	0.1657	45,624,912	22,812,456
+TOTAL	100	134,958,156	67,479,078	4,616,401	1,065,053	417,290	2,679,674	24	23,531,830	0.1734	108,329,338	54,164,669

@@ -1,0 +1,26 @@
+# Data and results live on HTCF (/scratch/sahlab/leran/) -- never commit them.
+# This repo is code, configs, and small summary tables only.
+
+# cloned upstream pipelines -- they have their own repos
+pipelines/
+
+# macOS / editor noise
+.DS_Store
+*.swp
+*~
+
+# local scratch
+memory.sqlite
+*.log
+*.err
+
+# big data, in case any lands here by accident
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.fasta
+*.fa
+*.bam
+*.sam
+*.bai

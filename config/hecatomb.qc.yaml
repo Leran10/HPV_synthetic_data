@@ -1,0 +1,54 @@
+# Hecatomb v1.1.0 config -- QC (preprocessing stage) for the jackalope cohort
+#
+# --preprocess paired: these are InSilicoSeq-simulated NovaSeq 150bp reads with
+# standard Illumina adapters. NOT roundAB -- that path expects Round A/B
+# random-primer artefacts these reads do not have, and the roundAB rules in this
+# shared install carry hand-edited NEBNext primer files.
+
+Reads: /scratch/sahlab/leran/jackalope_cohort/READS
+Output: /scratch/sahlab/leran/jackalope_cohort/qc_hecatomb
+Host: human
+Preprocess: paired
+Search: fast
+Databases: null          # use the env default: 73 GB at envs/hecatomb_v1.1.0/databases
+
+# --- read filtering ---
+QSCORE: 15               # min base quality
+READ_MINLENGTH: 90       # reads shorter than this are dropped after trimming
+CUTTAIL_WINDOW: 25       # 3' sliding-window trim
+DEDUP_ACCURACY: 4
+COMPRESSION: 1
+ENTROPY: 0.5             # low-complexity filter
+ENTROPYWINDOW: 25
+CONTIG_MINLENGTH: 1000
+
+# --- clustering (dereplication) ---
+linclustParams: --kmer-per-seq-scale 0.3 -c 0.8 --cov-mode 1 --min-seq-id 0.97 --alignment-mode
+  3
+
+# --- resources ---
+# Sized for 100 samples of 283k-1.36M read pairs. The big jobs are the
+# host-removal index load and mmseqs clustering.
+BigJobCpu: 16
+BigJobMem: 100000
+BigJobTimeMin: 2-0
+MediumJobCpu: 12
+MediumJobMem: 60000
+SmallJobCpu: 8
+SmallJobMem: 32000
+MoreRamCpu: 8
+MoreRamMem: 60000
+
+# --- search params (unused by the preprocessing stage, kept for config validity) ---
+filtAAprimary: --min-length 30 -e 1e-3
+filtAAsecondary: --min-length 30 -e 1e-5
+filtNTprimary: --min-length 90 -e 1e-10
+filtNTsecondary: --min-length 90 -e 1e-20
+perfAA: --start-sens 1 --sens-steps 3 -s 7 --lca-mode 2 --shuffle 0
+perfAAfast: -s 4.0 --lca-mode 2 --shuffle 0
+perfNT: --start-sens 2 -s 7 --sens-steps 3
+perfNTfast: -s 4.0
+taxIdIgnore: 0 1 2 10239 131567 12429 2759
+canuSettings: correctedErrorRate=0.16 maxInputCoverage=10000 minInputCoverage=0 corOutCoverage=10000
+  corMhapSensitivity=high corMinCoverage=0 useGrid=False stopOnLowCoverage=False genomeSize=10M
+  -nanopore

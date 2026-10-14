@@ -1,0 +1,5 @@
+step	software	version	purpose	reads_in	reads_out	reads_removed	pct_removed	pct_of_raw_remaining
+0. input	—	—	Input read pairs as generated/sequenced	—	67,479,078	—	—	100.00%
+1. fastp	fastp	fastp=0.23.2	Adapter removal, quality trim (Q15, 25bp window), length filter (>=90bp), poly-X trim, deduplication	67,479,078	54,164,669	13,314,409	19.73%	80.27%
+2. host	minimap2 + samtools	minimap2>=2.20, samtools>=1.13	Map to viral-masked human reference (GRCh38); keep unmapped reads only (samtools view -f 4)	54,164,669	30,733,965	23,430,704	43.26%	45.55%
+3. cluster	MMseqs2 linclust	mmseqs2=12.113e3, taxonkit=0.8.0, csvtk=0.23.0	Dereplicate at 97% identity / 80% coverage; counts carried onto representatives (lossless for reads)	30,733,965	30,733,965	0	0.00%	45.55%

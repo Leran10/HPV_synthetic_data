@@ -84,3 +84,36 @@ pipelines:
 
 # All databases for both pipelines verified present on /ref/sahlab/data — no downloads needed.
 databases_verified: 2026-09-30
+
+# ---------------------------------------------------------------- outputs
+# Full inventory with sizes and the local pipeline patches: docs/FILE_LOCATIONS.md
+outputs:
+  vlp:
+    assemblies:      /scratch/sahlab/leran/jackalope_cohort/assemblies
+    pooled_contigs:  /scratch/sahlab/leran/jackalope_cohort/phage_analysis/all_samples_contigs.fasta
+    pipeline_out:    /scratch/sahlab/leran/jackalope_cohort/phage_analysis/out
+    votu_reps:       /scratch/sahlab/leran/jackalope_cohort/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta
+    votu_abundance:  /scratch/sahlab/leran/jackalope_cohort/votu_abundance
+    matrices:        /scratch/sahlab/leran/jackalope_cohort/results
+  bulk:
+    prophage_out:    /scratch/sahlab/leran/jackalope_bulk/prophage_out    # assemblies only; binning failed
+    pipeline_out:    /scratch/sahlab/leran/jackalope_bulk/phage_analysis/out
+  backup_small_files: /scratch/sahlab/leran/hpv_project_files
+
+environments:
+  snakemake8:  /ref/sahlab/software/miniforge3/envs/snakemake_v8.20.3
+  phage_envs:  /ref/sahlab/software/miniforge3/envs/smk_envs_phage_pred
+  viroforge:   /scratch/sahlab/leran/miniforge3/envs/vf_benchmark
+
+pipelines_on_cluster:
+  # Both clones carry LOCAL PATCHES that are not upstream -- a fresh clone will
+  # reproduce the original failures. See docs/FILE_LOCATIONS.md.
+  phage_analysis:    /scratch/sahlab/leran/phage-analysis
+  prophage_pipeline: /scratch/sahlab/leran/prophage-pipeline
+
+results_final:
+  votus: 2921
+  testable_markers: 596
+  informative_markers: 74          # present in both arms
+  lactobacillus_depleted_in_hpv_pos: 29
+  slurm_job: 49642184

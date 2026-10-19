@@ -1,0 +1,41 @@
+======================================================================
+ PHAGE DIFFERENTIAL MARKERS -- HPV+ vs HPV-
+======================================================================
+
+  vOTUs total              : 2921
+  vOTUs testable           : 596  (present in >=10% of samples)
+  samples                  : 100  (HPV+ 48, HPV- 52)
+  FDR threshold            : 0.05
+
+  ANALYSIS 1 -- case/control
+    robust markers         : 575   (significant rarefied AND depth-adjusted)
+      enriched in HPV+     : 365
+      enriched in HPV-     : 210
+    depth-suspect          : 14   (raw only -- do not trust)
+
+    robust markers by presence pattern:
+      HPV+ exclusive       :  326   <- collection artefact
+      HPV- exclusive       :   95   <- collection artefact
+      shared, rare in one  :   80
+      SHARED in both arms  :   74   <- the informative subset
+
+  ANALYSIS 2 -- severity gradient (within HPV+, n=48)
+    vOTUs tracking size    : 418
+    still significant after adjusting for coverage : 337
+
+  CONSENSUS (both analyses): 402
+
+----------------------------------------------------------------------
+  CAVEATS
+  * HPV+ was simulated at 5-20x and HPV- at flat 10x, so cases carry
+    ~1.5x depth by construction. 'robust' means the marker survived both
+    rarefaction and depth adjustment; 'depth_suspect' means it did not.
+  * Richness tracks antler size at r=0.95 in this cohort -- far tighter
+    than real biology. Severity drove simulated coverage, so treat the
+    severity analysis as a positive control that the pipeline recovers a
+    planted signal, not as a biological dose-response.
+  * MMseqs2 nr taxonomy was omitted (2.1 TB index on a 7-10 MB/s mount).
+    Taxonomy here is PhaGCN; hosts are CHERRY. Both are single-caller.
+  * Synthetic data: absolute effect sizes are not transferable to real
+    cervicovaginal samples.
+----------------------------------------------------------------------

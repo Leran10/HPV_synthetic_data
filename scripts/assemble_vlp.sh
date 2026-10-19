@@ -57,7 +57,15 @@ megahit -1 "$r1" -2 "$r2" \
 
 # Flatten to one predictable path and prefix contigs with the sample id, so the
 # pooled FASTA can attribute every contig back to its sample.
-sed "s/^>/>${s}__/" "$wd/${s}.contigs.fa" > "$final"
+#
+# Also STRIP EVERYTHING AFTER THE FIRST SPACE. MEGAHIT writes headers like
+#   >k141_30 flag=1 multi=7.0000 len=1244
+# and the embedded spaces break phage-analysis's cluster_phages rule: it runs
+# `seqkit fx2tab --name` (which keeps the whole description as field 1) and then
+# `sort -k1,1` / `join -1 1 -2 1`, both of which split on whitespace. The join
+# keys never match, the rule dies after "Extracting sequence lengths...", and
+# Snakemake removes the output dir so there is no trace of why.
+sed -e "s/^>/>${s}__/" -e "s/^\(>[^ ]*\).*/\1/" "$wd/${s}.contigs.fa" > "$final"
 
 echo "contigs >=1000bp: $(grep -c '^>' "$final")"
 echo "finished: $(date)"

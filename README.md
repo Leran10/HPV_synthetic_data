@@ -2,96 +2,133 @@
 
 **Question:** does the bacteriophage community differ between HPV-positive and
 HPV-negative samples? HPV status is the *grouping variable*, not the readout —
-we are not doing HPV detection.
+this is not HPV detection.
 
-## The data
+## Headline result
+
+**29 Lactobacillus-host phages are depleted in HPV+ samples** (median log2FC
+−1.16), with no exceptions among the 29. The signal survived rarefaction and
+depth adjustment, has moderate effect sizes (|Cliff's δ| ~0.54 rather than the
+artefactual 1.00), and the host assignments are corroborated by two independent
+callers (CHERRY and iPHoP). It is consistent with the *Lactobacillus*-depletion
+pattern reported in the HPV literature.
+
+| | |
+|---|---|
+| vOTUs recovered | 2,921 |
+| testable (≥10% prevalence) | 596 |
+| **informative markers** (present in both arms) | **74** |
+| of those, *Lactobacillus* phages depleted in HPV+ | **29 / 29** |
+| severity-tracking vOTUs after depth adjustment | 337 |
+
+## The two cohorts
 
 100 simulated vaginal virome samples generated with
-[ViroForge](https://github.com/Leran10/viroforge) (SLURM job 47308113,
-14–15 Sep 2026), living on HTCF:
+[ViroForge](https://github.com/Leran10/viroforge) 0.20.0, on HTCF:
 
-```
-/scratch/sahlab/leran/jackalope_cohort/
-├── VIR_001 … VIR_100/       # 43 GB: fastq/, fasta/, metadata/
-├── READS/                   # staged: VIR_###_R{1,2}.fastq.gz  <- pipeline input
-├── jackalope_clinical_metadata.csv
-└── batch_report.json        # 100/100 successful
-```
-
-| | HPV− | HPV+ |
+| | VLP (`jackalope_cohort`) | bulk (`jackalope_bulk`) |
 |---|---|---|
-| n | 52 | 48 |
-| ViroForge collection | 16 | 24 |
-| Coverage | flat 10× | **5–20×**, scales with `Antler_Size_mm` |
-| Read pairs | 283k – 1.36M per sample | |
+| viral fraction | ~98% | ~1% |
+| host DNA | 0.67% | ~40% |
+| assembly N50 | ~30 kb | ~3 kb |
+| longest contig | 193 kb (82% of a CMV genome) | 10 kb (fragment ceiling) |
+| phages assemble? | **yes** | no |
+| teaches host removal? | no (1.4% removed) | **yes (44% removed)** |
 
-`jackalope_clinical_metadata.csv` is a *blinded* clinical sheet: the case/control
-label is `Antler_Present` (Yes = HPV+), with `Antler_Size_mm` as a graded severity
-measure. It is the input that generated the cohort — `jackalope_cohort.py` reads
-it and writes the ViroForge batch YAML — so antler size is physically encoded in
-sequencing depth.
+**The VLP cohort carries the analysis.** Bulk mode puts viruses at ~1% of reads
+split across 25–54 genomes per sample; because ViroForge allocates abundance by
+read share rather than genome size, a 50 kb phage received ~1× coverage and could
+not assemble. Only 211 viral contigs were recovered from 1,287 genomes actually
+present. VLP lifts the same phage to ~110×.
 
-## Expected signal (from ground truth)
+The bulk cohort is still the better QC teaching case — host removal discards 44%
+of reads there versus 1.4% in VLP.
 
-Every sample has a `metadata/*_composition.tsv` giving the true genome content, so
-the answer is known in advance and the pipeline can be benchmarked against it:
+## Groups
 
-| | HPV− | HPV+ |
-|---|---|---|
-| Phage genomes present | 7–10 | **18–23** |
-| Total phage abundance | 0.04–0.21 | 0.11–0.22 |
-| *Lactobacillus* phage | ~0.0024 | **~0.0050** |
+`jackalope_clinical_metadata.csv` is a *blinded* clinical sheet: `Antler_Present`
+is the case/control label (Yes = HPV+, n=48; No = HPV−, n=52) and
+`Antler_Size_mm` (8–63) is a severity score, NA for all controls. One subject per
+sample, no batches, no repeated measures. **There is no gender or other clinical
+field.**
 
-**Richness is the strong signal** (~2–3× more phage genomes in HPV+, no overlap);
-total abundance overlaps and will not discriminate.
+## ⚠ Two confounds that shape every result
 
-## ⚠ The depth confound
+**1. Depth is coupled to severity.** `jackalope_cohort.py` scales coverage with
+antler size (5× at 8 mm → 20× at 63 mm) while all controls got a flat 10×. So
+HPV+ averages ~1.5× the depth of HPV− by construction, and richness rises with
+depth. Every marker is therefore tested three ways — raw, rarefied, and with
+log(coverage) partialled out — and labelled `robust` / `depth_suspect` / `ns`.
+Richness tracks antler size at r = 0.95, far tighter than real biology.
 
-HPV+ samples were simulated at 5–20× and HPV− at a flat 10×. Richness is highly
-depth-sensitive, and richness is the leading signal — so the two are entangled by
-construction. Every comparison must **rarefy to even depth or model depth as a
-covariate**. Worth checking whether richness tracks coverage *within* the HPV+
-group; if it does, that is the confound showing itself.
+**2. The two arms were built from disjoint genome sets.** Cases came from
+ViroForge collection 24, controls from collection 16. A phage in one collection
+and not the other separates the groups *perfectly* (δ = 1.00, p ≈ 1e-20) with no
+biology involved. **421 of 575 "robust" markers are this artefact**, now labelled
+in the `presence_pattern` column. Only the 74 present in both arms pose a
+question whose answer could have gone either way.
 
 ## Layout
 
 ```
-config/project.yaml              paths, groups, confounds, pipeline settings
-scripts/stage_reads.sh           gzip + rename FASTQs to VIR_###_R{1,2}.fastq.gz
-scripts/collect_qc_attrition.py  per-step read attrition table from a Hecatomb run
-pipelines/prophage-pipeline/     reads -> assembly -> bins -> prophages
-pipelines/phage-analysis/        assembly -> vOTUs -> taxonomy/lifestyle/host
-results/qc/                      QC outputs
+config/                      project + Hecatomb QC configs
+scripts/
+  generate_bulk_cohort.sh    ViroForge, SLURM array, seeds from metadata
+  assemble_vlp.sh            MEGAHIT per sample (strips spaces from headers)
+  stage_reads*.sh            gzip + rename to VIR_###_R{1,2}.fastq.gz
+  run_qc*.sh                 Hecatomb preprocessing
+  collect_qc_attrition.py    per-step read attrition
+  qc_summary.py              tool/version/reads-removed tables
+  qc_steps_detailed.py       fastp sub-steps broken out
+  run_prophage.sh            prophage-pipeline (abandoned, see below)
+  run_phage_analysis_vlp.sh  phage-analysis, all resources pinned on the CLI
+  votu_abundance_vlp.sh      bbmap each sample vs vOTU reps  <- the missing piece
+  build_votu_matrix.py       joins abundance + taxonomy + host + lifestyle
+  differential_abundance.py  the marker analysis
+results/qc/                  QC attrition and step tables, both cohorts
+results/vlp/                 vOTU × sample matrices + annotations
+results/markers/             differential abundance output
+docs/                        ViroForge fragment-length issue report
 ```
 
-The source FASTQs share filenames across samples (every HPV− sample is
-`vaginal_virome_healthy_R1.fastq`), which breaks any pipeline that infers sample
-identity from the filename. `stage_reads.sh` gzips them into `READS/` under their
-`VIR_###` id, which also joins cleanly to the metadata.
+Data and pipeline outputs stay on HTCF under `/scratch/sahlab/leran/` and are
+gitignored. A copy of the scripts and tables also lives in
+`/scratch/sahlab/leran/hpv_project_files/`.
 
-## Plan
+## Pipeline notes, hard-won
 
-1. **Setup** — metadata, staging, pipeline clones, database checks ✅
-2. **QC** — Hecatomb v1.1.0, `preprocessing` stage only, `--preprocess paired`
-3. **Phage analysis** — `prophage-pipeline` from reads, then `phage-analysis`
-   on the assemblies
-4. **Stats** — richness and composition by group, controlling for depth,
-   validated against ground truth
+**prophage-pipeline is structurally incompatible with ViroForge output.** It bins
+bacterial genomes to find prophages inside them, but ViroForge supplies bacterial
+background as random 10 kb fragments — realism ballast, not whole genomes. DAS
+Tool returned *"No bins with bin-score >0.5"* on 230–306 kb assemblies. No
+parameter fixes this. See `docs/viroforge_fragment_bias_issue.md`.
 
-## Tools
+**phage-analysis needed six fixes to run clean** (job 49642184, 435/435 steps,
+3h51m, after 15 failed attempts):
 
-QC uses the Hecatomb v1.1.0 install at
-`/ref/sahlab/software/anaconda3/envs/hecatomb_v1.1.0` (73 GB databases, 14 masked
-host genomes). Use `--preprocess paired`, **not** `roundAB` — these are simulated
-Illumina reads without Round A/B primer artefacts, and the roundAB path in that
-shared install has hand-edited NEBNext primer files.
+| failure | cause | fix |
+|---|---|---|
+| 4 CPUs not 24 | profile `set-resources` silently ignored | pin on the CLI |
+| TIMEOUT at 24 h | runtime written as `"24:00:00"`, not integer minutes | pin in minutes |
+| iPHoP OOM | memory not applied from profile | 150 GB on the CLI |
+| `cluster_phages` died | **our bug** — MEGAHIT headers contain spaces, breaking `sort`/`join` | strip at assembly |
+| PHOLD 0 rows from 834 splits | conda env missing `scipy` + `scikit-learn` | installed |
+| `taxonomic_consensus` type error | vConTACT3 name filter matched no MEGAHIT contigs → empty frame typed `<logical>` | widened filter |
 
-Hecatomb's human reference is viral-masked and the mask includes 21,029
-papillomavirus fragments, so HPV reads survive host removal.
+**MMseqs2 `nr` taxonomy is skipped by design.** The shared index is 2,125 GB
+across 9 split files on a `/ref` mount that reads at 7–10 MB/s — one pass would
+take ~81 days. Three runs (27 h, 14 h, 10 h) were lost before measuring that.
+`skip_mmseqs: true` routes the rule to its empty-output branch. Taxonomy comes
+from PhaGCN and vConTACT3 instead; hosts from CHERRY and iPHoP.
 
-All 14 databases needed by both phage pipelines are already present under
-`/ref/sahlab/data/` — no downloads required. Both pipeline configs ship with HTCF
-paths as their defaults.
+## Caveats on the result
+
+- ~60% of vOTUs have no iPHoP host call, so the *Lactobacillus* pattern is drawn
+  from the predictable subset.
+- 71 of 74 markers were called `virulent` by BACPHLIP — lopsided enough to
+  suspect it behaves poorly on short contigs.
+- Synthetic data: effect sizes are not transferable to real cervicovaginal
+  samples.
 
 ## Related
 

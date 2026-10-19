@@ -38,6 +38,20 @@ CONFIG=${1:?usage: sbatch run_phage_analysis_vlp.sh <configfile>}
 export PATH=/ref/sahlab/software/miniforge3/bin:/ref/sahlab/software/miniforge3/condabin:$PATH
 command -v conda >/dev/null || { echo "FATAL: conda not on PATH" >&2; exit 1; }
 
+# Put MMseqs2's temp dir on BeeGFS scratch, not node-local /tmp.
+#
+# Run 49480957 hung in mmseqs_taxonomy: the log went silent for 14h with the
+# file size byte-identical and the job's disk read/write counters frozen, while
+# still holding 24 CPUs and 685 GB. Node /tmp was NOT full (867 GB free), so the
+# cause is not capacity -- but the rule does TMP_DIR=$(mktemp -d), which honours
+# $TMPDIR, and this search splits a 707M-sequence nr index 5 ways with
+# --tax-lineage output. Large concurrent split I/O is more predictable on
+# BeeGFS than on node-local disk, and TMPDIR is the one variable that is cheap
+# to change. Snakemake skips the 3 completed steps on resubmit.
+export TMPDIR=/scratch/sahlab/leran/tmp_mmseqs
+mkdir -p "$TMPDIR"
+echo "TMPDIR=$TMPDIR  ($(df -h "$TMPDIR" | tail -1 | awk '{print $4}') free)"
+
 mkdir -p /scratch/sahlab/leran/jackalope_cohort/logs
 cd "$PIPELINE"
 

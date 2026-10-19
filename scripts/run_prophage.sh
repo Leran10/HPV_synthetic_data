@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=7-00:00:00
-#SBATCH --output=/scratch/sahlab/leran/jackalope_bulk/logs/prophage_%j.log
-#SBATCH --error=/scratch/sahlab/leran/jackalope_bulk/logs/prophage_%j.err
+#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/prophage_%j.log
+#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/prophage_%j.err
 
 # prophage-pipeline driver for the jackalope BULK cohort.
 #
@@ -31,14 +31,14 @@ set -euo pipefail
 READS=${1:?usage: sbatch run_prophage.sh <reads_dir> <outdir>}
 OUTDIR=${2:?usage: sbatch run_prophage.sh <reads_dir> <outdir>}
 
-PIPELINE=/scratch/sahlab/leran/prophage-pipeline
+PIPELINE=/scratch/sahlab/leran/HPV_synthetic_data/pipelines/prophage-pipeline
 SMK=/ref/sahlab/software/miniforge3/envs/snakemake_v8.20.3/bin/snakemake
 
 # conda on PATH -- see note 2 above
 export PATH=/ref/sahlab/software/miniforge3/bin:/ref/sahlab/software/miniforge3/condabin:$PATH
 command -v conda >/dev/null || { echo "FATAL: conda not on PATH" >&2; exit 1; }
 
-mkdir -p "$OUTDIR" /scratch/sahlab/leran/jackalope_bulk/logs
+mkdir -p "$OUTDIR" /scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs
 cd "$PIPELINE/workflow"
 
 n=$(ls "$READS"/*_R1.fastq.gz 2>/dev/null | wc -l)

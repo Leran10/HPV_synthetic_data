@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=7-00:00:00
-#SBATCH --output=/scratch/sahlab/leran/jackalope_cohort/logs/phage_vlp_%j.log
-#SBATCH --error=/scratch/sahlab/leran/jackalope_cohort/logs/phage_vlp_%j.err
+#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/phage_vlp_%j.log
+#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/phage_vlp_%j.err
 
 # phage-analysis on the VLP cohort.
 #
@@ -31,7 +31,7 @@
 
 set -euo pipefail
 
-PIPELINE=/scratch/sahlab/leran/phage-analysis
+PIPELINE=/scratch/sahlab/leran/HPV_synthetic_data/pipelines/phage-analysis
 SMK=/ref/sahlab/software/miniforge3/envs/snakemake_v8.20.3/bin/snakemake
 CONFIG=${1:?usage: sbatch run_phage_analysis_vlp.sh <configfile>}
 
@@ -52,7 +52,7 @@ export TMPDIR=/scratch/sahlab/leran/tmp_mmseqs
 mkdir -p "$TMPDIR"
 echo "TMPDIR=$TMPDIR  ($(df -h "$TMPDIR" | tail -1 | awk '{print $4}') free)"
 
-mkdir -p /scratch/sahlab/leran/jackalope_cohort/logs
+mkdir -p /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs
 cd "$PIPELINE"
 
 echo "=================================================================="

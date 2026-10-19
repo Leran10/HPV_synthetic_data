@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=24:00:00
-#SBATCH --output=/scratch/sahlab/leran/jackalope_bulk/logs/gen_%A_%a.log
-#SBATCH --error=/scratch/sahlab/leran/jackalope_bulk/logs/gen_%A_%a.err
+#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/gen_%A_%a.log
+#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/gen_%A_%a.err
 
 # Regenerate the jackalope cohort as a BULK metagenome (no VLP enrichment).
 #
@@ -44,8 +44,8 @@ export PATH="$VFENV/bin:$PATH"
 VF="$VFENV/bin/viroforge"
 
 command -v iss >/dev/null || { echo "FATAL: iss not on PATH" >&2; exit 1; }
-METADATA=/scratch/sahlab/leran/jackalope_cohort/jackalope_clinical_metadata.csv
-OUTBASE=/scratch/sahlab/leran/jackalope_bulk
+METADATA=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/jackalope_clinical_metadata.csv
+OUTBASE=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk
 
 # Same mapping the original cohort used (examples/batch_configs/jackalope_cohort.py)
 MIN_SIZE=8; MAX_SIZE=63

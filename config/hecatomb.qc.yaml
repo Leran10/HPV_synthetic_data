@@ -5,8 +5,8 @@
 # random-primer artefacts these reads do not have, and the roundAB rules in this
 # shared install carry hand-edited NEBNext primer files.
 
-Reads: /scratch/sahlab/leran/jackalope_cohort/READS
-Output: /scratch/sahlab/leran/jackalope_cohort/qc_hecatomb
+Reads: /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/READS
+Output: /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/qc_hecatomb
 Host: human
 Preprocess: paired
 Search: fast

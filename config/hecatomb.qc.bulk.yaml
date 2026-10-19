@@ -4,8 +4,8 @@
 # parameters, so the two QC tables are directly comparable -- which is the point:
 # the VLP cohort loses ~1.4% of reads to host removal, this one should lose ~40%.
 
-Reads: /scratch/sahlab/leran/jackalope_bulk/READS
-Output: /scratch/sahlab/leran/jackalope_bulk/qc_hecatomb
+Reads: /scratch/sahlab/leran/HPV_synthetic_data/data/bulk/READS
+Output: /scratch/sahlab/leran/HPV_synthetic_data/data/bulk/qc_hecatomb
 Host: human
 Preprocess: paired
 Search: fast

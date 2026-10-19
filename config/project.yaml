@@ -8,16 +8,16 @@ cluster: htcf                       # ssh htcf
 
 # ---------------------------------------------------------------- data
 # ACTIVE cohort: bulk metagenome, ~40% host DNA. This is the one to analyse.
-cohort_dir: /scratch/sahlab/leran/jackalope_bulk
-metadata:   /scratch/sahlab/leran/jackalope_cohort/jackalope_clinical_metadata.csv
+cohort_dir: /scratch/sahlab/leran/HPV_synthetic_data/data/bulk
+metadata:   /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/jackalope_clinical_metadata.csv
 
 # Superseded: the original VLP-enriched cohort. Its tangential-flow protocol has
 # nuclease_efficiency=0.98, which cut host DNA from 20% to 0.67% -- making the QC
 # host-removal step look like a no-op. Wrong lesson for a tutorial: real bulk
 # cervicovaginal metagenomes run 40-95% human (PMC9040584 measured 61%).
 # Kept for the VLP-vs-bulk comparison, not for the primary analysis.
-vlp_cohort_dir: /scratch/sahlab/leran/jackalope_cohort
-vlp_reads_dir:  /scratch/sahlab/leran/jackalope_cohort/READS
+vlp_cohort_dir: /scratch/sahlab/leran/HPV_synthetic_data/data/vlp
+vlp_reads_dir:  /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/READS
 
 # Measured read composition, bulk cohort (VIR_010, sampled):
 #   bacterial 47.6% | host_dna 40.1% | rRNA 6.5% | fungal 3.6% | viral ~1.0%
@@ -65,7 +65,7 @@ qc:
   stage: preprocessing              # QC only; not the full virome pipeline
   preprocess_mode: paired           # NOT roundAB — these are simulated Illumina reads
   host: human                       # viral-masked; 21,029 papillomavirus fragments in the mask
-  outdir: /scratch/sahlab/leran/jackalope_cohort/qc_hecatomb
+  outdir: /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/qc_hecatomb
 
 # ---------------------------------------------------------------- pipelines
 pipelines:
@@ -89,16 +89,16 @@ databases_verified: 2026-09-30
 # Full inventory with sizes and the local pipeline patches: docs/FILE_LOCATIONS.md
 outputs:
   vlp:
-    assemblies:      /scratch/sahlab/leran/jackalope_cohort/assemblies
-    pooled_contigs:  /scratch/sahlab/leran/jackalope_cohort/phage_analysis/all_samples_contigs.fasta
-    pipeline_out:    /scratch/sahlab/leran/jackalope_cohort/phage_analysis/out
-    votu_reps:       /scratch/sahlab/leran/jackalope_cohort/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta
-    votu_abundance:  /scratch/sahlab/leran/jackalope_cohort/votu_abundance
-    matrices:        /scratch/sahlab/leran/jackalope_cohort/results
+    assemblies:      /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/assemblies
+    pooled_contigs:  /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/phage_analysis/all_samples_contigs.fasta
+    pipeline_out:    /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/phage_analysis/out
+    votu_reps:       /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta
+    votu_abundance:  /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/votu_abundance
+    matrices:        /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/results
   bulk:
-    prophage_out:    /scratch/sahlab/leran/jackalope_bulk/prophage_out    # assemblies only; binning failed
-    pipeline_out:    /scratch/sahlab/leran/jackalope_bulk/phage_analysis/out
-  backup_small_files: /scratch/sahlab/leran/hpv_project_files
+    prophage_out:    /scratch/sahlab/leran/HPV_synthetic_data/data/bulk/prophage_out    # assemblies only; binning failed
+    pipeline_out:    /scratch/sahlab/leran/HPV_synthetic_data/data/bulk/phage_analysis/out
+  backup_small_files: /scratch/sahlab/leran/HPV_synthetic_data/backup
 
 environments:
   snakemake8:  /ref/sahlab/software/miniforge3/envs/snakemake_v8.20.3
@@ -108,8 +108,8 @@ environments:
 pipelines_on_cluster:
   # Both clones carry LOCAL PATCHES that are not upstream -- a fresh clone will
   # reproduce the original failures. See docs/FILE_LOCATIONS.md.
-  phage_analysis:    /scratch/sahlab/leran/phage-analysis
-  prophage_pipeline: /scratch/sahlab/leran/prophage-pipeline
+  phage_analysis:    /scratch/sahlab/leran/HPV_synthetic_data/pipelines/phage-analysis
+  prophage_pipeline: /scratch/sahlab/leran/HPV_synthetic_data/pipelines/prophage-pipeline
 
 results_final:
   votus: 2921

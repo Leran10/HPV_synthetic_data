@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=16G
 #SBATCH --time=4:00:00
-#SBATCH --output=/scratch/sahlab/leran/jackalope_cohort/logs/stage_%j.log
-#SBATCH --error=/scratch/sahlab/leran/jackalope_cohort/logs/stage_%j.err
+#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/stage_%j.log
+#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/stage_%j.err
 
 # Stage the jackalope cohort FASTQs into a single directory with unique,
 # metadata-joinable sample names (VIR_001_R1.fastq.gz ...).
@@ -17,7 +17,7 @@
 
 set -euo pipefail
 
-COHORT=/scratch/sahlab/leran/jackalope_cohort
+COHORT=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp
 READS=$COHORT/READS
 
 mkdir -p "$READS" "$COHORT/logs"

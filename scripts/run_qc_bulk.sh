@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=16G
 #SBATCH --time=2-00:00:00
-#SBATCH --output=/scratch/sahlab/leran/jackalope_bulk/logs/qc_%j.log
-#SBATCH --error=/scratch/sahlab/leran/jackalope_bulk/logs/qc_%j.err
+#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/qc_%j.log
+#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/qc_%j.err
 
 # Hecatomb QC (preprocessing stage) for the BULK jackalope cohort.
 # Snakemake driver job: stays resident and submits the real work via the
@@ -13,7 +13,7 @@
 
 set -euo pipefail
 
-COHORT=/scratch/sahlab/leran/jackalope_bulk
+COHORT=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk
 CONFIG=$COHORT/hecatomb.qc.bulk.yaml
 OUT=$COHORT/qc_hecatomb
 

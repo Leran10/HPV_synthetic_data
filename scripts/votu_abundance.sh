@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=24G
 #SBATCH --time=4:00:00
-#SBATCH --output=/scratch/sahlab/leran/jackalope_bulk/logs/abund_%A_%a.log
-#SBATCH --error=/scratch/sahlab/leran/jackalope_bulk/logs/abund_%A_%a.err
+#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/abund_%A_%a.log
+#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/abund_%A_%a.err
 
 # Per-sample vOTU abundance for the jackalope BULK cohort.
 #
@@ -25,11 +25,11 @@
 
 set -euo pipefail
 
-VOTU=/scratch/sahlab/leran/jackalope_bulk/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta
-READS=/scratch/sahlab/leran/jackalope_bulk/READS
-OUT=/scratch/sahlab/leran/jackalope_bulk/votu_abundance
+VOTU=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta
+READS=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/READS
+OUT=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/votu_abundance
 
-mkdir -p "$OUT" /scratch/sahlab/leran/jackalope_bulk/logs
+mkdir -p "$OUT" /scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs
 
 i=${SLURM_ARRAY_TASK_ID}
 s=$(printf "VIR_%03d" "$i")

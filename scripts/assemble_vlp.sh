@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
 #SBATCH --time=8:00:00
-#SBATCH --output=/scratch/sahlab/leran/jackalope_cohort/logs/asm_%A_%a.log
-#SBATCH --error=/scratch/sahlab/leran/jackalope_cohort/logs/asm_%A_%a.err
+#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/asm_%A_%a.log
+#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/asm_%A_%a.err
 
 # Assemble the VLP cohort. The bulk cohort's assemblies came free from the
 # prophage-pipeline run (which died later, at binning); the VLP cohort has none,
@@ -19,7 +19,7 @@
 
 set -euo pipefail
 
-C=/scratch/sahlab/leran/jackalope_cohort
+C=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp
 READS=$C/READS
 OUT=$C/assemblies
 

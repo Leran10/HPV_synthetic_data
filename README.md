@@ -96,7 +96,7 @@ gitignored. **[docs/FILE_LOCATIONS.md](docs/FILE_LOCATIONS.md) is the full
 inventory** — every path with sizes, which output file holds what, the shared
 tool/database locations, the local pipeline patches that are not upstream, the
 purge-protection cron, and the key SLURM job ids. A copy of the scripts and tables also lives in
-`/scratch/sahlab/leran/hpv_project_files/`.
+`/scratch/sahlab/leran/HPV_synthetic_data/backup/`.
 
 ## Pipeline notes, hard-won
 

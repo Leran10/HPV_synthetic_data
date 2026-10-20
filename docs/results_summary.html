@@ -148,7 +148,8 @@
   <div class="eyebrow">Jackalope cohort · 100 samples · ViroForge 0.20.0 · 2026-10-20</div>
   <h1>Lactobacillus phages are depleted in HPV-positive samples</h1>
   <p class="standfirst">A phage differential-abundance analysis across 2,921 vOTUs. Two confounds built into the cohort are
-  controlled explicitly rather than set aside — and after controlling both, one coherent signal remains.</p>
+  controlled explicitly rather than set aside. After controlling both, one signal survives — consistently, but only among
+  the phages whose hosts can be identified.</p>
 </header>
 
 <dl class="hero">
@@ -199,7 +200,8 @@ depth-controlled threshold. Effect sizes here are moderate (median |δ| ≈ 0.54
 
 <h2>3. The <em>Lactobacillus</em> signal</h2>
 <p>29 of the 74 markers are phages of <em>Lactobacillus</em> species. <strong>All 29 are depleted in HPV+</strong> — no
-exceptions — with a median log<sub>2</sub> fold change of −1.16. Host assignments come from CHERRY and are
+exceptions — with a median log<sub>2</sub> fold change of −1.16. This holds specifically among markers whose host could be
+assigned: of the 41 host-assigned markers 33 are depleted, against 16 of 33 unassigned (see Limitations). Host assignments come from CHERRY and are
 independently corroborated by iPHoP, whose own top predicted hosts across the cohort are
 <em>L. mulieris</em> (163), <em>L. jensenii</em> (159), and <em>Lacticaseibacillus</em> species.</p>
 
@@ -270,8 +272,13 @@ independently corroborated by iPHoP, whose own top predicted hosts across the co
   <li><strong>Statistical control cannot undo a design confound.</strong> Rarefaction and covariate adjustment reduce
   depth-driven inflation; they do not erase the fact that coverage and severity were coupled at generation. Residual
   confounding cannot be excluded.</li>
-  <li><strong>Host prediction is incomplete.</strong> 1,175 of 2,921 vOTUs received an iPHoP host call, so the
-  <em>Lactobacillus</em> pattern is drawn from the predictable subset — phages of well-studied hosts are easier to assign.</li>
+  <li><strong>Host prediction is incomplete, and the gap is not random.</strong> Only 1,175 of 2,921 vOTUs received an
+  iPHoP host call; within the 74 markers, 41 have a host and 33 do not. Host prediction works by matching against known
+  bacteria, so it succeeds for well-studied hosts like <em>Lactobacillus</em> and fails for obscure ones. Those two
+  groups behave differently: <strong>33 of 41 host-assigned markers are depleted in HPV+ (median log<sub>2</sub>FC
+  −1.03), against 16 of 33 unassigned (median +0.60)</strong>. The depletion signal is therefore concentrated in the
+  identifiable half of the community — among phages we cannot name, there is no clear direction. The defensible claim is
+  about <em>identifiable Lactobacillus phages</em>, not about the phage community as a whole.</li>
   <li><strong>Lifestyle calls look skewed.</strong> 71 of 74 markers were called virulent by BACPHLIP, lopsided enough
   to suspect the tool performs poorly on short contigs rather than reflecting real lifestyle distribution.</li>
   <li><strong>MMseqs2 <code>nr</code> taxonomy was omitted</strong> — the shared index is 2.1 TB on a mount reading at

@@ -153,6 +153,15 @@ from PhaGCN and vConTACT3 instead; hosts from CHERRY and iPHoP.
 - Synthetic data: effect sizes are not transferable to real cervicovaginal
   samples.
 
+## Documentation
+
+| file | what it covers |
+|---|---|
+| [docs/TOOLS_WALKTHROUGH.md](docs/TOOLS_WALKTHROUGH.md) | **every tool step by step** — what it does, the mechanism, the command we ran, what it produced, and the pitfalls that cost us runs |
+| [docs/results_summary.html](https://leran10.github.io/HPV_synthetic_data/) | the findings, with five figures |
+| [docs/FILE_LOCATIONS.md](docs/FILE_LOCATIONS.md) | where every file lives, on disk and on the cluster |
+| [docs/viroforge_fragment_bias_issue.md](docs/viroforge_fragment_bias_issue.md) | an issue report for the ViroForge authors |
+
 ## Related
 
 The Hecatomb pipeline itself is documented at

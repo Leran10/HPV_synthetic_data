@@ -153,14 +153,51 @@ from PhaGCN and vConTACT3 instead; hosts from CHERRY and iPHoP.
 - Synthetic data: effect sizes are not transferable to real cervicovaginal
   samples.
 
-## Documentation
+## Using this as a tutorial
+
+This repo doubles as a teaching resource for virome analysis. If that is why you
+are here, start with these:
 
 | file | what it covers |
 |---|---|
-| [docs/TOOLS_WALKTHROUGH.md](docs/TOOLS_WALKTHROUGH.md) | **every tool step by step** — what it does, the mechanism, the command we ran, what it produced, and the pitfalls that cost us runs |
+| [docs/TOOLS_WALKTHROUGH.md](docs/TOOLS_WALKTHROUGH.md) | **every tool step by step** — what it does, the mechanism, the command we ran, what it produced, and the pitfalls that cost us runs. QC is broken out operation-by-operation with the reads each one removed |
+| [tutorial/README.md](tutorial/README.md) | **runnable QC scripts** — `01_qc.sh` (one sample) and `02_qc_cohort.sh` (a cohort). No cluster, no Snakemake, no Hecatomb; tested end to end |
+| [tutorial/DOWNSTREAM.md](tutorial/DOWNSTREAM.md) | what assembly, annotation and analysis need — measured database sizes, which stages a laptop can run, and which force a cluster |
 | [docs/results_summary.html](https://leran10.github.io/HPV_synthetic_data/) | the findings, with five figures |
+
+Reusable pieces, all parameterised and runnable on your own data:
+
+| script | does |
+|---|---|
+| [tutorial/01_qc.sh](tutorial/01_qc.sh) | fastp → PhiX → host removal → re-pair → optional dereplication, emitting a per-step read-count table |
+| [tutorial/02_qc_cohort.sh](tutorial/02_qc_cohort.sh) | the above across a directory, building the attrition tables; resumable and parallel |
+| [scripts/differential_abundance.py](scripts/differential_abundance.py) | three-pass differential abundance (raw / rarefied / depth-adjusted) with BH correction |
+| [scripts/make_figures.py](scripts/make_figures.py) | regenerates all five report figures as SVG; numpy/scipy not even required |
+
+## Reference
+
+| file | what it covers |
+|---|---|
 | [docs/FILE_LOCATIONS.md](docs/FILE_LOCATIONS.md) | where every file lives, on disk and on the cluster |
 | [docs/viroforge_fragment_bias_issue.md](docs/viroforge_fragment_bias_issue.md) | an issue report for the ViroForge authors |
+| [results/qc/](results/qc) | per-step and per-sample QC attrition tables |
+| [results/markers/](results/markers) | the marker tables behind the figures |
+
+## Reusing this material
+
+Everything here is **MIT licensed** ([LICENSE](LICENSE)) — reuse, adapt and
+republish freely, including on a tutorial website, keeping the copyright
+notice. Two things worth carrying across if you build on this:
+
+- **The QC attrition numbers are the teachable part.** Duplicates were ~93% of
+  all read loss while quality filtering removed 0.31%; host removal took 0.86%
+  of a VLP library and 34.72% of a bulk one. Those contrasts teach library prep
+  better than any prose.
+- **State the confounds wherever the results appear.** Severity drove simulated
+  coverage, and the two source collections do not share genomes — which is why
+  421 of 495 statistically robust markers are design artefacts rather than
+  findings. A tutorial that shows the 575 significant hits without that filter
+  teaches the wrong lesson.
 
 ## Related
 

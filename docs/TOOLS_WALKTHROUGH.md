@@ -88,8 +88,8 @@ gzip -c "$src" > ${PROJECT_DIR}/data/vlp/READS/VIR_041_R1.fastq.gz
 ### — Hecatomb v1.1.0 — the wrapper that runs steps 3–5
 
 **Worth being explicit:** we did not invoke fastp, minimap2 and MMseqs2 separately.
-All three were run by **Hecatomb**, a Snakemake workflow for virome QC, via one
-command:
+All three were run by **Hecatomb** ([shandley/hecatomb](https://github.com/shandley/hecatomb),
+Roach et al.), a published Snakemake workflow for virome QC, via one command:
 
 ```bash
 source ${CONDA_BASE}/bin/activate hecatomb_v1.1.0
@@ -116,6 +116,61 @@ transferable knowledge is in the tools: *how* fastp finds adapters, *why* the ho
 reference is masked, what dereplication preserves. Those apply whether you use
 Hecatomb, another workflow, or run them by hand. Hecatomb's own contribution is
 orchestration, and the command above is all of it.
+
+**You do not need Hecatomb for this.** The three tools are standard and
+independently installable; the wrapper only orchestrates them. Running QC without
+it, per sample:
+
+```bash
+# 1. adapters, quality, length, poly-X, duplicates
+fastp -i VIR_041_R1.fastq.gz -I VIR_041_R2.fastq.gz \
+      -o t_R1.fastq -O t_R2.fastq -j VIR_041.fastp.json -h VIR_041.fastp.html \
+      --qualified_quality_phred 15 --length_required 90 --detect_adapter_for_pe \
+      --cut_tail --cut_tail_window_size 25 --cut_tail_mean_quality 15 \
+      --dedup --dup_calc_accuracy 4 --trim_poly_x --thread 12
+
+# 2. host removal -- build the index once, reuse it
+minimap2 -t 16 -d human_masked.idx human_masked.fa.gz        # once
+minimap2 -ax sr -t 16 --secondary=no human_masked.idx t_R1.fastq t_R2.fastq \
+  | samtools view -f 4 -h \
+  | samtools fastq -NO -1 clean_R1.fastq -2 clean_R2.fastq
+
+# 3. OPTIONAL -- only if you will search a huge protein database
+mmseqs easy-linclust clean_R1.fastq VIR_041_rep tmp \
+    --kmer-per-seq-scale 0.3 -c 0.8 --cov-mode 1 \
+    --min-seq-id 0.97 --alignment-mode 3 --threads 8
+```
+
+**Do you need Hecatomb's masked reference?** For a VLP cohort like this one,
+no — and the numbers say so plainly. Host removal took out **581,127 of 49.2 M
+reads (1.18%)**. At that scale it makes no measurable difference whether you map
+against Hecatomb's virus-masked bundle or a plain GRCh38 download. Masking earns
+its keep on *bulk* data: the same step on our 80%-host bulk run removed **43.26%**,
+and there a badly masked reference could discard real viral reads along with the
+human ones. (Hecatomb's `add-host` subcommand builds a masked reference if you
+want one.)
+
+Nor is Hecatomb a host-removal tool in its own right — the host step *is*
+minimap2 + samtools, and the wrapper's contribution is the pre-masked reference.
+Equally defensible substitutes: **bowtie2/bwa + samtools** (identical logic),
+**bbduk/bbsplit** (k-mer based, fast), **Kraken2** against a human database, or
+**hostile**, which is purpose-built for host depletion and ships ready-made
+decontaminated indexes.
+
+**Dereplication (step 3) is skippable here.** It exists to shrink the query set
+for Hecatomb's own 73 GB taxonomic cascade, which we did not run. Our phage
+analysis assembles the *full* read set, so it removed 0 reads and changed nothing
+downstream.
+
+**What Hecatomb is actually needed for:** reproducing *our exact read counts*,
+since the parameters and reference above came from it. A reader QC-ing their own
+VLP virome does not need it.
+
+**QC ran once, not twice.** Worth stating plainly, because the next wrapper also
+takes a `reads_dir`: **phage-analysis has no QC rules** — no fastp, no trimming,
+no host removal. It uses the reads only for coverage mapping in stage 6. (The
+third pipeline we tried, `prophage-pipeline`, *does* include fastp — but that run
+was abandoned at binning, so it never contributed.)
 
 **Two things specific to this install.** The `--preprocess paired` route runs one
 fastp call; the alternative `roundAB` route runs six sequential `bbduk.sh` passes

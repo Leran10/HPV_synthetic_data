@@ -189,7 +189,11 @@ worth stating: **phage-analysis has no QC rules** — it uses reads only for
 coverage in Stage 6. (`prophage-pipeline` does bundle fastp, but that run was
 abandoned at binning.)
 
-To run the same steps without Hecatomb, per sample:
+**Runnable scripts:** [`tutorial/01_qc.sh`](../tutorial/01_qc.sh) (one sample)
+and [`tutorial/02_qc_cohort.sh`](../tutorial/02_qc_cohort.sh) (a whole cohort,
+building the attrition tables) wrap everything below — no cluster, no Snakemake,
+no Hecatomb. See [`tutorial/README.md`](../tutorial/README.md). The commands
+themselves, per sample:
 
 ```bash
 # 1. fastp -- rows 1.1-1.6 above, one pass

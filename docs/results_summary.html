@@ -146,10 +146,11 @@
 
 <header>
   <div class="eyebrow">Jackalope cohort · 100 samples · ViroForge 0.20.0 · 2026-10-20</div>
-  <h1>Lactobacillus phages are depleted in HPV-positive samples</h1>
-  <p class="standfirst">A phage differential-abundance analysis across 2,921 vOTUs. Two confounds built into the cohort are
-  controlled explicitly rather than set aside. After controlling both, one signal survives — consistently, but only among
-  the phages whose hosts can be identified.</p>
+  <h1>A reciprocal phage shift tracks HPV status</h1>
+  <p class="standfirst">A phage differential-abundance analysis across 2,921 vOTUs. Two confounds built into the cohort
+  are controlled explicitly rather than set aside. What survives is a reciprocal shift — <em>Lactobacillus</em> phages
+  down, <em>Atopobium vaginae</em> phages up — unanimous in both directions, among the phages whose hosts can be
+  identified.</p>
 </header>
 
 <dl class="hero">
@@ -214,7 +215,31 @@ independently corroborated by iPHoP, whose own top predicted hosts across the co
   <em>Lactobacillus</em> hosts support fewer <em>Lactobacillus</em> phages, so the phage signal tracks the bacterial community.</figcaption>
 </figure>
 
-<h2>4. The two confounds, and how they were handled</h2>
+<h2>4. The shift is reciprocal, not one-sided</h2>
+<p>Splitting the host-assigned markers by bacterial genus gives a cleaner result than <em>Lactobacillus</em> alone.
+The two vaginal genera present point in <strong>opposite directions, with no exceptions in either</strong>:
+all 29 <em>Lactobacillus</em> phages are depleted in HPV+, and all 7 <em>Atopobium vaginae</em> phages are enriched.
+<strong>36 of 36 markers go the biologically expected way.</strong></p>
+
+<figure>
+  <div class="figtitle">Figure 4 · Fold change by predicted bacterial host</div>
+  <div class="figsub">Each mark is one marker vOTU. <em>Lactobacillus</em> is the healthy-flora genus; <em>Atopobium vaginae</em> is associated with bacterial vaginosis.</div>
+  <div class="figbody"><svg id="f5" viewBox="0 0 700 250" role="img"
+    aria-label="Strip plot of log2 fold change by host genus. All 29 Lactobacillus phage markers are negative; all 7 Atopobium vaginae markers are positive; unassigned markers scatter both ways."></svg></div>
+  <div class="legend">
+    <span><i class="swatch" style="background:var(--depleted)"></i>Depleted in HPV+</span>
+    <span><i class="swatch" style="background:var(--enriched)"></i>Enriched in HPV+</span>
+  </div>
+  <figcaption>This is the textbook vaginal dysbiosis signature read at the virome level — <em>Lactobacillus</em> down,
+  BV-associated anaerobes up — reproduced in the phage fraction rather than inferred from bacteria directly.
+  The <em>Atopobium</em> effects are modest (log<sub>2</sub>FC +0.59 to +0.66, FDR 0.023–0.048) but unanimous.
+  Three of the five &ldquo;other host&rdquo; calls are <em>Mandrillus</em>, <em>Macaca</em> and a plant pathogen —
+  almost certainly CHERRY misassignments on short contigs, so that group is not interpreted. The axis is clipped to
+  [&minus;2, +1.5]; marks beyond it (all in that misassigned group, out to &minus;4.4) are drawn as triangles at the
+  edge rather than allowed to set the scale.</figcaption>
+</figure>
+
+<h2>5. The two confounds, and how they were handled</h2>
 
 <div class="warn">
   <span class="label">Confound 1 — sequencing depth is coupled to severity</span>
@@ -227,7 +252,7 @@ independently corroborated by iPHoP, whose own top predicted hosts across the co
 </div>
 
 <figure>
-  <div class="figtitle">Figure 4 · Richness against sequencing depth, by group</div>
+  <div class="figtitle">Figure 5 · Richness against sequencing depth, by group</div>
   <div class="figsub">The confound made visible: HPV+ samples spread to higher depth, and richness follows depth within that arm.</div>
   <div class="figbody"><svg id="f4" viewBox="0 0 700 330" role="img"
     aria-label="Scatter plot of vOTU richness against total coverage for 100 samples, coloured by HPV status. Coverage ranges overlap substantially between groups."></svg></div>
@@ -248,7 +273,7 @@ independently corroborated by iPHoP, whose own top predicted hosts across the co
   presence/absence differences; only the 74 shared-arm markers are treated as informative about abundance.</p>
 </div>
 
-<h2>5. Numbers as reported</h2>
+<h2>6. Numbers as reported</h2>
 <div class="tablewrap">
   <table>
     <thead><tr><th>Quantity</th><th class="n">Value</th><th>Note</th></tr></thead>
@@ -267,7 +292,7 @@ independently corroborated by iPHoP, whose own top predicted hosts across the co
   </table>
 </div>
 
-<h2>6. Limitations</h2>
+<h2>7. Limitations</h2>
 <ul class="plain">
   <li><strong>Statistical control cannot undo a design confound.</strong> Rarefaction and covariate adjustment reduce
   depth-driven inflation; they do not erase the fact that coverage and severity were coupled at generation. Residual
@@ -296,6 +321,7 @@ independently corroborated by iPHoP, whose own top predicted hosts across the co
 </div>
 <div class="tip" id="tip"></div>
 <script>
+const HG={"lacto":{"n":29,"dep":29,"med":-1.16,"vals":[-1.36,-1.3,-1.29,-1.36,-1.3,-1.49,-1.48,-1.47,-1.54,-1.39,-1.09,-0.99,-1.06,-1.16,-1.17,-0.94,-1.28,-0.97,-1.17,-0.88,-0.86,-1.0,-0.89,-1.17,-0.9,-0.98,-0.78,-0.97,-1.01]},"atopo":{"n":7,"dep":0,"med":0.63,"vals":[0.63,0.59,0.63,0.59,0.66,0.63,0.6]},"other":{"n":5,"dep":4,"med":-4.32,"vals":[-4.32,-4.41,-4.42,-1.03,0.67]},"unassigned":{"n":33,"dep":16,"med":0.6,"vals":[-1.13,-1.0,-1.34,-1.67,-1.34,-1.15,-1.41,-1.07,-1.05,-0.9,1.1,-1.04,-0.96,0.95,0.99,-0.97,-1.0,0.88,0.92,-1.23,-0.75,0.94,0.74,0.76,0.62,0.69,0.68,0.68,0.6,0.7,0.94,0.68,0.96]}};
 const D={"pattern":{"HPV+_exclusive":326,"shared_rare_in_one":80,"HPV-_exclusive":95,"shared_both":74},"volcano":[{"d":-1.0,"q":16.88,"lac":0,"rob":1,"host":"Macaca"},{"d":-1.0,"q":16.88,"lac":0,"rob":1,"host":"Mandrillus"},{"d":-1.0,"q":16.88,"lac":0,"rob":1,"host":"Mandrillus"},{"d":-0.982,"q":13.6,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.956,"q":13.35,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.948,"q":12.34,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.94,"q":12.04,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.916,"q":11.84,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.903,"q":11.71,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.905,"q":11.35,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.845,"q":10.32,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.817,"q":10.14,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.759,"q":8.1,"lac":0,"rob":1,"host":"-"},{"d":-0.75,"q":7.86,"lac":0,"rob":1,"host":"-"},{"d":-0.641,"q":7.55,"lac":0,"rob":1,"host":"-"},{"d":-0.667,"q":7.38,"lac":1,"rob":1,"host":"Lactobacillus sp. UMNPBX19"},{"d":-0.655,"q":7.31,"lac":0,"rob":1,"host":"-"},{"d":-0.676,"q":7.29,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.651,"q":7.11,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.568,"q":6.88,"lac":0,"rob":1,"host":"-"},{"d":-0.654,"q":6.45,"lac":1,"rob":1,"host":"Lactobacillus johnsonii"},{"d":-0.597,"q":6.28,"lac":0,"rob":1,"host":"-"},{"d":-0.588,"q":6.26,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.595,"q":6.24,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.633,"q":6.22,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.531,"q":6.0,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.577,"q":5.61,"lac":0,"rob":1,"host":"Faecalibacterium prausnitzii"},{"d":-0.536,"q":5.47,"lac":0,"rob":1,"host":"-"},{"d":-0.595,"q":5.44,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.561,"q":5.38,"lac":1,"rob":1,"host":"Lactobacillus sp. UMNPBX19"},{"d":-0.495,"q":5.37,"lac":0,"rob":1,"host":"-"},{"d":-0.575,"q":5.24,"lac":1,"rob":1,"host":"Lactobacillus johnsonii"},{"d":-0.568,"q":5.11,"lac":0,"rob":1,"host":"-"},{"d":-0.551,"q":5.11,"lac":0,"rob":1,"host":"-"},{"d":0.627,"q":4.9,"lac":0,"rob":1,"host":"-"},{"d":-0.536,"q":4.86,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.529,"q":4.83,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.469,"q":4.73,"lac":1,"rob":1,"host":"Lactobacillus sp. UMNPBX19"},{"d":-0.518,"q":4.56,"lac":0,"rob":1,"host":"-"},{"d":-0.47,"q":4.42,"lac":1,"rob":1,"host":"Lactobacillus jensenii"},{"d":-0.534,"q":4.37,"lac":0,"rob":1,"host":"-"},{"d":0.59,"q":4.35,"lac":0,"rob":1,"host":"-"},{"d":0.56,"q":4.3,"lac":0,"rob":1,"host":"-"},{"d":-0.492,"q":4.02,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.496,"q":3.98,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.351,"q":3.81,"lac":0,"rob":1,"host":"-"},{"d":-0.471,"q":3.78,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":-0.414,"q":3.77,"lac":0,"rob":1,"host":"-"},{"d":0.53,"q":3.64,"lac":0,"rob":1,"host":"-"},{"d":0.527,"q":3.63,"lac":0,"rob":1,"host":"-"},{"d":0.76,"q":3.57,"lac":0,"rob":1,"host":"Pectobacterium peruviense"},{"d":-0.45,"q":3.43,"lac":1,"rob":1,"host":"Lactobacillus johnsonii"},{"d":-0.414,"q":3.39,"lac":0,"rob":1,"host":"-"},{"d":-0.431,"q":3.25,"lac":0,"rob":1,"host":"-"},{"d":0.524,"q":3.18,"lac":0,"rob":1,"host":"-"},{"d":-0.362,"q":2.94,"lac":1,"rob":1,"host":"Lactobacillus gasseri"},{"d":0.395,"q":2.27,"lac":0,"rob":1,"host":"-"},{"d":0.345,"q":1.83,"lac":0,"rob":1,"host":"-"},{"d":0.442,"q":1.83,"lac":0,"rob":1,"host":"-"},{"d":0.588,"q":1.76,"lac":0,"rob":1,"host":"-"},{"d":0.388,"q":1.74,"lac":0,"rob":1,"host":"-"},{"d":0.373,"q":1.64,"lac":0,"rob":1,"host":"-"},{"d":0.364,"q":1.64,"lac":0,"rob":1,"host":"Atopobium vaginae"},{"d":0.402,"q":1.58,"lac":0,"rob":1,"host":"-"},{"d":0.346,"q":1.55,"lac":0,"rob":1,"host":"Atopobium vaginae"},{"d":0.355,"q":1.55,"lac":0,"rob":1,"host":"Atopobium vaginae"},{"d":0.37,"q":1.45,"lac":0,"rob":1,"host":"-"},{"d":0.374,"q":1.45,"lac":0,"rob":1,"host":"Atopobium vaginae"},{"d":0.379,"q":1.45,"lac":0,"rob":1,"host":"Atopobium vaginae"},{"d":0.343,"q":1.44,"lac":0,"rob":1,"host":"-"},{"d":0.374,"q":1.41,"lac":0,"rob":1,"host":"-"},{"d":0.379,"q":1.33,"lac":0,"rob":1,"host":"Atopobium vaginae"},{"d":0.348,"q":1.32,"lac":0,"rob":1,"host":"Atopobium vaginae"},{"d":0.265,"q":1.31,"lac":0,"rob":1,"host":"-"},{"d":0.262,"q":1.3,"lac":0,"rob":0,"host":"-"},{"d":0.349,"q":1.26,"lac":0,"rob":0,"host":"-"},{"d":0.286,"q":1.21,"lac":0,"rob":0,"host":"-"},{"d":0.339,"q":1.2,"lac":0,"rob":0,"host":"-"},{"d":0.336,"q":1.19,"lac":0,"rob":0,"host":"Atopobium vaginae"},{"d":0.316,"q":1.16,"lac":0,"rob":0,"host":"Atopobium vaginae"},{"d":0.326,"q":1.02,"lac":0,"rob":0,"host":"-"},{"d":0.313,"q":1.0,"lac":0,"rob":0,"host":"-"},{"d":0.278,"q":0.98,"lac":0,"rob":0,"host":"-"},{"d":0.26,"q":0.97,"lac":0,"rob":0,"host":"-"},{"d":0.308,"q":0.89,"lac":0,"rob":0,"host":"Atopobium vaginae"},{"d":0.29,"q":0.75,"lac":0,"rob":0,"host":"Atopobium vaginae"},{"d":0.242,"q":0.69,"lac":0,"rob":0,"host":"Atopobium vaginae"},{"d":0.268,"q":0.69,"lac":0,"rob":0,"host":"-"},{"d":0.206,"q":0.34,"lac":0,"rob":0,"host":"-"},{"d":0.141,"q":0.3,"lac":0,"rob":0,"host":"-"},{"d":-0.036,"q":0.24,"lac":0,"rob":0,"host":"-"},{"d":0.143,"q":0.19,"lac":0,"rob":0,"host":"-"},{"d":0.121,"q":0.19,"lac":0,"rob":0,"host":"-"},{"d":0.131,"q":0.15,"lac":0,"rob":0,"host":"-"},{"d":0.079,"q":0.01,"lac":0,"rob":0,"host":"-"}],"richness":[{"x":7.93,"y":196,"g":"HPV-"},{"x":13.3,"y":199,"g":"HPV-"},{"x":7.74,"y":195,"g":"HPV-"},{"x":7.32,"y":186,"g":"HPV-"},{"x":5.1,"y":183,"g":"HPV-"},{"x":4.9,"y":209,"g":"HPV-"},{"x":6.17,"y":201,"g":"HPV-"},{"x":13.24,"y":193,"g":"HPV-"},{"x":15.04,"y":197,"g":"HPV-"},{"x":4.54,"y":105,"g":"HPV+"},{"x":3.0,"y":101,"g":"HPV+"},{"x":4.26,"y":146,"g":"HPV+"},{"x":10.96,"y":196,"g":"HPV+"},{"x":4.71,"y":227,"g":"HPV+"},{"x":3.05,"y":179,"g":"HPV+"},{"x":5.03,"y":200,"g":"HPV-"},{"x":5.58,"y":250,"g":"HPV+"},{"x":4.84,"y":269,"g":"HPV+"},{"x":4.64,"y":183,"g":"HPV-"},{"x":3.04,"y":238,"g":"HPV+"},{"x":3.9,"y":263,"g":"HPV+"},{"x":25.48,"y":255,"g":"HPV+"},{"x":12.73,"y":305,"g":"HPV+"},{"x":8.53,"y":178,"g":"HPV-"},{"x":11.14,"y":343,"g":"HPV+"},{"x":12.67,"y":279,"g":"HPV+"},{"x":11.14,"y":288,"g":"HPV+"},{"x":9.15,"y":213,"g":"HPV-"},{"x":10.5,"y":348,"g":"HPV+"},{"x":9.31,"y":335,"g":"HPV+"},{"x":5.86,"y":342,"g":"HPV+"},{"x":33.51,"y":400,"g":"HPV+"},{"x":6.13,"y":207,"g":"HPV-"},{"x":9.54,"y":388,"g":"HPV+"},{"x":13.58,"y":394,"g":"HPV+"},{"x":8.31,"y":371,"g":"HPV+"},{"x":8.26,"y":391,"g":"HPV+"},{"x":11.58,"y":470,"g":"HPV+"},{"x":14.26,"y":209,"g":"HPV-"},{"x":6.25,"y":425,"g":"HPV+"},{"x":7.43,"y":476,"g":"HPV+"},{"x":6.6,"y":205,"g":"HPV-"},{"x":5.26,"y":178,"g":"HPV-"},{"x":4.37,"y":182,"g":"HPV-"},{"x":8.15,"y":216,"g":"HPV-"},{"x":5.67,"y":180,"g":"HPV-"},{"x":30.96,"y":199,"g":"HPV-"},{"x":7.24,"y":196,"g":"HPV-"},{"x":12.89,"y":186,"g":"HPV-"},{"x":5.07,"y":182,"g":"HPV-"},{"x":5.8,"y":205,"g":"HPV-"},{"x":4.6,"y":199,"g":"HPV-"},{"x":6.71,"y":204,"g":"HPV-"},{"x":5.61,"y":169,"g":"HPV-"},{"x":10.16,"y":194,"g":"HPV-"},{"x":12.11,"y":194,"g":"HPV-"},{"x":4.8,"y":200,"g":"HPV-"},{"x":9.23,"y":183,"g":"HPV-"},{"x":7.59,"y":250,"g":"HPV+"},{"x":5.47,"y":239,"g":"HPV+"},{"x":5.08,"y":185,"g":"HPV-"},{"x":5.47,"y":335,"g":"HPV+"},{"x":17.09,"y":320,"g":"HPV+"},{"x":4.11,"y":284,"g":"HPV+"},{"x":8.38,"y":211,"g":"HPV-"},{"x":18.1,"y":393,"g":"HPV+"},{"x":5.97,"y":401,"g":"HPV+"},{"x":8.82,"y":443,"g":"HPV+"},{"x":10.02,"y":380,"g":"HPV+"},{"x":11.39,"y":363,"g":"HPV+"},{"x":9.6,"y":172,"g":"HPV-"},{"x":6.26,"y":215,"g":"HPV-"},{"x":9.53,"y":183,"g":"HPV-"},{"x":5.17,"y":203,"g":"HPV-"},{"x":6.9,"y":192,"g":"HPV-"},{"x":7.38,"y":214,"g":"HPV-"},{"x":5.34,"y":194,"g":"HPV-"},{"x":8.0,"y":184,"g":"HPV-"},{"x":4.75,"y":210,"g":"HPV+"},{"x":13.43,"y":235,"g":"HPV+"},{"x":11.05,"y":219,"g":"HPV-"},{"x":4.7,"y":249,"g":"HPV+"},{"x":4.03,"y":293,"g":"HPV+"},{"x":6.74,"y":328,"g":"HPV+"},{"x":4.88,"y":315,"g":"HPV+"},{"x":5.64,"y":218,"g":"HPV-"},{"x":5.47,"y":334,"g":"HPV+"},{"x":18.51,"y":395,"g":"HPV+"},{"x":9.86,"y":355,"g":"HPV+"},{"x":8.73,"y":369,"g":"HPV+"},{"x":22.95,"y":399,"g":"HPV+"},{"x":13.83,"y":401,"g":"HPV+"},{"x":16.82,"y":185,"g":"HPV-"},{"x":5.52,"y":201,"g":"HPV-"},{"x":5.38,"y":176,"g":"HPV-"},{"x":4.85,"y":208,"g":"HPV-"},{"x":5.49,"y":213,"g":"HPV-"},{"x":11.52,"y":184,"g":"HPV-"},{"x":11.06,"y":218,"g":"HPV-"},{"x":4.69,"y":198,"g":"HPV-"}],"lacbars":[{"v":-1.54,"h":"L. jensenii","q":7.221572538572946e-11},{"v":-1.49,"h":"L. jensenii","q":1.9331301774654804e-12},{"v":-1.48,"h":"L. jensenii","q":4.46209172126493e-12},{"v":-1.47,"h":"L. jensenii","q":4.76352501941069e-11},{"v":-1.39,"h":"L. sp. UMNPBX19","q":4.167953619186439e-08},{"v":-1.36,"h":"L. jensenii","q":2.4921903582962618e-14},{"v":-1.36,"h":"L. jensenii","q":9.176082810208053e-13},{"v":-1.3,"h":"L. jensenii","q":4.44739870576248e-14},{"v":-1.3,"h":"L. jensenii","q":1.4363110621876947e-12},{"v":-1.29,"h":"L. jensenii","q":4.567476612033451e-13},{"v":-1.28,"h":"L. jensenii","q":1.0040745178527604e-06},{"v":-1.17,"h":"L. gasseri","q":5.778914510694513e-07},{"v":-1.17,"h":"L. sp. UMNPBX19","q":4.17213747289439e-06},{"v":-1.17,"h":"L. jensenii","q":3.7662149420705294e-05},{"v":-1.16,"h":"L. gasseri","q":5.538584034173702e-07},{"v":-1.09,"h":"L. gasseri","q":5.074508727695201e-08},{"v":-1.06,"h":"L. johnsonii","q":3.5257665843481663e-07},{"v":-1.01,"h":"L. gasseri","q":0.0011581817807239556},{"v":-1.0,"h":"L. gasseri","q":1.4685194247552321e-05},{"v":-0.99,"h":"L. gasseri","q":7.729695934365016e-08},{"v":-0.98,"h":"L. gasseri","q":0.00010572170280744364},{"v":-0.97,"h":"L. johnsonii","q":0.0003695674385150903},{"v":-0.97,"h":"L. gasseri","q":3.66766281814061e-06},{"v":-0.94,"h":"L. gasseri","q":5.993371178641512e-07},{"v":-0.9,"h":"L. gasseri","q":9.554393739627042e-05},{"v":-0.89,"h":"L. sp. UMNPBX19","q":1.85148137420076e-05},{"v":-0.88,"h":"L. johnsonii","q":5.789623738157482e-06},{"v":-0.86,"h":"L. jensenii","q":1.377166877152113e-05},{"v":-0.78,"h":"L. gasseri","q":0.00016722002452242103}],"stats":{"votus":2921,"testable":596,"robust":575,"shared":95,"shared_robust":74,"lac_n":29,"lac_med":-1.16,"dep":49,"enr":25}};const NS="http://www.w3.org/2000/svg";
 const cs=getComputedStyle(document.body);
 const C=k=>cs.getPropertyValue(k).trim();
@@ -442,4 +468,69 @@ function axisText(p,x,y,s,extra={}){
   const yl=axisText(s,16,(T+B)/2,"vOTU richness",{"text-anchor":"middle","font-size":11,fill:C("--text-secondary")});
   yl.setAttribute("transform",`rotate(-90 16 ${(T+B)/2})`);
 })();
+
+/* ---------- Fig 5: fold change by predicted host genus ---------- */
+(function(){
+  const s=document.getElementById("f5"); if(!s) return;
+  const lanes=[
+    {k:"lacto",     label:"Lactobacillus spp.",      italic:1},
+    {k:"atopo",     label:"Atopobium vaginae",       italic:1},
+    {k:"other",     label:"other named host",        italic:0},
+    {k:"unassigned",label:"no host call",            italic:0}
+  ];
+  const L=186,R=662,T=26,ROW=46;
+  // Axis clipped to [-2, 1.5]. The 'other named host' lane contains a few
+  // CHERRY misassignments (Mandrillus, Macaca, a plant pathogen) out near -4.4;
+  // letting them set the domain squashes the real Lactobacillus/Atopobium signal
+  // into the middle third. Out-of-range marks are drawn at the edge as triangles
+  // so they are visible but do not drive the scale.
+  const lo=-2, hi=1.5;
+  const sx=v=>L+((Math.max(lo,Math.min(hi,v))-lo)/(hi-lo))*(R-L);
+  const clipped=v=>v<lo||v>hi;
+  // gridlines + axis
+  for(let v=Math.ceil(lo*2)/2; v<=hi+1e-9; v+=0.5){
+    const x=sx(v), zero=Math.abs(v)<1e-9;
+    s.appendChild(el("line",{x1:x,y1:T-6,x2:x,y2:T+lanes.length*ROW-10,
+      stroke:zero?C("--text-muted"):C("--rule-soft"),"stroke-width":zero?1.5:1,
+      ...(zero?{"stroke-dasharray":"3 3"}:{})}));
+    axisText(s,x,T+lanes.length*ROW+6,v.toFixed(1),{"text-anchor":"middle"});
+  }
+  lanes.forEach((ln,i)=>{
+    const g=HG[ln.k]||{vals:[],n:0,dep:0,med:0};
+    const y=T+i*ROW+10;
+    // lane label
+    axisText(s,L-12,y+4,ln.label,{"text-anchor":"end","font-size":11.5,
+      fill:C("--text-primary"),"font-family":"-apple-system,Segoe UI,Roboto,sans-serif",
+      ...(ln.italic?{"font-style":"italic"}:{})});
+    axisText(s,L-12,y+17,`n=${g.n} · ${g.dep} down / ${g.n-g.dep} up`,
+      {"text-anchor":"end","font-size":9,fill:C("--text-muted")});
+    // jittered marks -- deterministic offset so the picture is stable
+    g.vals.forEach((v,j)=>{
+      const dy=((j%5)-2)*3.4, x=sx(v), col=v<0?C("--depleted"):C("--enriched");
+      let m;
+      if(clipped(v)){
+        const d=v<lo?-1:1;   // triangle pointing off-axis
+        m=el("path",{d:`M${x+d*5} ${y+dy} L${x-d*3} ${y+dy-4.5} L${x-d*3} ${y+dy+4.5} Z`,
+          fill:col,stroke:C("--surface-1"),"stroke-width":1.5});
+      } else {
+        m=el("circle",{cx:x,cy:y+dy,r:4.5,fill:col,
+          stroke:C("--surface-1"),"stroke-width":1.5,"fill-opacity":0.85});
+      }
+      hoverable(m,`${ln.label} · log2FC ${v>0?"+":""}${v}`+(clipped(v)?"  (off scale)":""));
+      s.appendChild(m);
+    });
+    // median tick
+    if(g.n){
+      s.appendChild(el("line",{x1:sx(g.med),y1:y-13,x2:sx(g.med),y2:y+13,
+        stroke:C("--text-primary"),"stroke-width":2.5}));
+      const t=el("text",{x:sx(g.med),y:y-18,"text-anchor":"middle","font-size":9.5,
+        "font-weight":700,fill:C("--text-primary"),"font-family":"ui-monospace,Menlo,monospace"});
+      t.textContent=(g.med>0?"+":"")+g.med.toFixed(2); s.appendChild(t);
+    }
+  });
+  axisText(s,(L+R)/2,T+lanes.length*ROW+26,
+    "← depleted in HPV+      log\u2082 fold change      enriched in HPV+ →",
+    {"text-anchor":"middle","font-size":11,fill:C("--text-secondary")});
+})();
+
 </script>

@@ -1,6 +1,6 @@
 # Every tool in this analysis, step by step
 
-A walkthrough of the 18 steps — 16 distinct tools plus two scripted steps — that take us from simulated reads to a ranked list of
+A walkthrough of the 20 steps — 16 distinct tools, two workflow wrappers, and two scripted steps — that take us from simulated reads to a ranked list of
 phage markers. For each: **what it does**, **the mechanism** (how it actually
 decides), **the command we ran**, and **what it produced on this cohort**.
 
@@ -8,7 +8,7 @@ Commands are reproduced from source as executed, with site paths shown as
 `${PLACEHOLDERS}` (see the README table). Provenance, so you know what to trust:
 
 - **Tools 1, 2, 6, 17, 18** — our own scripts in [`scripts/`](../scripts), run directly
-- **Tools 3, 4, 5** — Hecatomb v1.1.0's internal rules (`01_preprocessing.smk`)
+- **Tools 3, 4, 5** — run BY Hecatomb v1.1.0, commands from its `01_preprocessing.smk`
 - **Tools 7–16** — the [phage-analysis](https://github.com/megjohnson1999/phage-analysis)
   pipeline's rules (`01_prediction.smk`, `02_clustering.smk`, `03_analysis.smk`)
 
@@ -18,13 +18,19 @@ wildcards are resolved to readable paths; flags and values are verbatim.
 **Running order:**
 
 ```
- generate ──▶ stage ──▶ QC ──▶ assemble ──▶ identify ──▶ cluster ──▶ annotate ──▶ quantify ──▶ test
- ViroForge   gzip/     fastp   MEGAHIT     Jaeger       vclust      PHOLD        bbmap        Python
-             rename    minimap2            geNomad                  PHABOX       (coverage)   (stats)
-                       MMseqs2             CheckV                   vConTACT3
-                                                                    BACPHLIP
-                                                                    iPHoP
+ generate    stage      QC          assemble   identify    cluster   annotate    quantify  test
+ ViroForge   gzip/      fastp       MEGAHIT    Jaeger      vclust    PHOLD       bbmap     Python
+             rename     minimap2               geNomad               PHABOX      coverage  scipy
+                        MMseqs2                CheckV                vConTACT3
+                                                                     BACPHLIP
+                                                                     iPHoP
+ ─ours─      ─ours─     └── Hecatomb ──┘  ─ours─  └──── phage-analysis ─────┘   ─ours─   ─ours─
 ```
+
+Two of those columns are **workflow wrappers**, not tools: Hecatomb runs the three
+QC tools, and phage-analysis runs the ten identification/annotation tools. Each is
+one command. Both are documented as their own section below, so you can see what
+we actually typed — then the tool sections explain what happened inside.
 
 ---
 
@@ -78,6 +84,46 @@ gzip -c "$src" > ${PROJECT_DIR}/data/vlp/READS/VIR_041_R1.fastq.gz
 ```
 
 **Produced.** 200 files as `VIR_###_R{1,2}.fastq.gz`, joinable to the metadata.
+
+### — Hecatomb v1.1.0 — the wrapper that runs steps 3–5
+
+**Worth being explicit:** we did not invoke fastp, minimap2 and MMseqs2 separately.
+All three were run by **Hecatomb**, a Snakemake workflow for virome QC, via one
+command:
+
+```bash
+source ${CONDA_BASE}/bin/activate hecatomb_v1.1.0
+
+hecatomb run \
+    --reads   ${PROJECT_DIR}/data/vlp/READS \
+    --output  ${PROJECT_DIR}/data/vlp/qc_hecatomb \
+    --preprocess paired \        # one fastp pass; `roundAB` instead = six bbduk passes
+    --host    human \            # selects the viral-masked reference
+    --search  fast \
+    --threads 16 \
+    --profile slurm \
+    preprocessing                 # stage target: stop after the seqtable
+```
+
+**What a workflow wrapper buys you.** Hecatomb resolves the dependency graph,
+submits each rule as its own SLURM job, manages a conda environment per tool, and
+resumes from where it stopped if something fails. The `preprocessing` target stops
+after QC rather than running Hecatomb's full taxonomic cascade — which would have
+taken days and duplicated what the phage pipeline does better.
+
+**Why the next three sections document the tools rather than the wrapper.** The
+transferable knowledge is in the tools: *how* fastp finds adapters, *why* the host
+reference is masked, what dereplication preserves. Those apply whether you use
+Hecatomb, another workflow, or run them by hand. Hecatomb's own contribution is
+orchestration, and the command above is all of it.
+
+**Two things specific to this install.** The `--preprocess paired` route runs one
+fastp call; the alternative `roundAB` route runs six sequential `bbduk.sh` passes
+for Round A/B primer artefacts, which simulated Illumina reads do not have. And
+Hecatomb's per-step read-counting rules (`04_summaries_optional.smk`) are
+commented out in the version we used, so the attrition tables in
+[`results/qc/`](../results/qc) were rebuilt from the stats files by
+[`scripts/collect_qc_attrition.py`](../scripts/collect_qc_attrition.py).
 
 ### 3. fastp 0.23.2 — read QC
 
@@ -181,6 +227,62 @@ sed -e "s/^>/>VIR_041__/" -e "s/^\(>[^ ]*\).*/\1/" VIR_041.contigs.fa > out.fast
 ## Stage 3 — Which contigs are viral?
 
 Four independent callers, combined by consensus. No single tool is trusted alone.
+
+### — phage-analysis — the wrapper that runs steps 7–16
+
+Same caveat as Hecatomb: the ten tools in stages 3–5 were not invoked separately.
+They are rules in the [phage-analysis](https://github.com/megjohnson1999/phage-analysis)
+Snakemake workflow, run once:
+
+```bash
+export PATH=${CONDA_BASE}/bin:${CONDA_BASE}/condabin:$PATH   # conda must be ON PATH
+cd ${PROJECT_DIR}/pipelines/phage-analysis
+
+snakemake \
+    --snakefile workflow/Snakefile \
+    --profile   profile/slurm/ \
+    --configfile config/vlp_config.yaml \
+    --set-resources \
+        mmseqs_taxonomy:cpus_per_task=24  mmseqs_taxonomy:mem_mb=700000 \
+        mmseqs_taxonomy:runtime=4320 \
+        genomad_prediction:cpus_per_task=16  genomad_prediction:mem_mb=100000 \
+        phabox_prediction:mem_mb=100000   vcontact3_taxonomy:mem_mb=200000 \
+        iphop_single_prediction:mem_mb=150000  iphop_single_prediction:runtime=2880 \
+        # ...16 rules pinned in total; see scripts/run_phage_analysis_vlp.sh
+    --nolock
+```
+
+The config names the inputs:
+
+```yaml
+output_dir:    ${PROJECT_DIR}/data/vlp/phage_analysis/out
+assembly_file: ${PROJECT_DIR}/data/vlp/phage_analysis/all_samples_contigs.fasta
+reads_dir:     ${PROJECT_DIR}/data/vlp/READS
+skip_mmseqs:   true     # see below
+```
+
+**One assembly file, not a directory.** The pipeline takes a single FASTA, so all
+100 per-sample assemblies were concatenated with sample-prefixed contig names
+(`VIR_041__k141_78`). That prefix is what lets abundance be attributed back to
+samples in stage 6.
+
+**Why every resource is pinned on the command line.** The profile's
+`set-resources:` block is silently ignored by this Snakemake build — partly
+because it writes runtimes as strings (`"24:00:00"`) where Snakemake wants integer
+minutes. Four separate runs failed on resource defaults before we stopped trusting
+the profile: a rule declaring `threads: 24` was handed 4 CPUs, two rules hit a
+24-hour ceiling, and iPHoP was given 50 GB when it needed more. CLI
+`--set-resources` does take effect, verified with `--dry-run`.
+
+**MMseqs2 `nr` taxonomy is skipped deliberately.** The shared index is 2,125 GB
+across 9 split files on a filesystem reading at **7–10 MB/s** — one pass would take
+roughly 81 days. Three runs (27 h, 14 h, 10 h) were lost to it before we timed a
+raw read and understood why. `skip_mmseqs: true` routes the rule to its
+empty-output branch; taxonomy comes from PhaGCN and vConTACT3 instead, hosts from
+CHERRY and iPHoP. **Measure your filesystem before blaming a tool.**
+
+**Result.** 435 jobs, 3h51m, zero errors — after fifteen failed attempts. The six
+fixes that got there are in the [README](../README.md#pipeline-notes-hard-won).
 
 ### 7. Jaeger 1.1.26 — deep-learning viral classifier
 

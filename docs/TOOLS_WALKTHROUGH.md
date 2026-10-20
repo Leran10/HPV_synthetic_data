@@ -1,15 +1,16 @@
 # Every tool in this analysis, step by step
 
-A walkthrough of the 20 steps — 16 distinct tools, two workflow wrappers, and two scripted steps — that take us from simulated reads to a ranked list of
-phage markers. For each: **what it does**, **the mechanism** (how it actually
+A walkthrough of every tool that took us from simulated reads to a ranked list
+of phage markers. QC is listed operation-by-operation with the reads each one
+removed; the rest are numbered 1–18. For each: **what it does**, **the mechanism** (how it actually
 decides), **the command we ran**, and **what it produced on this cohort**.
 
 Commands are reproduced from source as executed, with site paths shown as
 `${PLACEHOLDERS}` (see the README table). Provenance, so you know what to trust:
 
 - **Tools 1, 2, 6, 17, 18** — our own scripts in [`scripts/`](../scripts), run directly
-- **Tools 3, 4, 5** — run BY Hecatomb v1.1.0 (commands from its `01_preprocessing.smk`);
-  standalone equivalents given, since the wrapper is optional
+- **QC (steps 1–9 of the QC table)** — run BY Hecatomb v1.1.0, commands from
+  `01_preprocessing.smk`; standalone equivalents given, since the wrapper is optional
 - **Tools 7–16** — the [phage-analysis](https://github.com/megjohnson1999/phage-analysis)
   pipeline's rules (`01_prediction.smk`, `02_clustering.smk`, `03_analysis.smk`)
 
@@ -22,23 +23,21 @@ wildcards are resolved to readable paths; flags and values are verbatim.
  generate    stage      QC          assemble   identify    cluster   annotate    quantify  test
  ViroForge   gzip/      fastp       MEGAHIT    Jaeger      vclust    PHOLD       bbmap     Python
              rename     minimap2               geNomad               PHABOX      coverage  scipy
-                        MMseqs2                CheckV                vConTACT3
-                                                                     BACPHLIP
+                        repair.sh              CheckV                vConTACT3
+                        MMseqs2                                      BACPHLIP
                                                                      iPHoP
  ─ours─      ─ours─     └── Hecatomb ──┘  ─ours─  └──── phage-analysis ─────┘   ─ours─   ─ours─
 ```
 
-Two of those columns are **workflow wrappers**, not tools: Hecatomb ran the three
-QC tools, phage-analysis ran the ten identification/annotation tools. Each is one
+Two of those columns are **workflow wrappers**, not tools: Hecatomb ran the QC
+tools, phage-analysis ran the ten identification/annotation tools. Each is one
 command, and each gets its own section below so you can see what we actually
 typed — then the tool sections explain what happened inside.
 
-**If you are here to learn how to do this on your own data,** the wrapper
-sections also lay out your alternatives: [how QC was done and what your options
-are](#how-qc-was-done-here--and-what-your-options-are) covers running the three
-QC tools individually, choosing a host-removal tool, and which steps you can skip
-outright. Nothing in this pipeline requires our specific software stack — but the
-read counts we report do, so both routes are spelled out.
+**If you are here to learn how to do this on your own data,** start with the
+[QC tool list](#qc-tool-list--every-operation-and-the-reads-it-removed) — every
+operation, the reads it removed, which one we skipped and should not have on real
+data, and how to run each without the wrapper.
 
 ---
 
@@ -93,194 +92,164 @@ gzip -c "$src" > ${PROJECT_DIR}/data/vlp/READS/VIR_041_R1.fastq.gz
 
 **Produced.** 200 files as `VIR_###_R{1,2}.fastq.gz`, joinable to the metadata.
 
-### How QC was done here — and what your options are
+### QC tool list — every operation and the reads it removed
 
-Three questions a reader needs answered before the tool pages below make sense:
-what did *we* run, do *you* need the same thing, and where are the real choices.
+All counts are **reads** (not pairs), VLP cohort, 100 samples, 135,304,106 reads in.
+`—` in the Removed column means the operation modifies reads without discarding any.
 
-#### What we ran
+| # | Tool | Operation | Reads removed | % of raw |
+|---|---|---|---|---|
+| **1** | **fastp 0.23.2** | **trim + filter + deduplicate, single pass** | **36,926,084** | **27.29%** |
+| 1.1 | fastp | trim adapters (`--detect_adapter_for_pe`) | — (3,740,339 trimmed) | — |
+| 1.2 | fastp | trim poly-X tails (`--trim_poly_x`) | — (786,119 trimmed) | — |
+| 1.3 | fastp | discard low quality (Q<15, `--cut_tail` w=25) | 418,402 | 0.31% |
+| 1.4 | fastp | discard too short (`--length_required 90`) | 2,144,966 | 1.59% |
+| 1.5 | fastp | discard >2 ambiguous bases (N) | 3,346 | 0.00% |
+| 1.6 | fastp | discard PCR/optical duplicates (`--dedup`) | 34,359,370 | 25.40% |
+| — | **bbduk** | **remove PhiX + vector (UniVec)** | **NOT RUN** | — |
+| **2** | **minimap2 + samtools** | **remove host (map to GRCh38, keep unmapped)** | **1,162,254** | **0.86%** |
+| **3** | **bbtools `reformat.sh`** | **re-pair reads orphaned by host removal** | — (no reads lost) | — |
+| **4** | **`cat`** | **recombine paired + singleton streams** | — (no reads lost) | — |
+| **5** | **MMseqs2 linclust** | **dereplicate at 97% id, counts preserved** | **0** | 0.00% |
+| 6 | seqkit + awk | build per-sample sequence/count table | — (reshape only) | — |
+| 7 | `mergeSeqTable.py` | merge 100 sample tables into one | — (reshape only) | — |
+| 8 | — | annotate GC% and tetranucleotide frequency | — (annotation) | — |
+| 9 | — | assemble final sequence-properties table | — (annotation) | — |
+| | | **Total removed** | **38,088,338** | **28.15%** |
+| | | **Retained** | **97,215,768** | **71.85%** |
 
-One command. All three QC tools below were orchestrated by **Hecatomb**
-([shandley/hecatomb](https://github.com/shandley/hecatomb), Roach et al.) — a
-published Snakemake virome workflow:
+Sub-rows 1.1–1.6 sum exactly to the fastp total; steps 6–9 are bookkeeping for
+Hecatomb's taxonomic cascade, which we did not run.
+
+**Reading the table.** Three facts a learner should take away:
+
+- **Duplicates are 93% of all removal.** 34.4 M of the 36.9 M fastp discards, and
+  25.4% of the entire raw dataset. Quality filtering — what people usually picture
+  when they hear "QC" — removed **0.31%**.
+- **Trimming ≠ removal.** Adapter and poly-X operations *shorten* reads; nothing
+  is discarded unless the result falls under 90 bp, at which point it appears in
+  row 1.4 instead. This is why rows 1.1–1.2 show no removal.
+- **Dereplication removing 0 is correct.** MMseqs2 collapsed 97.2 M reads onto
+  7,111,211 representatives (6.8×) while carrying every count forward.
+  Deduplication (1.6) *deletes*; dereplication (5) *groups*. Opposite operations
+  with confusingly similar names.
+
+**PhiX removal did not run, and on real data it should.** Hecatomb has the step
+(`remove_vector_contamination`, bbduk vs PhiX + NCBI UniVec) but only on its
+`roundAB` route; we ran `--preprocess paired`, which has one cleaning rule where
+`roundAB` has six. Defensible here because InSilicoSeq reads contain no PhiX
+spike-in, no primers and no vector — but Illumina runs are routinely PhiX-spiked
+and not every demultiplexer strips it. Add it for a real cohort.
+
+| | `--preprocess paired` (ours) | `--preprocess roundAB` |
+|---|---|---|
+| Cleaning rules | 1 (`fastp_preprocessing`) | 6 `bbduk.sh` passes |
+| Adapter / quality / length | inside fastp | `remove_low_quality` (+ entropy filter) |
+| PhiX + UniVec | **—** | `remove_vector_contamination` |
+| Round A/B primer passes | — | 4 separate rules |
+| Steps after host removal | identical | identical |
+
+`roundAB` also applies an **entropy filter** — it discards low-complexity reads
+(homopolymers, simple repeats) that pass a quality threshold perfectly well.
+fastp has no equivalent, and those reads assemble into junk contigs.
+
+**Bulk cohort for comparison** (80% host, same tools, 134,958,156 reads in):
+
+| Operation | Reads removed | % of raw |
+|---|---|---|
+| fastp total | 26,628,818 | 19.73% |
+| └ duplicates | 23,531,830 | 17.44% |
+| └ too short | 2,679,674 | 1.99% |
+| └ low quality | 417,290 | 0.31% |
+| host removal | 46,861,408 | **34.72%** |
+| dereplication | 0 | 0.00% |
+| **Retained** | **61,467,930** | **45.55%** |
+
+The contrast is the whole lesson in library prep: **host removal takes 0.86% of a
+VLP library and 34.72% of a bulk one.** Quality filtering is 0.31% in both —
+sequencer quality has nothing to do with prep method.
+
+#### The commands
+
+One wrapper call ran steps 1–9. Hecatomb
+([shandley/hecatomb](https://github.com/shandley/hecatomb), Roach et al.):
 
 ```bash
 source ${CONDA_BASE}/bin/activate hecatomb_v1.1.0
 
 hecatomb run \
-    --reads   ${PROJECT_DIR}/data/vlp/READS \
-    --output  ${PROJECT_DIR}/data/vlp/qc_hecatomb \
-    --preprocess paired \        # one fastp pass; `roundAB` = six bbduk passes instead
-    --host    human \            # selects Hecatomb's viral-masked GRCh38
-    --search  fast \
-    --threads 16 \
-    --profile slurm \
+    --reads ${PROJECT_DIR}/data/vlp/READS --output ${PROJECT_DIR}/data/vlp/qc_hecatomb \
+    --preprocess paired --host human --search fast \
+    --threads 16 --profile slurm \
     preprocessing                 # stage target: stop after QC
 ```
 
-The wrapper resolves the dependency graph, submits each rule as its own SLURM
-job, keeps a conda environment per tool, and resumes after a failure. The
-`preprocessing` target stops after QC instead of running Hecatomb's full
-taxonomic cascade, which would have taken days and duplicated what the phage
-pipeline does better.
+**This was the cohort's only QC.** The next wrapper also takes a `reads_dir`, so
+worth stating: **phage-analysis has no QC rules** — it uses reads only for
+coverage in Stage 6. (`prophage-pipeline` does bundle fastp, but that run was
+abandoned at binning.)
 
-**This is the only QC the cohort received.** Worth saying because the next
-wrapper also takes a `reads_dir`: **phage-analysis contains no QC rules** — no
-trimming, no host removal — it uses reads only for coverage in Stage 6. (A third
-pipeline we tried, `prophage-pipeline`, does bundle fastp, but that run was
-abandoned at binning and never fed anything.)
-
-#### Where are adapter removal, PhiX removal, quality trimming?
-
-If you have run a QC pipeline before, you expect a list like *adapter removal →
-primer removal → vector/PhiX removal → quality trimming → length filter → host
-removal*. Only one of those appears as its own row in our tables, which looks
-like steps are missing. Two different reasons, and one is a genuine gap.
-
-**Most of them are inside fastp.** fastp is a single-pass tool that does what
-older pipelines spread across several programs. Mapping the classic list onto
-what ran:
-
-| Classic QC step | Did it happen? | Where |
-|---|---|---|
-| Adapter removal | **Yes** | fastp `--detect_adapter_for_pe` — 3,740,339 reads trimmed |
-| Quality trimming | **Yes** | fastp `--cut_tail` w=25, Q<15 — 418,402 reads discarded |
-| Length filter | **Yes** | fastp `--length_required 90` — 2,144,966 discarded |
-| Poly-G/X tail | **Yes** | fastp `--trim_poly_x` — 786,119 trimmed |
-| Ambiguous-base filter | **Yes** | fastp, >2 N — 3,346 discarded |
-| Duplicate removal | **Yes** | fastp `--dedup` — 34,359,370 discarded |
-| Host removal | **Yes** | minimap2 + samtools — 581,127 pairs |
-| **PhiX / vector removal** | **NO — skipped** | see below |
-| Primer removal (Round A/B) | **NO — not applicable** | see below |
-
-So the single `fastp` row in the attrition table is six classic steps collapsed
-into one pass. That is a reporting artefact of how fastp works, not missing QC —
-which is exactly why the per-flag breakdown below matters more than the per-step
-totals.
-
-**The real gap: PhiX and vector contamination.** Hecatomb *does* have this step,
-but only on its other preprocessing route. The two routes are not minor variants:
-
-| | `--preprocess paired` (what we ran) | `--preprocess roundAB` |
-|---|---|---|
-| Cleaning rules | **1** (`fastp_preprocessing`) | **6** discrete `bbduk.sh` passes |
-| 5′ primer removal | — | `remove_5prime_primer` |
-| 3′ contaminant | — | `remove_3prime_contaminant` |
-| Primer-free adapter | — | `remove_primer_free_adapter` |
-| Adapter-free primer | — | `remove_adapter_free_primer` |
-| **PhiX + UniVec** | — | `remove_vector_contamination` |
-| Quality/entropy | inside fastp | `remove_low_quality` (adds an entropy filter) |
-| Everything after | identical | identical |
-
-The `roundAB` route is built for Hecatomb's own Round A/B amplification protocol,
-and its primer files in this install are hand-edited for lab-specific primers.
-We chose `paired` because our reads are **simulated by InSilicoSeq** — they carry
-no Round A/B primers, no PhiX spike-in, and no vector sequence, so five of those
-six passes would have found nothing. The vector pass is the one that would be
-mandatory on real sequencer output.
+To run the same steps without Hecatomb, per sample:
 
 ```bash
-# what roundAB runs and we did not -- PhiX + NCBI UniVec
-bbduk.sh in=R1.fastq in2=R2.fastq ref=vector_contaminants.fa \
-    out=clean_R1.fastq out2=clean_R2.fastq stats=vector.stats \
-    k=31 hammingdistance=1 ordered=t ow=t threads=16
+# 1. fastp -- rows 1.1-1.6 above, one pass
+fastp -i VIR_041_R1.fastq.gz -I VIR_041_R2.fastq.gz \
+      -o t_R1.fastq -O t_R2.fastq -j VIR_041.fastp.json -h VIR_041.fastp.html \
+      --qualified_quality_phred 15 --length_required 90 --detect_adapter_for_pe \
+      --cut_tail --cut_tail_window_size 25 --cut_tail_mean_quality 15 \
+      --dedup --dup_calc_accuracy 4 --trim_poly_x --thread 12
 
-# roundAB's quality pass -- note the entropy filter fastp has no equivalent for
-bbduk.sh in=R1.fastq in2=R2.fastq qtrim=r maxns=2 \
-    trimq=${QSCORE} minlength=${READ_MINLEN} \
-    entropy=${ENTROPY} entropywindow=${ENTROPYWINDOW}
+# 1b. PhiX/vector -- WE SKIPPED THIS; include it for real sequencer output
+bbduk.sh in=t_R1.fastq in2=t_R2.fastq \
+         ref=phix174_ill.ref.fa.gz,vector_contaminants.fa \
+         out=nophix_R1.fastq out2=nophix_R2.fastq stats=phix.stats \
+         k=31 hammingdistance=1 ordered=t ow=t threads=16
+
+# 2. host removal -- build the index once, reuse it
+minimap2 -t 16 -d host.idx GRCh38.fa.gz
+minimap2 -ax sr -t 16 --secondary=no host.idx nophix_R1.fastq nophix_R2.fastq \
+  | samtools view -f 4 -h \
+  | samtools fastq -NO -1 clean_R1.fastq -2 clean_R2.fastq
+
+# 3-4. re-pair -- DO NOT SKIP (see note below)
+repair.sh in=clean_R1.fastq in2=clean_R2.fastq \
+          out=fixed_R1.fastq out2=fixed_R2.fastq outs=singletons.fastq repair -Xmx8g
+
+# 5. dereplication -- skip unless a large database search follows
+mmseqs easy-linclust fixed_R1.fastq VIR_041_rep tmp \
+    --kmer-per-seq-scale 0.3 -c 0.8 --cov-mode 1 \
+    --min-seq-id 0.97 --alignment-mode 3 --threads 8
 ```
 
-> **If you are adapting this to real data, add PhiX removal.** Illumina runs are
-> routinely spiked with PhiX as a sequencing control, and it is not removed by
-> every demultiplexer. It is cheap to screen for: `bbduk.sh` against the bundled
-> `phix174_ill.ref.fa.gz`, or `--preprocess roundAB` if your library used that
-> protocol. We skipped it because simulated reads cannot contain it — that
-> justification does not transfer to a real cohort.
->
-> The **entropy filter** in `remove_low_quality` is also worth knowing about:
-> it discards low-complexity reads (homopolymer runs, simple repeats) that pass
-> a quality threshold perfectly well. fastp has no direct equivalent.
+**Why steps 3–4 are not optional.** `samtools view -f 4` filters reads
+independently, so a pair with one human mate leaves an orphan — R1 and R2 end up
+different lengths and out of sync. MEGAHIT and most aligners either error or
+silently misread that. Hecatomb spends two rules on it (`reformat.sh` + `cat`);
+`repair.sh` does it in one. `seqkit pair` and `fastq_pair` also work. This is the
+step hand-rolled QC scripts most often forget.
 
-#### The full rule list — nine steps, three of which remove reads
+**Host removal is the one real choice.** Hecatomb is not a host-removal tool —
+that step *is* minimap2 + samtools; what the wrapper adds is a GRCh38 with
+virus-like regions masked so genuine viral reads are not discarded as human. How
+much that matters depends on prep: at 0.86% removal (VLP) it is nearly
+irrelevant; at 34.72% (bulk) a bad mask costs you real data. Alternatives, any
+defensible:
 
-"Three QC steps" is a simplification, and worth unpacking, because Hecatomb's
-`preprocessing` target actually ran **nine rules** per sample. Only three change
-the read count; the rest reshape the data. Counted from the run's own benchmark
-and log files:
-
-| # | Rule | Tool | Jobs | Effect on read count |
-|---|---|---|---|---|
-| 1 | `fastp_preprocessing` | fastp | 100 | **removes** — trim, filter, dedup |
-| 2 | `host_removal_mapping` | minimap2 + samtools | 300 | **removes** — drops host |
-| 3 | `nonhost_read_repair` | bbtools `reformat.sh` | 100 | re-pairs — splits singletons/orphans back into R1/R2 |
-| 4 | `nonhost_read_combine` | `cat` | 100 | re-joins paired + singleton streams per sample |
-| 5 | `cluster_similar_sequences` | MMseqs2 linclust | 100 | **collapses** — 0 reads lost, counts preserved |
-| 6 | `create_individual_seqtables` | seqkit + awk | 100 | reshapes to a per-sample sequence/count table |
-| 7 | `merge_seq_table` | `mergeSeqTable.py` | 1 | merges 100 tables into one cohort seqtable |
-| 8 | `calculate_gc` / `calculate_tet_freq` | — | 2 | annotates GC% and tetranucleotide frequency |
-| 9 | `seq_properties_table` | — | 1 | assembles the final properties table |
-
-Three observations for anyone reading this as a method:
-
-- **`host_removal_mapping` shows 300 jobs for 100 samples** because the rule is
-  three chained invocations (minimap2 → `samtools view` → `samtools fastq`), each
-  logging separately. One logical step, three processes.
-- **Steps 3–4 exist because host removal breaks pairing.** When one mate maps to
-  human and the other doesn't, you get an orphan. `reformat.sh` splits those back
-  into synchronised R1/R2 files and `cat` recombines them, so downstream
-  assembly gets valid pairs. Skip this and MEGAHIT will complain about mismatched
-  files. This is the step most hand-rolled QC scripts forget.
-- **Steps 6–9 are bookkeeping, not cleaning.** They build Hecatomb's seqtable —
-  the input to its taxonomic cascade, which we did not run. If you QC by hand for
-  an assembly-based workflow like ours, you stop after step 4 (or 5).
-
-A fourth note on the counts: `fastp_preprocessing` logged 87 jobs and
-`old_fastp_preprocessing` 100. Both appear because the workflow retains a legacy
-rule name; the 87 reflects a resumed run after a partial failure, not 13 skipped
-samples. All 100 samples have complete fastp output, which the attrition table
-below confirms.
-
-#### How many reads each step removed
-
-Of those nine rules, three move the number. VLP cohort, 100 samples, read pairs:
-
-| Step | Tool | Pairs in | Pairs out | Removed | % removed | % of raw left |
-|---|---|---|---|---|---|---|
-| 0. input | — | — | 67,652,053 | — | — | 100.00% |
-| 1. trim + filter + dedup | fastp 0.23.2 | 67,652,053 | 49,189,011 | 18,463,042 | **27.29%** | 72.71% |
-| 2. host removal | minimap2 + samtools | 49,189,011 | 48,607,884 | 581,127 | **1.18%** | 71.85% |
-| 3. dereplication | MMseqs2 linclust | 48,607,884 | 48,607,884 | 0 | **0.00%** | 71.85% |
-
-**Nearly all the loss is one step, and nearly all of that is duplicates.**
-Breaking fastp open (reads, not pairs — a pair can be hit by more than one rule):
-
-| Sub-operation | Flag | Reads affected |
+| Tool | Approach | When |
 |---|---|---|
-| Adapter trimmed | `--detect_adapter_for_pe` | 3,740,339 |
-| Poly-X tail trimmed | `--trim_poly_x` | 786,119 |
-| Discarded — low quality | Q<15, `--cut_tail` w=25 | 418,402 |
-| Discarded — too short | `--length_required 90` | 2,144,966 |
-| Discarded — too many N | >2 N | 3,346 |
-| **Discarded — duplicate** | `--dedup --dup_calc_accuracy 4` | **34,359,370** |
+| minimap2 + samtools | minimizer-seeded alignment | what we used; fast vs a 3 Gb genome |
+| bowtie2 / bwa + samtools | FM-index alignment | same logic, more familiar |
+| bbduk / bbsplit | k-mer matching | fastest, no alignment |
+| Kraken2 (human DB) | k-mer classification | already in your stack |
+| **hostile** | wrapper, ships clean indexes | purpose-built; shortest path |
 
-So of the 27.29% that fastp removed, **duplicates account for ~93%**. Quality
-filtering — the thing people usually picture when they hear "QC" — discarded
-0.3% of reads. Trimming *modifies* reads without discarding them, which is why
-the first two rows don't subtract from the total.
+> **Read the 0.86% as a result, not a formality.** A VLP prep *should* leave
+> almost no host behind — that is the enrichment working. If your own VLP library
+> returns 40% human, the bench prep failed and no software choice rescues it. The
+> bulk column shows what unenriched looks like.
 
-Three things a reader should take from this shape:
-
-- **Dereplication removed nothing.** 0.00% is not a bug — MMseqs2 collapses reads
-  onto representatives while carrying counts forward, so no read is lost. It
-  compressed 48.6 M pairs to 7.1 M representatives (6.8×) for searching. Deduplication
-  deletes; dereplication groups. (See the box after step 5.)
-- **Host removal at 1.18% is the VLP prep working**, not a weak filter.
-- **Quality is rarely where reads go.** If your own QC drops 30%, look at
-  duplicates and length before you touch the quality threshold.
-
-**Per-sample spread** (`results/qc/qc_attrition.tsv`, one row per sample) — useful
-because a cohort mean hides the sample that failed:
+**Per-sample spread** (`results/qc/qc_attrition.tsv`) — a cohort total hides the
+sample that failed:
 
 | Stage | Min | Median | Max |
 |---|---|---|---|
@@ -288,125 +257,26 @@ because a cohort mean hides the sample that failed:
 | Retained after host removal | 98.37% | 98.75% | 99.12% |
 | **Retained overall** | **67.17%** | **72.91%** | **76.73%** |
 
-Tight — no sample collapsed, which is what you want to confirm before analysing.
-But note the group split: **HPV+ retained 70.12% vs HPV− 74.36%** (medians). QC
-attrition is not independent of the grouping variable here, and that is the
-coverage confound documented in the [results
-summary](https://leran10.github.io/HPV_synthetic_data/) showing up as early as
-the trimming step. Always break attrition down by group, not just by sample.
+Tight, no collapsed sample. But by group: **HPV+ retained 70.12% vs HPV− 74.36%**
+(medians). QC attrition is not independent of the grouping variable — the
+coverage confound in the [results
+summary](https://leran10.github.io/HPV_synthetic_data/) is already visible at the
+trimming step. Break attrition down by group, not just by sample.
 
-**All of it is in the repo:** [`results/qc/`](../results/qc) —
-`qc_steps_vlp.tsv` (the first table), `qc_steps_detailed_vlp.tsv` (the fastp
-breakdown), `qc_attrition.tsv` (per sample), `qc_steps_by_group_vlp.tsv` (by
-group), with `_bulk` counterparts for the 80%-host cohort. Rebuilt from the tool
-stats files by [`scripts/qc_steps_detailed.py`](../scripts/qc_steps_detailed.py)
-and [`scripts/collect_qc_attrition.py`](../scripts/collect_qc_attrition.py).
+**Source tables:** [`results/qc/`](../results/qc) — `qc_steps_vlp.tsv` (per step),
+`qc_steps_detailed_vlp.tsv` (the per-flag rows above), `qc_attrition.tsv` (per
+sample), `qc_steps_by_group_vlp.tsv` (by group), `_bulk` counterparts for the
+other cohort. Built by
+[`scripts/qc_steps_detailed.py`](../scripts/qc_steps_detailed.py) and
+[`scripts/collect_qc_attrition.py`](../scripts/collect_qc_attrition.py), because
+Hecatomb's own counting rules (`04_summaries_optional.smk`) are commented out in
+this install.
 
-#### Do you need Hecatomb?
+A note on the install: `--preprocess paired` runs one fastp call; `roundAB`'s
+primer files here are hand-edited for lab-specific primers, which is a second
+reason we did not use that route.
 
-| Your goal | Answer |
-|---|---|
-| Reproduce our exact read counts | **Yes** — the parameters and the reference both came from it |
-| QC your own VLP virome | **No** — the three commands below are the whole of it |
-| QC a bulk metagenome | Optional, but its masked reference starts to matter — see below |
-
-Hecatomb's contribution is orchestration plus a pre-masked host reference. The
-transferable knowledge is in the tools: how fastp finds adapters, why a host
-reference gets masked, what dereplication preserves. That applies whichever
-route you take.
-
-#### Running the same QC without the wrapper
-
-Per sample. Step 1b is marked because we skipped it and you probably should not:
-
-```bash
-# 1. adapters, quality, length, poly-X, duplicates
-fastp -i VIR_041_R1.fastq.gz -I VIR_041_R2.fastq.gz \
-      -o t_R1.fastq -O t_R2.fastq -j VIR_041.fastp.json -h VIR_041.fastp.html \
-      --qualified_quality_phred 15 --length_required 90 --detect_adapter_for_pe \
-      --cut_tail --cut_tail_window_size 25 --cut_tail_mean_quality 15 \
-      --dedup --dup_calc_accuracy 4 --trim_poly_x --thread 12
-
-# 1b. PhiX / vector screen -- WE SKIPPED THIS (simulated reads); add it for real data
-bbduk.sh in=t_R1.fastq in2=t_R2.fastq \
-         ref=phix174_ill.ref.fa.gz,vector_contaminants.fa \
-         out=nophix_R1.fastq out2=nophix_R2.fastq stats=phix.stats \
-         k=31 hammingdistance=1 ordered=t ow=t threads=16
-
-# 2. host removal -- index once, reuse
-minimap2 -t 16 -d host.idx GRCh38.fa.gz                      # once
-minimap2 -ax sr -t 16 --secondary=no host.idx nophix_R1.fastq nophix_R2.fastq \
-  | samtools view -f 4 -h \
-  | samtools fastq -NO -1 clean_R1.fastq -2 clean_R2.fastq
-
-# 3. REPAIR PAIRING -- do not skip this
-# host removal orphans reads whose mate mapped to human; re-synchronise R1/R2
-repair.sh in=clean_R1.fastq in2=clean_R2.fastq \
-          out=fixed_R1.fastq out2=fixed_R2.fastq \
-          outs=singletons.fastq repair -Xmx8g
-
-# 4. dereplication -- SKIP unless a huge database search follows (see below)
-mmseqs easy-linclust fixed_R1.fastq VIR_041_rep tmp \
-    --kmer-per-seq-scale 0.3 -c 0.8 --cov-mode 1 \
-    --min-seq-id 0.97 --alignment-mode 3 --threads 8
-```
-
-**Step 3 is the one people leave out.** `samtools view -f 4` filters reads
-independently, so a pair with one human mate becomes an orphan — the R1 and R2
-files end up different lengths and out of order. MEGAHIT and most aligners will
-either error or silently misinterpret that. Hecatomb handles it with
-`reformat.sh` + `cat` across two rules; `repair.sh` (same bbtools suite) does it
-in one. You can also use `seqkit pair` or `fastq_pair`.
-
-**Step 4 removed 0 reads** for us and changed nothing downstream — it exists to
-shrink the query set for Hecatomb's 73 GB taxonomic cascade, which we never ran.
-Skip it unless you are feeding a large protein database.
-
-#### The one real choice: host removal
-
-**Hecatomb is not a host-removal tool.** That step *is* minimap2 + samtools; what
-the wrapper supplies is a GRCh38 with virus-like regions blanked, so genuine
-viral reads are not discarded as human.
-
-How much that masking matters depends entirely on your library prep, and our two
-cohorts bracket the answer:
-
-| Cohort | Host reads removed | Does masking matter? |
-|---|---|---|
-| **VLP** (what we analysed) | 581,127 / 49.2 M = **1.18%** | Barely — too little host to get wrong |
-| **Bulk**, 80% host | **43.26%** | Yes — a bad mask here costs you real viral reads |
-
-So for VLP data, map against any human reference you can download. For bulk
-data, the masking is worth having (`hecatomb add-host` builds one).
-
-Any of these is a defensible choice for the step:
-
-| Tool | Approach | When to reach for it |
-|---|---|---|
-| **minimap2** + samtools | minimizer-seeded alignment | What we used; fast on short reads vs a 3 Gb genome |
-| **bowtie2** / **bwa** + samtools | FM-index alignment | Identical logic, more familiar to most labs |
-| **bbduk** / **bbsplit** | k-mer matching | Fastest; no alignment step |
-| **Kraken2** (human DB) | k-mer classification | Already in your stack for taxonomy |
-| **hostile** | wrapper, ships clean indexes | Purpose-built for host depletion — easiest start |
-
-If I were starting fresh on someone else's VLP data, **hostile** is the shortest
-path; **minimap2 + samtools** is what to use when you want to see and control
-every flag.
-
-> **Read the 1.18% as a QC result, not a formality.** A VLP prep *should* leave
-> almost no host behind — that is the enrichment working. If your own VLP library
-> comes back 40% human, the prep failed, and no amount of software fixes it. The
-> bulk column is what an unenriched library looks like.
-
-#### Two things specific to this install
-
-`--preprocess paired` runs one fastp call; the alternative `roundAB` route runs
-six sequential `bbduk.sh` passes (compared in full
-[above](#where-are-adapter-removal-phix-removal-quality-trimming)), including the
-PhiX/vector screen we skipped. And Hecatomb's per-step counting rules
-(`04_summaries_optional.smk`) are commented out in our version, so the attrition
-tables in [`results/qc/`](../results/qc) were rebuilt from the stats files by
-[`scripts/collect_qc_attrition.py`](../scripts/collect_qc_attrition.py).
+---
 
 ### 3. fastp 0.23.2 — read QC
 
@@ -426,10 +296,8 @@ fastp -i VIR_041_R1.fastq.gz -I VIR_041_R2.fastq.gz \
       --dedup --dup_calc_accuracy 4 --trim_poly_x --thread 12
 ```
 
-**Produced (VLP cohort, the one analysed).** 67,652,053 pairs → 49,189,011
-(27.29% removed), of which duplicates were ~93%. Full per-flag breakdown in the
-[attrition tables above](#how-many-reads-each-step-removed). Bulk cohort for
-comparison: 67,479,078 → 54,164,669 (19.73%).
+**Counts.** See the [QC tool list](#qc-tool-list--every-operation-and-the-reads-it-removed) —
+rows 1.1–1.6 break this single pass into its six operations.
 
 ### 4. minimap2 ≥2.20 + samtools ≥1.13 — host removal
 
@@ -447,8 +315,8 @@ minimap2 -ax sr -t 16 --secondary=no ${HOST_INDEX} R1.fastq R2.fastq \
   | samtools fastq -NO -1 unmapped_R1.fastq -2 unmapped_R2.fastq
 ```
 
-**Produced.** VLP cohort (analysed): 581,127 of 49,189,011 reads removed =
-**1.18%**. Bulk cohort: **43.26%**.
+**Counts.** Row 2 of the [QC tool list](#qc-tool-list--every-operation-and-the-reads-it-removed):
+1,162,254 reads (0.86%) on VLP, 46,861,408 (34.72%) on bulk.
 
 ### 5. MMseqs2 12.113e3 — dereplication (optional; skipped effect here)
 
@@ -466,9 +334,8 @@ mmseqs easy-linclust reads.fastq out_prefix tmp_dir \
     --min-seq-id 0.97 --alignment-mode 3 --threads 8
 ```
 
-**Produced (VLP).** 48,607,884 pairs → 7,111,211 representatives: a **6.8×**
-smaller search space with **zero reads lost**, which is why its row in the
-attrition table reads 0.00% removed. (Bulk: 30,733,965 → 5,108,133, 6.0×.)
+**Counts.** Row 5 of the [QC tool list](#qc-tool-list--every-operation-and-the-reads-it-removed):
+97,215,768 reads → 7,111,211 representatives (6.8×), **0 removed**. Bulk: 5,108,133 (6.0×).
 
 > **Deduplication vs dereplication — different operations.** Deduplication
 > (fastp) *deletes* PCR duplicates as artefacts. Dereplication (MMseqs2) *groups*

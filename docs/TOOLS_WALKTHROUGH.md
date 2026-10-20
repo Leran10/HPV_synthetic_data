@@ -130,6 +130,67 @@ trimming, no host removal — it uses reads only for coverage in Stage 6. (A thi
 pipeline we tried, `prophage-pipeline`, does bundle fastp, but that run was
 abandoned at binning and never fed anything.)
 
+#### How many reads each step removed
+
+The point of the exercise, in one table. VLP cohort, 100 samples, read pairs:
+
+| Step | Tool | Pairs in | Pairs out | Removed | % removed | % of raw left |
+|---|---|---|---|---|---|---|
+| 0. input | — | — | 67,652,053 | — | — | 100.00% |
+| 1. trim + filter + dedup | fastp 0.23.2 | 67,652,053 | 49,189,011 | 18,463,042 | **27.29%** | 72.71% |
+| 2. host removal | minimap2 + samtools | 49,189,011 | 48,607,884 | 581,127 | **1.18%** | 71.85% |
+| 3. dereplication | MMseqs2 linclust | 48,607,884 | 48,607,884 | 0 | **0.00%** | 71.85% |
+
+**Nearly all the loss is one step, and nearly all of that is duplicates.**
+Breaking fastp open (reads, not pairs — a pair can be hit by more than one rule):
+
+| Sub-operation | Flag | Reads affected |
+|---|---|---|
+| Adapter trimmed | `--detect_adapter_for_pe` | 3,740,339 |
+| Poly-X tail trimmed | `--trim_poly_x` | 786,119 |
+| Discarded — low quality | Q<15, `--cut_tail` w=25 | 418,402 |
+| Discarded — too short | `--length_required 90` | 2,144,966 |
+| Discarded — too many N | >2 N | 3,346 |
+| **Discarded — duplicate** | `--dedup --dup_calc_accuracy 4` | **34,359,370** |
+
+So of the 27.29% that fastp removed, **duplicates account for ~93%**. Quality
+filtering — the thing people usually picture when they hear "QC" — discarded
+0.3% of reads. Trimming *modifies* reads without discarding them, which is why
+the first two rows don't subtract from the total.
+
+Three things a reader should take from this shape:
+
+- **Dereplication removed nothing.** 0.00% is not a bug — MMseqs2 collapses reads
+  onto representatives while carrying counts forward, so no read is lost. It
+  compressed 48.6 M pairs to 7.1 M representatives (6.8×) for searching. Deduplication
+  deletes; dereplication groups. (See the box after step 5.)
+- **Host removal at 1.18% is the VLP prep working**, not a weak filter.
+- **Quality is rarely where reads go.** If your own QC drops 30%, look at
+  duplicates and length before you touch the quality threshold.
+
+**Per-sample spread** (`results/qc/qc_attrition.tsv`, one row per sample) — useful
+because a cohort mean hides the sample that failed:
+
+| Stage | Min | Median | Max |
+|---|---|---|---|
+| Retained after fastp | 67.91% | 73.96% | 77.74% |
+| Retained after host removal | 98.37% | 98.75% | 99.12% |
+| **Retained overall** | **67.17%** | **72.91%** | **76.73%** |
+
+Tight — no sample collapsed, which is what you want to confirm before analysing.
+But note the group split: **HPV+ retained 70.12% vs HPV− 74.36%** (medians). QC
+attrition is not independent of the grouping variable here, and that is the
+coverage confound documented in the [results
+summary](https://leran10.github.io/HPV_synthetic_data/) showing up as early as
+the trimming step. Always break attrition down by group, not just by sample.
+
+**All of it is in the repo:** [`results/qc/`](../results/qc) —
+`qc_steps_vlp.tsv` (the first table), `qc_steps_detailed_vlp.tsv` (the fastp
+breakdown), `qc_attrition.tsv` (per sample), `qc_steps_by_group_vlp.tsv` (by
+group), with `_bulk` counterparts for the 80%-host cohort. Rebuilt from the tool
+stats files by [`scripts/qc_steps_detailed.py`](../scripts/qc_steps_detailed.py)
+and [`scripts/collect_qc_attrition.py`](../scripts/collect_qc_attrition.py).
+
 #### Do you need Hecatomb?
 
 | Your goal | Answer |
@@ -234,9 +295,10 @@ fastp -i VIR_041_R1.fastq.gz -I VIR_041_R2.fastq.gz \
       --dedup --dup_calc_accuracy 4 --trim_poly_x --thread 12
 ```
 
-**Produced (bulk cohort, 100 samples).** 134,958,156 reads in → 108,329,338 out.
-Deduplication removed 23.5M reads (17.4%); quality and length filters together
-under 2.3%.
+**Produced (VLP cohort, the one analysed).** 67,652,053 pairs → 49,189,011
+(27.29% removed), of which duplicates were ~93%. Full per-flag breakdown in the
+[attrition tables above](#how-many-reads-each-step-removed). Bulk cohort for
+comparison: 67,479,078 → 54,164,669 (19.73%).
 
 ### 4. minimap2 ≥2.20 + samtools ≥1.13 — host removal
 
@@ -273,8 +335,9 @@ mmseqs easy-linclust reads.fastq out_prefix tmp_dir \
     --min-seq-id 0.97 --alignment-mode 3 --threads 8
 ```
 
-**Produced.** 30,733,965 read pairs → 5,108,133 representatives, a 6× smaller
-search space with zero reads lost.
+**Produced (VLP).** 48,607,884 pairs → 7,111,211 representatives: a **6.8×**
+smaller search space with **zero reads lost**, which is why its row in the
+attrition table reads 0.00% removed. (Bulk: 30,733,965 → 5,108,133, 6.0×.)
 
 > **Deduplication vs dereplication — different operations.** Deduplication
 > (fastp) *deletes* PCR duplicates as artefacts. Dereplication (MMseqs2) *groups*

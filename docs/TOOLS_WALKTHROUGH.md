@@ -192,8 +192,9 @@ abandoned at binning.)
 **Runnable scripts:** [`tutorial/01_qc.sh`](../tutorial/01_qc.sh) (one sample)
 and [`tutorial/02_qc_cohort.sh`](../tutorial/02_qc_cohort.sh) (a whole cohort,
 building the attrition tables) wrap everything below — no cluster, no Snakemake,
-no Hecatomb. See [`tutorial/README.md`](../tutorial/README.md). The commands
-themselves, per sample:
+no Hecatomb. See [`tutorial/README.md`](../tutorial/README.md), and
+[`tutorial/DOWNSTREAM.md`](../tutorial/DOWNSTREAM.md) for what the later stages
+need. The commands themselves, per sample:
 
 ```bash
 # 1. fastp -- rows 1.1-1.6 above, one pass

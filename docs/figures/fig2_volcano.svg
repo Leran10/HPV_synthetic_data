@@ -1,0 +1,1193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="100%" role="img" aria-label="Effect size versus depth-adjusted significance"><title>Effect size versus depth-adjusted significance</title><text x="0.0" y="16.0" font-size="13" fill="#0b0b0b" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="600" opacity="1">Effect size vs depth-adjusted significance</text><text x="0.0" y="34.0" font-size="11" fill="#7a7873" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="normal" opacity="1">Coloured points are informative markers; grey are collection artefacts or non-significant</text><line x1="54.0" y1="54.0" x2="54.0" y2="374.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="54.0" y="392.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">-1</text><line x1="227.0" y1="54.0" x2="227.0" y2="374.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="227.0" y="392.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">-0.5</text><line x1="400.0" y1="54.0" x2="400.0" y2="374.0" stroke="#e2e0da" stroke-width="1"/><text x="400.0" y="392.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">0</text><line x1="573.0" y1="54.0" x2="573.0" y2="374.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="573.0" y="392.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">0.5</text><line x1="746.0" y1="54.0" x2="746.0" y2="374.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="746.0" y="392.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">1</text><line x1="54.0" y1="374.0" x2="746.0" y2="374.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="46.0" y="377.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">0</text><line x1="54.0" y1="294.0" x2="746.0" y2="294.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="46.0" y="297.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">12</text><line x1="54.0" y1="214.0" x2="746.0" y2="214.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="46.0" y="217.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">25</text><line x1="54.0" y1="134.0" x2="746.0" y2="134.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="46.0" y="137.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">37</text><line x1="54.0" y1="54.0" x2="746.0" y2="54.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="46.0" y="57.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">50</text><line x1="54.0" y1="365.6" x2="746.0" y2="365.6" stroke="#e34948" stroke-width="1" stroke-dasharray="4,3"/><text x="746.0" y="359.6" font-size="9" fill="#e34948" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">FDR 0.05</text><g><circle cx="746.0" cy="85.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_010__k141_213
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 9.95e-46</title></g><g><circle cx="746.0" cy="84.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_010__k141_225
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 9.46e-46</title></g><g><circle cx="746.0" cy="89.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_010__k141_266
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.49e-45</title></g><g><circle cx="746.0" cy="84.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_010__k141_6
+host: species:Lactobacillus rhamnosus
+Cliff&#x27;s delta +1.00, FDR 9.46e-46</title></g><g><circle cx="746.0" cy="89.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_143
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 5.77e-45</title></g><g><circle cx="746.0" cy="90.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_164
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 6.10e-45</title></g><g><circle cx="746.0" cy="89.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_76
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.47e-45</title></g><g><circle cx="746.0" cy="87.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_012__k141_223
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.28e-45</title></g><g><circle cx="746.0" cy="84.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_012__k141_48
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 7.33e-46</title></g><g><circle cx="746.0" cy="72.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_013__k141_225
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 9.86e-48</title></g><g><circle cx="746.0" cy="82.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_013__k141_230
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.23e-46</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_013__k141_321
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="90.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_013__k141_95
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 8.44e-45</title></g><g><circle cx="746.0" cy="82.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_014__k141_105
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.23e-46</title></g><g><circle cx="746.0" cy="85.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_014__k141_274
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.08e-45</title></g><g><circle cx="746.0" cy="89.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_014__k141_33
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.50e-45</title></g><g><circle cx="746.0" cy="86.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_014__k141_61
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.53e-45</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_014__k141_65
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="88.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_015__k141_157
+host: species:Lactobacillus rhamnosus
+Cliff&#x27;s delta +1.00, FDR 3.17e-45</title></g><g><circle cx="746.0" cy="90.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_015__k141_195
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 6.06e-45</title></g><g><circle cx="746.0" cy="84.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_015__k141_307
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 9.46e-46</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_017__k141_195
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="83.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_017__k141_277
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 5.67e-46</title></g><g><circle cx="746.0" cy="86.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_018__k141_179
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.01e-45</title></g><g><circle cx="746.0" cy="84.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_020__k141_458
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 6.99e-46</title></g><g><circle cx="746.0" cy="90.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_021__k141_108
+host: genus:Lacticaseibacillus
+Cliff&#x27;s delta +1.00, FDR 7.09e-45</title></g><g><circle cx="746.0" cy="80.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_021__k141_178
+host: species:Dickeya zeae
+Cliff&#x27;s delta +1.00, FDR 1.99e-46</title></g><g><circle cx="746.0" cy="72.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_022__k141_198
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 9.86e-48</title></g><g><circle cx="746.0" cy="84.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_022__k141_96
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 8.89e-46</title></g><g><circle cx="746.0" cy="78.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_025__k141_270
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.11e-46</title></g><g><circle cx="746.0" cy="92.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_025__k141_369
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 1.24e-44</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_026__k141_292
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.81e-46</title></g><g><circle cx="746.0" cy="84.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_026__k141_332
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 9.40e-46</title></g><g><circle cx="746.0" cy="78.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_029__k141_185
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.11e-46</title></g><g><circle cx="746.0" cy="87.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_029__k141_194
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.17e-45</title></g><g><circle cx="746.0" cy="82.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_029__k141_336
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 4.08e-46</title></g><g><circle cx="746.0" cy="84.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_029__k141_50
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 6.92e-46</title></g><g><circle cx="746.0" cy="89.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_191
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 5.25e-45</title></g><g><circle cx="746.0" cy="89.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_353
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 4.76e-45</title></g><g><circle cx="746.0" cy="86.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_394
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.44e-45</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_031__k141_47
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="89.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_118
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 5.47e-45</title></g><g><circle cx="746.0" cy="85.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_186
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.12e-45</title></g><g><circle cx="746.0" cy="86.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_252
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.93e-45</title></g><g><circle cx="746.0" cy="87.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_269
+host: species:Lactobacillus plajomi
+Cliff&#x27;s delta +1.00, FDR 2.17e-45</title></g><g><circle cx="746.0" cy="86.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_297
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.62e-45</title></g><g><circle cx="746.0" cy="90.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_323
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 6.06e-45</title></g><g><circle cx="746.0" cy="90.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_34
+host: genus:Enterococcus
+Cliff&#x27;s delta +1.00, FDR 7.74e-45</title></g><g><circle cx="746.0" cy="83.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_347
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 6.67e-46</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_034__k141_252
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="90.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_034__k141_298
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 6.22e-45</title></g><g><circle cx="746.0" cy="88.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_034__k141_73
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 3.93e-45</title></g><g><circle cx="746.0" cy="87.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_109
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.13e-45</title></g><g><circle cx="746.0" cy="81.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_164
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 2.53e-46</title></g><g><circle cx="746.0" cy="88.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_229
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 3.04e-45</title></g><g><circle cx="746.0" cy="82.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_254
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 3.35e-46</title></g><g><circle cx="746.0" cy="90.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_349
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 8.44e-45</title></g><g><circle cx="746.0" cy="81.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_55
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 2.53e-46</title></g><g><circle cx="746.0" cy="82.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_68
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 3.35e-46</title></g><g><circle cx="746.0" cy="84.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_185
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 8.49e-46</title></g><g><circle cx="746.0" cy="85.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_199
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 9.95e-46</title></g><g><circle cx="746.0" cy="82.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_54
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.78e-46</title></g><g><circle cx="746.0" cy="83.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_56
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 5.76e-46</title></g><g><circle cx="746.0" cy="85.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_206
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.03e-45</title></g><g><circle cx="746.0" cy="86.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_52
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.93e-45</title></g><g><circle cx="746.0" cy="86.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_375
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.53e-45</title></g><g><circle cx="746.0" cy="85.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_523
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 1.39e-45</title></g><g><circle cx="746.0" cy="81.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_57
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 2.53e-46</title></g><g><circle cx="746.0" cy="86.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_125
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.95e-45</title></g><g><circle cx="746.0" cy="86.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_74
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 1.64e-45</title></g><g><circle cx="746.0" cy="84.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_180
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 8.49e-46</title></g><g><circle cx="746.0" cy="84.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_217
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 8.06e-46</title></g><g><circle cx="746.0" cy="84.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_218
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 6.92e-46</title></g><g><circle cx="746.0" cy="83.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_275
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 5.67e-46</title></g><g><circle cx="746.0" cy="89.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_308
+host: species:bacterium endosymbiont of Bathymodiolus sp. 5 South
+Cliff&#x27;s delta +1.00, FDR 4.83e-45</title></g><g><circle cx="746.0" cy="78.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_375
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 1.11e-46</title></g><g><circle cx="746.0" cy="84.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_40
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 9.24e-46</title></g><g><circle cx="746.0" cy="90.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_46
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 6.43e-45</title></g><g><circle cx="746.0" cy="90.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_61
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 6.14e-45</title></g><g><circle cx="746.0" cy="86.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_62
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.65e-45</title></g><g><circle cx="746.0" cy="86.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_68
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.00e-45</title></g><g><circle cx="746.0" cy="82.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_059__k141_318
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 3.35e-46</title></g><g><circle cx="746.0" cy="80.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_060__k141_161
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.93e-46</title></g><g><circle cx="746.0" cy="86.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_060__k141_27
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.95e-45</title></g><g><circle cx="746.0" cy="85.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_063__k141_251
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.16e-45</title></g><g><circle cx="746.0" cy="82.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_063__k141_264
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 4.44e-46</title></g><g><circle cx="746.0" cy="91.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_064__k141_116
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 8.97e-45</title></g><g><circle cx="746.0" cy="93.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_269
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.10e-44</title></g><g><circle cx="746.0" cy="88.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_58
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 3.75e-45</title></g><g><circle cx="746.0" cy="86.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_154
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.01e-45</title></g><g><circle cx="746.0" cy="80.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_245
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 1.95e-46</title></g><g><circle cx="746.0" cy="86.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_271
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 1.93e-45</title></g><g><circle cx="746.0" cy="89.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_282
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 4.47e-45</title></g><g><circle cx="746.0" cy="91.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_364
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 9.33e-45</title></g><g><circle cx="746.0" cy="89.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_382
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 5.73e-45</title></g><g><circle cx="746.0" cy="86.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_428
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.67e-45</title></g><g><circle cx="746.0" cy="87.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_128
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.27e-45</title></g><g><circle cx="746.0" cy="87.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_156
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.82e-45</title></g><g><circle cx="746.0" cy="87.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_16
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 2.69e-45</title></g><g><circle cx="746.0" cy="87.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_216
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.71e-45</title></g><g><circle cx="746.0" cy="86.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_268
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.44e-45</title></g><g><circle cx="746.0" cy="90.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_332
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 8.23e-45</title></g><g><circle cx="746.0" cy="92.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_069__k141_150
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.58e-44</title></g><g><circle cx="746.0" cy="81.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_069__k141_224
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 3.28e-46</title></g><g><circle cx="746.0" cy="89.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_109
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 5.86e-45</title></g><g><circle cx="746.0" cy="85.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_162
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.16e-45</title></g><g><circle cx="746.0" cy="89.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_260
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 4.50e-45</title></g><g><circle cx="746.0" cy="89.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_84
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 4.29e-45</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_079__k141_234
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="89.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_079__k141_273
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.29e-45</title></g><g><circle cx="746.0" cy="80.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_080__k141_108
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.98e-46</title></g><g><circle cx="746.0" cy="85.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_080__k141_258
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.04e-45</title></g><g><circle cx="746.0" cy="80.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_080__k141_275
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.20e-46</title></g><g><circle cx="746.0" cy="83.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_080__k141_299
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 6.87e-46</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_080__k141_333
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="80.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_080__k141_368
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.68e-46</title></g><g><circle cx="746.0" cy="87.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_084__k141_168
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.18e-45</title></g><g><circle cx="746.0" cy="84.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_084__k141_208
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 8.49e-46</title></g><g><circle cx="746.0" cy="88.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_084__k141_321
+host: genus:Enterococcus
+Cliff&#x27;s delta +1.00, FDR 4.07e-45</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_085__k141_160
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.81e-46</title></g><g><circle cx="746.0" cy="88.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_085__k141_192
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +1.00, FDR 3.38e-45</title></g><g><circle cx="746.0" cy="81.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_085__k141_193
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.88e-46</title></g><g><circle cx="746.0" cy="87.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_087__k141_13
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 2.36e-45</title></g><g><circle cx="746.0" cy="84.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_087__k141_219
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 9.46e-46</title></g><g><circle cx="746.0" cy="87.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_088__k141_134
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.18e-45</title></g><g><circle cx="746.0" cy="87.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_088__k141_307
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 2.17e-45</title></g><g><circle cx="746.0" cy="84.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_088__k141_39
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 6.99e-46</title></g><g><circle cx="746.0" cy="82.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_175
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 3.35e-46</title></g><g><circle cx="746.0" cy="80.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_48
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 1.93e-46</title></g><g><circle cx="746.0" cy="82.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_229
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 3.35e-46</title></g><g><circle cx="746.0" cy="89.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_313
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 4.62e-45</title></g><g><circle cx="746.0" cy="81.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_387
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.53e-46</title></g><g><circle cx="746.0" cy="86.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_091__k141_104
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 1.93e-45</title></g><g><circle cx="746.0" cy="84.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_091__k141_219
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 7.33e-46</title></g><g><circle cx="746.0" cy="81.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_091__k141_237
+host: genus:Shigella
+Cliff&#x27;s delta +1.00, FDR 3.28e-46</title></g><g><circle cx="746.0" cy="87.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_11
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.59e-45</title></g><g><circle cx="746.0" cy="88.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_18
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 3.91e-45</title></g><g><circle cx="746.0" cy="87.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_242
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.79e-45</title></g><g><circle cx="746.0" cy="85.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_334
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 9.95e-46</title></g><g><circle cx="746.0" cy="93.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_49
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 2.42e-44</title></g><g><circle cx="746.0" cy="87.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_91
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +1.00, FDR 2.21e-45</title></g><g><circle cx="746.0" cy="86.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_015__k141_356
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.96e-45</title></g><g><circle cx="746.0" cy="85.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_018__k141_36
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +1.00, FDR 1.12e-45</title></g><g><circle cx="746.0" cy="89.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_021__k141_223
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 4.85e-45</title></g><g><circle cx="746.0" cy="87.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_029__k141_119
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 2.69e-45</title></g><g><circle cx="746.0" cy="85.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_385
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 1.06e-45</title></g><g><circle cx="746.0" cy="88.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_146
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 3.20e-45</title></g><g><circle cx="746.0" cy="89.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_148
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 5.31e-45</title></g><g><circle cx="746.0" cy="89.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_172
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 4.83e-45</title></g><g><circle cx="746.0" cy="86.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_217
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 1.71e-45</title></g><g><circle cx="746.0" cy="85.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_262
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +1.00, FDR 1.40e-45</title></g><g><circle cx="746.0" cy="89.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_059__k141_250
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 5.86e-45</title></g><g><circle cx="746.0" cy="84.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_060__k141_213
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 9.46e-46</title></g><g><circle cx="746.0" cy="85.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_062__k141_250
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +1.00, FDR 1.15e-45</title></g><g><circle cx="746.0" cy="89.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_079__k141_195
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 5.86e-45</title></g><g><circle cx="746.0" cy="85.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_45
+host: unassigned
+Cliff&#x27;s delta +1.00, FDR 1.38e-45</title></g><g><circle cx="745.4" cy="103.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_025__k141_543
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +1.00, FDR 6.72e-43</title></g><g><circle cx="54.0" cy="120.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_175
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.20e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_180
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="119.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_003__k141_236
+host: genus:Rangifer
+Cliff&#x27;s delta -1.00, FDR 2.38e-40</title></g><g><circle cx="54.0" cy="120.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_147
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 2.83e-40</title></g><g><circle cx="54.0" cy="120.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_206
+host: genus:Sus
+Cliff&#x27;s delta -1.00, FDR 3.05e-40</title></g><g><circle cx="54.0" cy="120.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_255
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 2.86e-40</title></g><g><circle cx="54.0" cy="118.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_332
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 1.91e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_344
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_009__k141_106
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_009__k141_242
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="118.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_009__k141_269
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 1.75e-40</title></g><g><circle cx="738.8" cy="115.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_010__k141_271
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 5.15e-41</title></g><g><circle cx="738.8" cy="113.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_231
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.98, FDR 2.59e-41</title></g><g><circle cx="738.8" cy="113.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_012__k141_80
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.98, FDR 2.79e-41</title></g><g><circle cx="738.8" cy="113.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_015__k141_296
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.98, FDR 2.72e-41</title></g><g><circle cx="738.8" cy="115.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_021__k141_209
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 5.70e-41</title></g><g><circle cx="54.0" cy="120.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_028__k141_240
+host: unassigned
+Cliff&#x27;s delta -1.00, FDR 3.29e-40</title></g><g><circle cx="738.8" cy="110.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_031__k141_12
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 8.04e-42</title></g><g><circle cx="738.8" cy="119.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_031__k141_264
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 2.28e-40</title></g><g><circle cx="738.8" cy="112.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_121
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 1.78e-41</title></g><g><circle cx="54.0" cy="118.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_033__k141_114
+host: species:Streptococcus thermophilus
+Cliff&#x27;s delta -1.00, FDR 1.57e-40</title></g><g><circle cx="738.8" cy="116.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_247
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 8.03e-41</title></g><g><circle cx="738.8" cy="117.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_76
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 1.13e-40</title></g><g><circle cx="738.8" cy="116.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_345
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 7.73e-41</title></g><g><circle cx="738.8" cy="116.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_102
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.98, FDR 8.18e-41</title></g><g><circle cx="738.8" cy="96.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_141
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 6.72e-44</title></g><g><circle cx="738.8" cy="117.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_154
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 1.02e-40</title></g><g><circle cx="738.8" cy="107.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_241
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 2.96e-42</title></g><g><circle cx="738.8" cy="117.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_317
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 1.02e-40</title></g><g><circle cx="738.8" cy="117.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_325
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.98, FDR 9.85e-41</title></g><g><circle cx="738.8" cy="110.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_361
+host: genus:Lacticaseibacillus
+Cliff&#x27;s delta +0.98, FDR 7.75e-42</title></g><g><circle cx="738.8" cy="108.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_119
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 4.24e-42</title></g><g><circle cx="738.8" cy="100.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_21
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.98, FDR 2.46e-43</title></g><g><circle cx="738.8" cy="94.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_292
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.98, FDR 2.76e-44</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_043__k141_180
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_043__k141_203
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_043__k141_92
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_048__k141_134
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_048__k141_150
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.39e-40</title></g><g><circle cx="54.0" cy="120.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_050__k141_178
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.20e-40</title></g><g><circle cx="54.0" cy="117.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_055__k141_212
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 1.01e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_057__k141_271
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="118.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_058__k141_180
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 1.51e-40</title></g><g><circle cx="54.0" cy="120.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_058__k141_185
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.17e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_058__k141_262
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_058__k141_299
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 2.84e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_061__k141_146
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_061__k141_204
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.46e-40</title></g><g><circle cx="738.8" cy="113.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_062__k141_142
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.98, FDR 2.67e-41</title></g><g><circle cx="738.8" cy="105.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_062__k141_340
+host: genus:Shigella
+Cliff&#x27;s delta +0.98, FDR 1.46e-42</title></g><g><circle cx="738.8" cy="117.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_064__k141_124
+host: genus:Shigella
+Cliff&#x27;s delta +0.98, FDR 9.81e-41</title></g><g><circle cx="738.8" cy="113.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_064__k141_61
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 3.01e-41</title></g><g><circle cx="738.8" cy="106.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_132
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 1.88e-42</title></g><g><circle cx="738.8" cy="111.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_498
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.98, FDR 1.42e-41</title></g><g><circle cx="738.8" cy="109.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_069__k141_118
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 5.50e-42</title></g><g><circle cx="738.8" cy="116.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_069__k141_38
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.98, FDR 7.94e-41</title></g><g><circle cx="738.8" cy="116.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_202
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 7.78e-41</title></g><g><circle cx="738.8" cy="100.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_216
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 2.77e-43</title></g><g><circle cx="738.8" cy="109.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_225
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 6.37e-42</title></g><g><circle cx="54.0" cy="119.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_071__k141_283
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 1.99e-40</title></g><g><circle cx="54.0" cy="119.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_072__k141_283
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 2.35e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_133
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_185
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 3.51e-40</title></g><g><circle cx="54.0" cy="120.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_081__k141_229
+host: species:Lactobacillus helveticus
+Cliff&#x27;s delta -1.00, FDR 3.35e-40</title></g><g><circle cx="738.8" cy="111.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_083__k141_178
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 1.10e-41</title></g><g><circle cx="738.8" cy="112.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_084__k141_342
+host: genus:Shigella
+Cliff&#x27;s delta +0.98, FDR 1.73e-41</title></g><g><circle cx="738.8" cy="116.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_087__k141_123
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 8.94e-41</title></g><g><circle cx="738.8" cy="115.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_135
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 6.23e-41</title></g><g><circle cx="738.8" cy="113.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_175
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 3.12e-41</title></g><g><circle cx="738.8" cy="116.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_187
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.98, FDR 9.34e-41</title></g><g><circle cx="738.8" cy="109.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_337
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 6.47e-42</title></g><g><circle cx="738.8" cy="117.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_62
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 1.08e-40</title></g><g><circle cx="738.8" cy="108.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_091__k141_21
+host: species:Lactobacillus plajomi
+Cliff&#x27;s delta +0.98, FDR 4.95e-42</title></g><g><circle cx="738.8" cy="108.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_121
+host: unassigned
+Cliff&#x27;s delta +0.98, FDR 4.24e-42</title></g><g><circle cx="738.8" cy="115.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_157
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 4.62e-41</title></g><g><circle cx="738.8" cy="115.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_265
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 5.69e-41</title></g><g><circle cx="738.8" cy="115.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_335
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 5.94e-41</title></g><g><circle cx="738.8" cy="115.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_89
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.98, FDR 5.41e-41</title></g><g><circle cx="54.0" cy="118.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_093__k141_112
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 1.58e-40</title></g><g><circle cx="54.0" cy="119.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_095__k141_148
+host: unassigned
+Cliff&#x27;s delta -1.00, FDR 2.55e-40</title></g><g><circle cx="54.0" cy="119.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_095__k141_213
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 2.49e-40</title></g><g><circle cx="54.0" cy="119.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_099__k141_321
+host: genus:Rangifer
+Cliff&#x27;s delta -1.00, FDR 2.19e-40</title></g><g><circle cx="54.0" cy="120.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_100__k141_200
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 2.84e-40</title></g><g><circle cx="54.0" cy="125.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_009__k141_249
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 2.13e-39</title></g><g><circle cx="746.0" cy="114.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_087__k141_6
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +1.00, FDR 4.31e-41</title></g><g><circle cx="54.0" cy="135.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_097__k141_233
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 6.23e-38</title></g><g><circle cx="54.0" cy="137.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_094__k141_136
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.51e-37</title></g><g><circle cx="60.6" cy="138.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_265
+host: unassigned
+Cliff&#x27;s delta -0.98, FDR 2.37e-37</title></g><g><circle cx="731.6" cy="134.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_010__k141_195
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.96, FDR 4.91e-38</title></g><g><circle cx="731.6" cy="136.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_010__k141_223
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.96, FDR 1.17e-37</title></g><g><circle cx="731.6" cy="134.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_196
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.96, FDR 4.89e-38</title></g><g><circle cx="731.6" cy="137.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_014__k141_161
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.96, FDR 1.26e-37</title></g><g><circle cx="731.6" cy="135.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_015__k141_119
+host: unassigned
+Cliff&#x27;s delta +0.96, FDR 6.85e-38</title></g><g><circle cx="731.6" cy="138.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_80
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.96, FDR 2.15e-37</title></g><g><circle cx="731.6" cy="138.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_201
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.96, FDR 1.82e-37</title></g><g><circle cx="731.6" cy="135.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_267
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.96, FDR 8.46e-38</title></g><g><circle cx="731.6" cy="132.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_66
+host: unassigned
+Cliff&#x27;s delta +0.96, FDR 2.66e-38</title></g><g><circle cx="60.6" cy="140.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_054__k141_139
+host: unassigned
+Cliff&#x27;s delta -0.98, FDR 4.42e-37</title></g><g><circle cx="731.6" cy="129.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_059__k141_173
+host: unassigned
+Cliff&#x27;s delta +0.96, FDR 8.79e-39</title></g><g><circle cx="731.6" cy="129.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_060__k141_264
+host: genus:Shigella
+Cliff&#x27;s delta +0.96, FDR 8.32e-39</title></g><g><circle cx="731.6" cy="131.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_060__k141_47
+host: genus:Shigella
+Cliff&#x27;s delta +0.96, FDR 1.88e-38</title></g><g><circle cx="731.6" cy="134.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_062__k141_158
+host: genus:Shigella
+Cliff&#x27;s delta +0.96, FDR 4.26e-38</title></g><g><circle cx="731.6" cy="134.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_123
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.96, FDR 5.47e-38</title></g><g><circle cx="731.6" cy="135.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_298
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.96, FDR 7.04e-38</title></g><g><circle cx="731.6" cy="132.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_192
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.96, FDR 2.34e-38</title></g><g><circle cx="731.6" cy="134.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_493
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.96, FDR 4.26e-38</title></g><g><circle cx="731.6" cy="132.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_230
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.96, FDR 2.71e-38</title></g><g><circle cx="731.6" cy="126.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_079__k141_21
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.96, FDR 3.30e-39</title></g><g><circle cx="731.6" cy="135.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_080__k141_17
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.96, FDR 6.12e-38</title></g><g><circle cx="731.6" cy="137.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_085__k141_262
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.96, FDR 1.38e-37</title></g><g><circle cx="731.6" cy="136.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_085__k141_325
+host: genus:Shigella
+Cliff&#x27;s delta +0.96, FDR 9.42e-38</title></g><g><circle cx="731.6" cy="139.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_087__k141_276
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.96, FDR 2.58e-37</title></g><g><circle cx="731.6" cy="132.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_10
+host: species:bacterium endosymbiont of Bathymodiolus sp. 5 South
+Cliff&#x27;s delta +0.96, FDR 2.09e-38</title></g><g><circle cx="54.0" cy="142.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_004__k141_283
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 9.14e-37</title></g><g><circle cx="54.0" cy="141.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_042__k141_193
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 5.36e-37</title></g><g><circle cx="54.0" cy="141.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_071__k141_211
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 6.43e-37</title></g><g><circle cx="54.0" cy="142.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_155
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 8.49e-37</title></g><g><circle cx="54.0" cy="145.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_007__k141_236
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 2.61e-36</title></g><g><circle cx="54.0" cy="145.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_077__k141_195
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 2.99e-36</title></g><g><circle cx="54.0" cy="148.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_009__k141_101
+host: genus:Mus
+Cliff&#x27;s delta -1.00, FDR 7.27e-36</title></g><g><circle cx="732.7" cy="150.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_003__k141_158
+host: species:Lactobacillus sp. 220-4
+Cliff&#x27;s delta +0.96, FDR 1.83e-35</title></g><g><circle cx="732.7" cy="141.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_003__k141_56
+host: species:Lactobacillus sp. 220-4
+Cliff&#x27;s delta +0.96, FDR 6.71e-37</title></g><g><circle cx="732.7" cy="146.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_003__k141_64
+host: species:Lactobacillus sp. 220-4
+Cliff&#x27;s delta +0.96, FDR 4.07e-36</title></g><g><circle cx="54.0" cy="154.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_100
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 5.55e-35</title></g><g><circle cx="54.0" cy="156.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_50
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.34e-34</title></g><g><circle cx="746.0" cy="145.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_034__k141_251
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +1.00, FDR 2.31e-36</title></g><g><circle cx="724.4" cy="157.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_012__k141_133
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.94, FDR 1.78e-34</title></g><g><circle cx="724.4" cy="158.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_012__k141_316
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.94, FDR 2.39e-34</title></g><g><circle cx="724.4" cy="148.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_018__k141_172
+host: genus:Shigella
+Cliff&#x27;s delta +0.94, FDR 7.93e-36</title></g><g><circle cx="724.4" cy="144.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_020__k141_375
+host: unassigned
+Cliff&#x27;s delta +0.94, FDR 1.60e-36</title></g><g><circle cx="724.4" cy="146.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_022__k141_21
+host: genus:Shigella
+Cliff&#x27;s delta +0.94, FDR 4.12e-36</title></g><g><circle cx="724.4" cy="154.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_022__k141_65
+host: unassigned
+Cliff&#x27;s delta +0.94, FDR 5.97e-35</title></g><g><circle cx="724.4" cy="144.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_022__k141_71
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.94, FDR 1.93e-36</title></g><g><circle cx="724.4" cy="146.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_029__k141_139
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.94, FDR 3.35e-36</title></g><g><circle cx="724.4" cy="135.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_178
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.94, FDR 7.90e-38</title></g><g><circle cx="724.4" cy="156.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_269
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.94, FDR 1.17e-34</title></g><g><circle cx="724.4" cy="152.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_329
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.94, FDR 2.93e-35</title></g><g><circle cx="724.4" cy="154.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_062__k141_34
+host: unassigned
+Cliff&#x27;s delta +0.94, FDR 7.24e-35</title></g><g><circle cx="724.4" cy="148.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_255
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.94, FDR 8.88e-36</title></g><g><circle cx="724.4" cy="152.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_80
+host: unassigned
+Cliff&#x27;s delta +0.94, FDR 3.61e-35</title></g><g><circle cx="724.4" cy="143.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_088__k141_149
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.94, FDR 1.30e-36</title></g><g><circle cx="724.0" cy="154.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_86
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.94, FDR 7.63e-35</title></g><g><circle cx="54.0" cy="161.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_065__k141_92
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 6.87e-34</title></g><g><circle cx="723.8" cy="168.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_185
+host: unassigned
+Cliff&#x27;s delta +0.94, FDR 9.25e-33</title></g><g><circle cx="74.0" cy="172.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_054__k141_38
+host: unassigned
+Cliff&#x27;s delta -0.94, FDR 4.21e-32</title></g><g><circle cx="717.2" cy="171.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_14
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.92, FDR 3.19e-32</title></g><g><circle cx="717.2" cy="169.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_44
+host: species:Lacticaseibacillus paracasei
+Cliff&#x27;s delta +0.92, FDR 1.43e-32</title></g><g><circle cx="717.2" cy="162.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_026__k141_230
+host: species:bacterium endosymbiont of Bathymodiolus sp. 5 South
+Cliff&#x27;s delta +0.92, FDR 1.33e-33</title></g><g><circle cx="717.2" cy="166.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_278
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.92, FDR 4.30e-33</title></g><g><circle cx="717.2" cy="169.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_255
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.92, FDR 1.45e-32</title></g><g><circle cx="717.2" cy="172.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_407
+host: species:Lactiplantibacillus plantarum
+Cliff&#x27;s delta +0.92, FDR 4.21e-32</title></g><g><circle cx="717.2" cy="172.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_184
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.92, FDR 3.65e-32</title></g><g><circle cx="717.2" cy="172.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_308
+host: unassigned
+Cliff&#x27;s delta +0.92, FDR 4.08e-32</title></g><g><circle cx="717.2" cy="169.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_208
+host: unassigned
+Cliff&#x27;s delta +0.92, FDR 1.38e-32</title></g><g><circle cx="717.2" cy="171.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_082__k141_310
+host: genus:Shigella
+Cliff&#x27;s delta +0.92, FDR 2.66e-32</title></g><g><circle cx="717.2" cy="173.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_082__k141_416
+host: genus:Shigella
+Cliff&#x27;s delta +0.92, FDR 5.23e-32</title></g><g><circle cx="717.2" cy="167.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_085__k141_319
+host: unassigned
+Cliff&#x27;s delta +0.92, FDR 7.06e-33</title></g><g><circle cx="717.2" cy="168.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_415
+host: unassigned
+Cliff&#x27;s delta +0.92, FDR 9.25e-33</title></g><g><circle cx="54.0" cy="169.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_098__k141_125
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.64e-32</title></g><g><circle cx="54.0" cy="167.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_050__k141_166
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 6.59e-33</title></g><g><circle cx="54.0" cy="172.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_097__k141_193
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 3.85e-32</title></g><g><circle cx="54.0" cy="175.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_004__k141_300
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.10e-31</title></g><g><circle cx="54.0" cy="173.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_043__k141_116
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 6.80e-32</title></g><g><circle cx="54.0" cy="170.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_094__k141_189
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 2.35e-32</title></g><g><circle cx="54.0" cy="171.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_044__k141_305
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 2.82e-32</title></g><g><circle cx="54.0" cy="173.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_197
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 5.33e-32</title></g><g><circle cx="54.0" cy="175.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_056__k141_285
+host: unassigned
+Cliff&#x27;s delta -1.00, FDR 1.40e-31</title></g><g><circle cx="54.0" cy="170.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_009__k141_199
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.84e-32</title></g><g><circle cx="54.0" cy="170.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_047__k141_281
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.76e-32</title></g><g><circle cx="54.0" cy="173.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_266
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 5.33e-32</title></g><g><circle cx="54.0" cy="171.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_004__k141_298
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 2.73e-32</title></g><g><circle cx="54.0" cy="169.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_065__k141_205
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.22e-32</title></g><g><circle cx="54.0" cy="174.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_050__k141_198
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 9.35e-32</title></g><g><circle cx="54.0" cy="176.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_003__k141_139
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 1.97e-31</title></g><g><circle cx="54.0" cy="178.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_016__k141_145
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 3.44e-31</title></g><g><circle cx="54.0" cy="177.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_098__k141_198
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 2.40e-31</title></g><g><circle cx="54.0" cy="177.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_003__k141_204
+host: unassigned
+Cliff&#x27;s delta -1.00, FDR 2.45e-31</title></g><g><circle cx="54.0" cy="166.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_071__k141_203
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 4.28e-33</title></g><g><circle cx="54.0" cy="177.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_081__k141_190
+host: species:Streptomyces sp. AC1-42W
+Cliff&#x27;s delta -1.00, FDR 2.11e-31</title></g><g><circle cx="709.9" cy="180.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_012__k141_99
+host: species:Lactobacillus casei
+Cliff&#x27;s delta +0.90, FDR 8.66e-31</title></g><g><circle cx="709.9" cy="186.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_022__k141_43
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.90, FDR 6.47e-30</title></g><g><circle cx="709.9" cy="185.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_025__k141_127
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.90, FDR 4.60e-30</title></g><g><circle cx="709.9" cy="175.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_025__k141_264
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.90, FDR 1.09e-31</title></g><g><circle cx="709.9" cy="184.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_031__k141_39
+host: unassigned
+Cliff&#x27;s delta +0.90, FDR 3.21e-30</title></g><g><circle cx="709.9" cy="185.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_146
+host: species:Acinetobacter venetianus
+Cliff&#x27;s delta +0.90, FDR 5.22e-30</title></g><g><circle cx="709.9" cy="183.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_222
+host: species:Lactiplantibacillus plantarum
+Cliff&#x27;s delta +0.90, FDR 2.21e-30</title></g><g><circle cx="709.9" cy="187.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_059__k141_166
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.90, FDR 7.65e-30</title></g><g><circle cx="709.9" cy="185.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_062__k141_120
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.90, FDR 4.36e-30</title></g><g><circle cx="709.9" cy="184.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_35
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.90, FDR 2.88e-30</title></g><g><circle cx="709.9" cy="185.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_22
+host: unassigned
+Cliff&#x27;s delta +0.90, FDR 4.48e-30</title></g><g><circle cx="709.9" cy="187.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_083__k141_10
+host: unassigned
+Cliff&#x27;s delta +0.90, FDR 7.52e-30</title></g><g><circle cx="709.9" cy="184.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_087__k141_180
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.90, FDR 2.67e-30</title></g><g><circle cx="709.9" cy="184.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_361
+host: unassigned
+Cliff&#x27;s delta +0.90, FDR 2.85e-30</title></g><g><circle cx="709.9" cy="182.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_091__k141_60
+host: unassigned
+Cliff&#x27;s delta +0.90, FDR 1.38e-30</title></g><g><circle cx="709.9" cy="175.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_253
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.90, FDR 1.40e-31</title></g><g><circle cx="702.8" cy="189.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_210
+host: unassigned
+Cliff&#x27;s delta +0.88, FDR 2.04e-29</title></g><g><circle cx="702.8" cy="196.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_029__k141_282
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.88, FDR 2.33e-28</title></g><g><circle cx="702.8" cy="186.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_037__k141_176
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.88, FDR 6.00e-30</title></g><g><circle cx="702.8" cy="199.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_53
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.88, FDR 6.95e-28</title></g><g><circle cx="702.8" cy="198.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_140
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.88, FDR 3.89e-28</title></g><g><circle cx="702.8" cy="195.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_280
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.88, FDR 1.50e-28</title></g><g><circle cx="695.6" cy="205.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_163
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.85, FDR 6.32e-27</title></g><g><circle cx="695.6" cy="210.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_025__k141_417
+host: unassigned
+Cliff&#x27;s delta +0.85, FDR 3.15e-26</title></g><g><circle cx="695.6" cy="210.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_027__k141_169
+host: unassigned
+Cliff&#x27;s delta +0.85, FDR 3.70e-26</title></g><g><circle cx="695.6" cy="209.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_135
+host: genus:Levilactobacillus
+Cliff&#x27;s delta +0.85, FDR 2.51e-26</title></g><g><circle cx="695.6" cy="207.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_365
+host: unassigned
+Cliff&#x27;s delta +0.85, FDR 1.39e-26</title></g><g><circle cx="695.6" cy="208.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_326
+host: unassigned
+Cliff&#x27;s delta +0.85, FDR 1.42e-26</title></g><g><circle cx="695.6" cy="208.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_162
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.85, FDR 1.65e-26</title></g><g><circle cx="695.6" cy="209.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_062__k141_121
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.85, FDR 2.08e-26</title></g><g><circle cx="695.6" cy="205.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_252
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.85, FDR 5.29e-27</title></g><g><circle cx="695.6" cy="207.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_083__k141_114
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.85, FDR 1.06e-26</title></g><g><circle cx="695.6" cy="208.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_088__k141_410
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.85, FDR 1.48e-26</title></g><g><circle cx="695.6" cy="210.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_227
+host: unassigned
+Cliff&#x27;s delta +0.85, FDR 3.32e-26</title></g><g><circle cx="695.6" cy="210.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_241
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.85, FDR 2.95e-26</title></g><g><circle cx="695.6" cy="207.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_092__k141_271
+host: unassigned
+Cliff&#x27;s delta +0.85, FDR 1.28e-26</title></g><g><circle cx="688.3" cy="220.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_011__k141_96
+host: species:Lactobacillus paracasei
+Cliff&#x27;s delta +0.83, FDR 1.11e-24</title></g><g><circle cx="688.3" cy="209.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_199
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.83, FDR 2.41e-26</title></g><g><circle cx="688.3" cy="221.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_036__k141_116
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.83, FDR 1.58e-24</title></g><g><circle cx="688.3" cy="220.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_069__k141_32
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.83, FDR 1.27e-24</title></g><g><circle cx="688.3" cy="216.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_236
+host: species:Lactiplantibacillus plantarum
+Cliff&#x27;s delta +0.83, FDR 2.46e-25</title></g><g><circle cx="688.3" cy="216.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_97
+host: unassigned
+Cliff&#x27;s delta +0.83, FDR 3.42e-25</title></g><g><circle cx="681.1" cy="228.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_015__k141_4
+host: genus:Shigella
+Cliff&#x27;s delta +0.81, FDR 2.10e-23</title></g><g><circle cx="681.1" cy="229.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_032__k141_79
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.81, FDR 3.65e-23</title></g><g><circle cx="681.1" cy="228.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_035__k141_107
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.81, FDR 2.11e-23</title></g><g><circle cx="681.1" cy="228.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_90
+host: unassigned
+Cliff&#x27;s delta +0.81, FDR 2.28e-23</title></g><g><circle cx="681.1" cy="226.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_088__k141_15
+host: unassigned
+Cliff&#x27;s delta +0.81, FDR 1.10e-23</title></g><g><circle cx="681.1" cy="225.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_126
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.81, FDR 6.37e-24</title></g><g><circle cx="681.1" cy="228.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_73
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.81, FDR 2.37e-23</title></g><g><circle cx="681.1" cy="227.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_091__k141_212
+host: unassigned
+Cliff&#x27;s delta +0.81, FDR 1.56e-23</title></g><g><circle cx="673.9" cy="237.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_023__k141_256
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.79, FDR 4.76e-22</title></g><g><circle cx="673.9" cy="236.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_100
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.79, FDR 3.57e-22</title></g><g><circle cx="673.9" cy="225.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_066__k141_331
+host: unassigned
+Cliff&#x27;s delta +0.79, FDR 8.08e-24</title></g><g><circle cx="673.9" cy="235.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_067__k141_347
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.79, FDR 2.49e-22</title></g><g><circle cx="666.7" cy="243.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_82
+host: unassigned
+Cliff&#x27;s delta +0.77, FDR 4.06e-21</title></g><g><circle cx="666.7" cy="245.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_084__k141_193
+host: genus:Levilactobacillus
+Cliff&#x27;s delta +0.77, FDR 9.33e-21</title></g><g><circle cx="666.7" cy="243.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_22
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.77, FDR 4.89e-21</title></g><g><circle cx="659.5" cy="254.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_031__k141_339
+host: unassigned
+Cliff&#x27;s delta +0.75, FDR 2.11e-19</title></g><g><circle cx="659.5" cy="253.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_034__k141_46
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.75, FDR 1.66e-19</title></g><g><circle cx="659.5" cy="247.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_064__k141_228
+host: species:Acinetobacter venetianus
+Cliff&#x27;s delta +0.75, FDR 2.09e-20</title></g><g><circle cx="659.5" cy="254.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_277
+host: species:Lactiplantibacillus plantarum
+Cliff&#x27;s delta +0.75, FDR 2.11e-19</title></g><g><circle cx="652.3" cy="260.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_022__k141_200
+host: species:Acinetobacter venetianus
+Cliff&#x27;s delta +0.73, FDR 2.23e-18</title></g><g><circle cx="652.3" cy="256.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_030__k141_54
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.73, FDR 5.42e-19</title></g><g><circle cx="652.3" cy="258.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_070__k141_101
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.73, FDR 1.20e-18</title></g><g><circle cx="652.3" cy="260.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_091__k141_113
+host: unassigned
+Cliff&#x27;s delta +0.73, FDR 2.42e-18</title></g><g><circle cx="645.1" cy="266.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_020__k141_36
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.71, FDR 1.70e-17</title></g><g><circle cx="645.1" cy="266.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_026__k141_15
+host: unassigned
+Cliff&#x27;s delta +0.71, FDR 1.99e-17</title></g><g><circle cx="645.1" cy="266.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_031__k141_324
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.71, FDR 1.69e-17</title></g><g><circle cx="645.1" cy="266.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_069__k141_100
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.71, FDR 1.70e-17</title></g><g><circle cx="93.4" cy="243.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_093__k141_34
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.89, FDR 4.38e-21</title></g><g><circle cx="96.4" cy="248.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_053__k141_187
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.88, FDR 3.34e-20</title></g><g><circle cx="80.6" cy="229.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_054__k141_73
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.92, FDR 3.25e-23</title></g><g><circle cx="100.2" cy="253.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_91
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.87, FDR 1.99e-19</title></g><g><circle cx="630.7" cy="278.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_70
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.67, FDR 1.43e-15</title></g><g><circle cx="66.8" cy="205.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_047__k141_123
+host: unassigned
+Cliff&#x27;s delta -0.96, FDR 6.12e-27</title></g><g><circle cx="98.8" cy="251.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_077__k141_115
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.87, FDR 9.22e-20</title></g><g><circle cx="623.4" cy="283.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_013__k141_98
+host: species:Pediococcus inopinatus
+Cliff&#x27;s delta +0.65, FDR 7.84e-15</title></g><g><circle cx="623.4" cy="283.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_063__k141_57
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.65, FDR 8.48e-15</title></g><g><circle cx="129.5" cy="282.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_045__k141_144
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.78, FDR 4.96e-15</title></g><g><circle cx="616.2" cy="289.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_041__k141_72
+host: unassigned
+Cliff&#x27;s delta +0.62, FDR 5.91e-14</title></g><g><circle cx="616.2" cy="289.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_090__k141_29
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.62, FDR 7.17e-14</title></g><g><circle cx="116.1" cy="272.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_048__k141_239
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.82, FDR 1.70e-16</title></g><g><circle cx="609.1" cy="293.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_261
+host: species:Enterococcus faecalis
+Cliff&#x27;s delta +0.60, FDR 2.96e-13</title></g><g><circle cx="609.1" cy="293.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_089__k141_93
+host: genus:Enterococcus
+Cliff&#x27;s delta +0.60, FDR 2.68e-13</title></g><g><circle cx="143.1" cy="289.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_098__k141_120
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.74, FDR 7.64e-14</title></g><g><circle cx="109.0" cy="264.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_048__k141_15
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.84, FDR 8.62e-18</title></g><g><circle cx="119.4" cy="275.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_124
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.81, FDR 5.22e-16</title></g><g><circle cx="601.8" cy="297.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_038__k141_9
+host: genus:Shigella
+Cliff&#x27;s delta +0.58, FDR 1.43e-12</title></g><g><circle cx="129.3" cy="283.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_006__k141_40
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.78, FDR 8.89e-15</title></g><g><circle cx="161.2" cy="305.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_086__k141_107
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.69, FDR 2.14e-11</title></g><g><circle cx="97.4" cy="252.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_097__k141_66
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.87, FDR 1.01e-19</title></g><g><circle cx="156.2" cy="299.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_098__k141_117
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.70, FDR 2.50e-12</title></g><g><circle cx="149.1" cy="295.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_225
+host: unassigned
+Cliff&#x27;s delta -0.73, FDR 6.83e-13</title></g><g><circle cx="159.4" cy="307.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_095__k141_121
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.70, FDR 4.29e-11</title></g><g><circle cx="113.5" cy="271.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_045__k141_183
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.83, FDR 9.04e-17</title></g><g><circle cx="145.1" cy="295.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_050__k141_73
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.74, FDR 6.71e-13</title></g><g><circle cx="160.5" cy="305.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_043__k141_70
+host: unassigned
+Cliff&#x27;s delta -0.69, FDR 2.11e-11</title></g><g><circle cx="159.9" cy="304.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_102
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.69, FDR 1.44e-11</title></g><g><circle cx="573.0" cy="314.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_040__k141_296
+host: unassigned
+Cliff&#x27;s delta +0.50, FDR 5.02e-10</title></g><g><circle cx="179.9" cy="317.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_047__k141_108
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.64, FDR 1.70e-09</title></g><g><circle cx="181.7" cy="316.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_096__k141_110
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.63, FDR 9.44e-10</title></g><g><circle cx="178.1" cy="314.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_075__k141_54
+host: unassigned
+Cliff&#x27;s delta -0.64, FDR 4.84e-10</title></g><g><circle cx="154.1" cy="301.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_003__k141_131
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.71, FDR 5.91e-12</title></g><g><circle cx="195.0" cy="324.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_223
+host: unassigned
+Cliff&#x27;s delta -0.59, FDR 2.00e-08</title></g><g><circle cx="174.6" cy="315.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_016__k141_14
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.65, FDR 7.56e-10</title></g><g><circle cx="171.4" cy="313.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_25
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.66, FDR 3.29e-10</title></g><g><circle cx="167.5" cy="311.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_073__k141_101
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.67, FDR 1.85e-10</title></g><g><circle cx="163.9" cy="308.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_028__k141_191
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.68, FDR 6.92e-11</title></g><g><circle cx="162.7" cy="307.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_096__k141_41
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.69, FDR 4.74e-11</title></g><g><circle cx="168.2" cy="311.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_061__k141_221
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.67, FDR 2.17e-10</title></g><g><circle cx="174.9" cy="316.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_077__k141_29
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.65, FDR 1.28e-09</title></g><g><circle cx="213.1" cy="326.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_097__k141_138
+host: unassigned
+Cliff&#x27;s delta -0.54, FDR 3.60e-08</title></g><g><circle cx="165.3" cy="311.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_081__k141_28
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.68, FDR 1.56e-10</title></g><g><circle cx="203.2" cy="327.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_065__k141_15
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.57, FDR 5.94e-08</title></g><g><circle cx="217.0" cy="331.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_028__k141_121
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.53, FDR 2.33e-07</title></g><g><circle cx="177.4" cy="316.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_005__k141_182
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.64, FDR 1.02e-09</title></g><g><circle cx="179.6" cy="317.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_002__k141_237
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.64, FDR 1.33e-09</title></g><g><circle cx="196.2" cy="324.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_093__k141_191
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.59, FDR 1.75e-08</title></g><g><circle cx="189.0" cy="322.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_099__k141_49
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.61, FDR 9.47e-09</title></g><g><circle cx="206.8" cy="330.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_044__k141_52
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.56, FDR 1.46e-07</title></g><g><circle cx="185.0" cy="321.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_074__k141_246
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.62, FDR 6.64e-09</title></g><g><circle cx="186.7" cy="322.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_049__k141_73
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.62, FDR 1.01e-08</title></g><g><circle cx="208.7" cy="331.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_078__k141_252
+host: unassigned
+Cliff&#x27;s delta -0.55, FDR 2.20e-07</title></g><g><circle cx="227.6" cy="338.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_072__k141_99
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.50, FDR 3.35e-06</title></g><g><circle cx="193.2" cy="326.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_042__k141_161
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.60, FDR 3.50e-08</title></g><g><circle cx="210.2" cy="329.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_028__k141_245
+host: unassigned
+Cliff&#x27;s delta -0.55, FDR 1.30e-07</title></g><g><circle cx="215.8" cy="334.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_050__k141_14
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.53, FDR 8.30e-07</title></g><g><circle cx="212.7" cy="333.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_019__k141_29
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.54, FDR 4.82e-07</title></g><g><circle cx="214.8" cy="335.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_054__k141_21
+host: unassigned
+Cliff&#x27;s delta -0.54, FDR 8.38e-07</title></g><g><circle cx="203.3" cy="328.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_058__k141_43
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.57, FDR 8.23e-08</title></g><g><circle cx="230.9" cy="339.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_055__k141_61
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.49, FDR 4.06e-06</title></g><g><circle cx="228.7" cy="336.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_077__k141_7
+host: unassigned
+Cliff&#x27;s delta -0.50, FDR 1.54e-06</title></g><g><circle cx="203.3" cy="331.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_065__k141_216
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.57, FDR 2.03e-07</title></g><g><circle cx="213.3" cy="332.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_068__k141_215
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.54, FDR 2.99e-07</title></g><g><circle cx="227.4" cy="338.6" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_024__k141_84
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.50, FDR 3.07e-06</title></g><g><circle cx="231.6" cy="339.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_058__k141_177
+host: unassigned
+Cliff&#x27;s delta -0.49, FDR 3.68e-06</title></g><g><circle cx="242.3" cy="345.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_039__k141_47
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.46, FDR 3.67e-05</title></g><g><circle cx="229.8" cy="340.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_97
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.49, FDR 6.95e-06</title></g><g><circle cx="247.9" cy="347.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_033__k141_191
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.44, FDR 6.58e-05</title></g><g><circle cx="238.7" cy="343.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_054__k141_19
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.47, FDR 2.02e-05</title></g><g><circle cx="245.4" cy="345.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_049__k141_194
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.45, FDR 3.92e-05</title></g><g><circle cx="249.3" cy="344.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_073__k141_224
+host: unassigned
+Cliff&#x27;s delta -0.44, FDR 2.98e-05</title></g><g><circle cx="224.4" cy="338.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_100__k141_177
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.51, FDR 2.96e-06</title></g><g><circle cx="234.1" cy="341.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_002__k141_196
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.48, FDR 1.01e-05</title></g><g><circle cx="255.3" cy="344.8" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_065__k141_143
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.42, FDR 2.89e-05</title></g><g><circle cx="228.7" cy="340.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_072__k141_167
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.50, FDR 5.98e-06</title></g><g><circle cx="245.0" cy="344.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_001__k141_4
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.45, FDR 2.54e-05</title></g><g><circle cx="244.2" cy="344.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_097__k141_105
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.45, FDR 2.10e-05</title></g><g><circle cx="251.5" cy="348.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_057__k141_178
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.43, FDR 1.23e-04</title></g><g><circle cx="255.1" cy="347.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_073__k141_143
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.42, FDR 7.34e-05</title></g><g><circle cx="234.9" cy="341.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_075__k141_83
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.48, FDR 8.76e-06</title></g><g><circle cx="258.7" cy="350.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_061__k141_85
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.41, FDR 2.12e-04</title></g><g><circle cx="260.6" cy="349.2" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_3
+host: unassigned
+Cliff&#x27;s delta -0.40, FDR 1.39e-04</title></g><g><circle cx="254.6" cy="348.7" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_099__k141_95
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.42, FDR 1.14e-04</title></g><g><circle cx="270.2" cy="351.9" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_005__k141_66
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.38, FDR 3.56e-04</title></g><g><circle cx="269.7" cy="351.3" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_065__k141_77
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.38, FDR 2.90e-04</title></g><g><circle cx="282.7" cy="355.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_024__k141_67
+host: unassigned
+Cliff&#x27;s delta -0.34, FDR 1.09e-03</title></g><g><circle cx="272.3" cy="350.5" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_028__k141_242
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.37, FDR 2.17e-04</title></g><g><circle cx="298.1" cy="358.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_076__k141_13
+host: unassigned
+Cliff&#x27;s delta -0.29, FDR 3.71e-03</title></g><g><circle cx="284.8" cy="357.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_100__k141_11
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.33, FDR 2.33e-03</title></g><g><circle cx="291.6" cy="358.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_039__k141_211
+host: unassigned
+Cliff&#x27;s delta -0.31, FDR 3.78e-03</title></g><g><circle cx="304.8" cy="361.1" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_100__k141_174
+host: unassigned
+Cliff&#x27;s delta -0.28, FDR 9.87e-03</title></g><g><circle cx="308.7" cy="361.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_009__k141_124
+host: unassigned
+Cliff&#x27;s delta -0.26, FDR 9.61e-03</title></g><g><circle cx="308.4" cy="360.4" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_024__k141_46
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.26, FDR 7.52e-03</title></g><g><circle cx="298.7" cy="361.0" r="3.4" fill="#b9b6ae" opacity="0.6"/><title>VIR_002__k141_40
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.29, FDR 9.41e-03</title></g><g><circle cx="490.5" cy="364.0" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_026__k141_200
+host: unassigned
+Cliff&#x27;s delta +0.26, FDR 2.79e-02</title></g><g><circle cx="520.6" cy="357.8" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_073__k141_56
+host: unassigned
+Cliff&#x27;s delta +0.35, FDR 2.96e-03</title></g><g><circle cx="499.0" cy="362.5" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_093__k141_150
+host: unassigned
+Cliff&#x27;s delta +0.29, FDR 1.63e-02</title></g><g><circle cx="517.3" cy="358.4" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_078__k141_177
+host: unassigned
+Cliff&#x27;s delta +0.34, FDR 3.69e-03</title></g><g><circle cx="516.2" cy="358.8" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_019__k141_129
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.34, FDR 4.23e-03</title></g><g><circle cx="509.2" cy="360.4" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_054__k141_24
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.32, FDR 7.60e-03</title></g><g><circle cx="512.7" cy="359.6" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_097__k141_65
+host: unassigned
+Cliff&#x27;s delta +0.33, FDR 5.74e-03</title></g><g><circle cx="508.4" cy="360.6" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_098__k141_183
+host: unassigned
+Cliff&#x27;s delta +0.31, FDR 8.10e-03</title></g><g><circle cx="496.3" cy="362.8" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_095__k141_61
+host: unassigned
+Cliff&#x27;s delta +0.28, FDR 1.83e-02</title></g><g><circle cx="489.8" cy="364.2" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_008__k141_32
+host: unassigned
+Cliff&#x27;s delta +0.26, FDR 3.03e-02</title></g><g><circle cx="506.7" cy="360.9" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_071__k141_83
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.31, FDR 9.26e-03</title></g><g><circle cx="500.5" cy="362.2" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_001__k141_108
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.29, FDR 1.47e-02</title></g><g><circle cx="483.6" cy="365.4" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_099__k141_134
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.24, FDR 4.56e-02</title></g><g><circle cx="492.9" cy="363.7" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_078__k141_82
+host: unassigned
+Cliff&#x27;s delta +0.27, FDR 2.52e-02</title></g><g><circle cx="471.4" cy="367.3" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_099__k141_191
+host: unassigned
+Cliff&#x27;s delta +0.21, FDR 9.13e-02</title></g><g><circle cx="448.9" cy="370.2" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_012__k141_128
+host: unassigned
+Cliff&#x27;s delta +0.14, FDR 2.58e-01</title></g><g><circle cx="387.6" cy="373.2" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_092__k141_161
+host: unassigned
+Cliff&#x27;s delta -0.04, FDR 7.43e-01</title></g><g><circle cx="449.3" cy="370.0" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_050__k141_22
+host: unassigned
+Cliff&#x27;s delta +0.14, FDR 2.41e-01</title></g><g><circle cx="441.9" cy="370.9" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_029__k141_362
+host: unassigned
+Cliff&#x27;s delta +0.12, FDR 3.30e-01</title></g><g><circle cx="445.2" cy="370.5" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_084__k141_205
+host: unassigned
+Cliff&#x27;s delta +0.13, FDR 2.87e-01</title></g><g><circle cx="427.4" cy="372.3" r="2.6" fill="#b9b6ae" opacity="0.32"/><title>VIR_039__k141_203
+host: unassigned
+Cliff&#x27;s delta +0.08, FDR 5.39e-01</title></g><g><circle cx="54.0" cy="166.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_001__k141_151
+host: genus:Macaca
+Cliff&#x27;s delta -1.00, FDR 5.44e-33</title></g><g><circle cx="54.0" cy="166.9" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_009__k141_189
+host: genus:Mandrillus
+Cliff&#x27;s delta -1.00, FDR 5.59e-33</title></g><g><circle cx="54.0" cy="166.7" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_019__k141_234
+host: genus:Mandrillus
+Cliff&#x27;s delta -1.00, FDR 5.22e-33</title></g><g><circle cx="60.2" cy="177.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_024__k141_56
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.98, FDR 2.85e-31</title></g><g><circle cx="69.3" cy="197.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_093__k141_223
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.96, FDR 3.64e-28</title></g><g><circle cx="72.2" cy="213.5" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_073__k141_110
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.95, FDR 1.02e-25</title></g><g><circle cx="74.8" cy="215.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_096__k141_68
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.94, FDR 2.30e-25</title></g><g><circle cx="83.0" cy="227.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_077__k141_92
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.92, FDR 1.71e-23</title></g><g><circle cx="87.7" cy="235.7" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_099__k141_127
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.90, FDR 2.95e-22</title></g><g><circle cx="86.9" cy="237.6" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_081__k141_47
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.91, FDR 5.73e-22</title></g><g><circle cx="107.8" cy="260.7" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_028__k141_48
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.84, FDR 2.26e-18</title></g><g><circle cx="117.5" cy="272.7" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_048__k141_197
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.82, FDR 1.70e-16</title></g><g><circle cx="137.3" cy="291.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_049__k141_14
+host: unassigned
+Cliff&#x27;s delta -0.76, FDR 1.59e-13</title></g><g><circle cx="140.5" cy="293.9" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_065__k141_260
+host: unassigned
+Cliff&#x27;s delta -0.75, FDR 3.40e-13</title></g><g><circle cx="178.1" cy="314.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_065__k141_62
+host: unassigned
+Cliff&#x27;s delta -0.64, FDR 6.00e-10</title></g><g><circle cx="169.2" cy="312.3" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_094__k141_309
+host: species:Lactobacillus sp. UMNPBX19
+Cliff&#x27;s delta -0.67, FDR 2.51e-10</title></g><g><circle cx="173.2" cy="314.3" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_053__k141_14
+host: unassigned
+Cliff&#x27;s delta -0.66, FDR 5.13e-10</title></g><g><circle cx="166.1" cy="312.2" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_076__k141_106
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.68, FDR 2.40e-10</title></g><g><circle cx="174.8" cy="316.5" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_088__k141_7
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.65, FDR 1.11e-09</title></g><g><circle cx="203.6" cy="326.0" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_024__k141_54
+host: unassigned
+Cliff&#x27;s delta -0.57, FDR 3.35e-08</title></g><g><circle cx="173.6" cy="316.5" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_055__k141_153
+host: species:Lactobacillus johnsonii
+Cliff&#x27;s delta -0.65, FDR 1.11e-09</title></g><g><circle cx="193.4" cy="325.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_048__k141_158
+host: unassigned
+Cliff&#x27;s delta -0.60, FDR 3.13e-08</title></g><g><circle cx="196.5" cy="327.5" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_074__k141_211
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.59, FDR 5.82e-08</title></g><g><circle cx="194.1" cy="325.7" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_054__k141_150
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.59, FDR 3.01e-08</title></g><g><circle cx="181.0" cy="319.2" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_006__k141_65
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.63, FDR 2.88e-09</title></g><g><circle cx="216.3" cy="334.5" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_046__k141_181
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.53, FDR 7.08e-07</title></g><g><circle cx="200.4" cy="330.6" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_052__k141_270
+host: species:Faecalibacterium prausnitzii
+Cliff&#x27;s delta -0.58, FDR 1.72e-07</title></g><g><circle cx="214.4" cy="333.6" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_069__k141_248
+host: unassigned
+Cliff&#x27;s delta -0.54, FDR 5.13e-07</title></g><g><circle cx="194.3" cy="327.5" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_094__k141_142
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.59, FDR 5.69e-08</title></g><g><circle cx="205.8" cy="329.4" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_046__k141_193
+host: species:Lactobacillus sp. UMNPBX19
+Cliff&#x27;s delta -0.56, FDR 1.14e-07</title></g><g><circle cx="228.8" cy="340.0" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_057__k141_9
+host: unassigned
+Cliff&#x27;s delta -0.49, FDR 5.07e-06</title></g><g><circle cx="201.1" cy="330.1" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_053__k141_92
+host: species:Lactobacillus johnsonii
+Cliff&#x27;s delta -0.57, FDR 1.48e-07</title></g><g><circle cx="203.4" cy="330.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_002__k141_181
+host: unassigned
+Cliff&#x27;s delta -0.57, FDR 1.91e-07</title></g><g><circle cx="209.4" cy="334.4" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_074__k141_234
+host: unassigned
+Cliff&#x27;s delta -0.55, FDR 6.82e-07</title></g><g><circle cx="616.8" cy="322.5" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_076__k141_104
+host: unassigned
+Cliff&#x27;s delta +0.63, FDR 9.67e-09</title></g><g><circle cx="214.5" cy="336.3" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_051__k141_153
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.54, FDR 1.35e-06</title></g><g><circle cx="216.9" cy="336.0" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_024__k141_40
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.53, FDR 1.21e-06</title></g><g><circle cx="237.7" cy="342.4" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_039__k141_186
+host: species:Lactobacillus sp. UMNPBX19
+Cliff&#x27;s delta -0.47, FDR 1.22e-05</title></g><g><circle cx="220.8" cy="338.9" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_076__k141_214
+host: unassigned
+Cliff&#x27;s delta -0.52, FDR 3.47e-06</title></g><g><circle cx="237.4" cy="339.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_057__k141_203
+host: species:Lactobacillus jensenii
+Cliff&#x27;s delta -0.47, FDR 4.77e-06</title></g><g><circle cx="215.2" cy="336.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_046__k141_76
+host: unassigned
+Cliff&#x27;s delta -0.53, FDR 1.61e-06</title></g><g><circle cx="604.0" cy="329.0" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_060__k141_181
+host: unassigned
+Cliff&#x27;s delta +0.59, FDR 9.78e-08</title></g><g><circle cx="593.7" cy="333.6" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_010__k141_11
+host: unassigned
+Cliff&#x27;s delta +0.56, FDR 5.07e-07</title></g><g><circle cx="229.6" cy="341.9" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_002__k141_205
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.49, FDR 1.00e-05</title></g><g><circle cx="228.5" cy="340.1" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_047__k141_21
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.50, FDR 5.31e-06</title></g><g><circle cx="278.6" cy="352.1" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_049__k141_63
+host: unassigned
+Cliff&#x27;s delta -0.35, FDR 3.86e-04</title></g><g><circle cx="237.0" cy="344.9" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_065__k141_88
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.47, FDR 2.97e-05</title></g><g><circle cx="256.7" cy="350.4" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_056__k141_112
+host: unassigned
+Cliff&#x27;s delta -0.41, FDR 2.10e-04</title></g><g><circle cx="583.4" cy="337.8" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_077__k141_16
+host: unassigned
+Cliff&#x27;s delta +0.53, FDR 2.34e-06</title></g><g><circle cx="582.4" cy="338.3" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_012__k141_169
+host: unassigned
+Cliff&#x27;s delta +0.53, FDR 2.79e-06</title></g><g><circle cx="662.8" cy="283.0" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_089__k141_428
+host: species:Pectobacterium peruviense
+Cliff&#x27;s delta +0.76, FDR 6.68e-15</title></g><g><circle cx="244.2" cy="346.6" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_098__k141_96
+host: species:Lactobacillus johnsonii
+Cliff&#x27;s delta -0.45, FDR 5.37e-05</title></g><g><circle cx="256.8" cy="350.1" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_100__k141_34
+host: unassigned
+Cliff&#x27;s delta -0.41, FDR 1.92e-04</title></g><g><circle cx="250.7" cy="348.8" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_097__k141_42
+host: unassigned
+Cliff&#x27;s delta -0.43, FDR 1.21e-04</title></g><g><circle cx="581.4" cy="338.4" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_093__k141_225
+host: unassigned
+Cliff&#x27;s delta +0.52, FDR 2.91e-06</title></g><g><circle cx="274.7" cy="354.5" r="4.6" fill="#2a78d6" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_093__k141_76
+host: species:Lactobacillus gasseri
+Cliff&#x27;s delta -0.36, FDR 9.18e-04</title></g><g><circle cx="536.5" cy="353.3" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_073__k141_73
+host: unassigned
+Cliff&#x27;s delta +0.39, FDR 6.05e-04</title></g><g><circle cx="519.2" cy="357.9" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_008__k141_107
+host: unassigned
+Cliff&#x27;s delta +0.34, FDR 3.15e-03</title></g><g><circle cx="553.0" cy="348.8" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_060__k141_130
+host: unassigned
+Cliff&#x27;s delta +0.44, FDR 1.20e-04</title></g><g><circle cx="603.5" cy="329.2" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_008__k141_252
+host: unassigned
+Cliff&#x27;s delta +0.59, FDR 1.04e-07</title></g><g><circle cx="534.2" cy="354.1" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_078__k141_147
+host: unassigned
+Cliff&#x27;s delta +0.39, FDR 8.09e-04</title></g><g><circle cx="529.1" cy="355.6" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_063__k141_269
+host: unassigned
+Cliff&#x27;s delta +0.37, FDR 1.37e-03</title></g><g><circle cx="526.0" cy="356.1" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_093__k141_148
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.36, FDR 1.64e-03</title></g><g><circle cx="539.2" cy="352.6" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_015__k141_236
+host: unassigned
+Cliff&#x27;s delta +0.40, FDR 4.62e-04</title></g><g><circle cx="519.6" cy="358.0" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_049__k141_35
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.35, FDR 3.24e-03</title></g><g><circle cx="522.7" cy="357.1" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_049__k141_55
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.35, FDR 2.36e-03</title></g><g><circle cx="528.1" cy="355.8" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_024__k141_192
+host: unassigned
+Cliff&#x27;s delta +0.37, FDR 1.45e-03</title></g><g><circle cx="529.5" cy="355.5" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_046__k141_37
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.37, FDR 1.31e-03</title></g><g><circle cx="531.1" cy="355.1" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_061__k141_99
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.38, FDR 1.15e-03</title></g><g><circle cx="518.6" cy="357.8" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_079__k141_183
+host: unassigned
+Cliff&#x27;s delta +0.34, FDR 3.05e-03</title></g><g><circle cx="529.3" cy="355.6" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_020__k141_308
+host: unassigned
+Cliff&#x27;s delta +0.37, FDR 1.36e-03</title></g><g><circle cx="531.1" cy="355.1" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_100__k141_79
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.38, FDR 1.14e-03</title></g><g><circle cx="520.5" cy="357.8" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_076__k141_85
+host: species:Atopobium vaginae
+Cliff&#x27;s delta +0.35, FDR 2.99e-03</title></g><g><circle cx="491.8" cy="363.8" r="4.6" fill="#e34948" opacity="0.95" stroke="#ffffff" stroke-width="1.2"/><title>VIR_025__k141_316
+host: unassigned
+Cliff&#x27;s delta +0.27, FDR 2.60e-02</title></g><text x="400.0" y="400.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="normal" opacity="1">← lower in HPV+  ·  Cliff&#x27;s delta  ·  higher in HPV+ →</text><text transform="translate(13,214.0) rotate(-90)" font-size="10" fill="#7a7873" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">−log10 FDR (depth-adjusted)</text></svg>

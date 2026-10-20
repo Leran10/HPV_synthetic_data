@@ -122,14 +122,19 @@ gzip -cd qc_out/SAMPLE01_R2.clean.fastq.gz | wc -l
 
 ## Scope
 
-These cover QC only — steps 1–5 of the walkthrough. Assembly onward (MEGAHIT,
-Jaeger, geNomad, CheckV, PHOLD, vclust, PHABOX, vConTACT3, BACPHLIP, iPHoP,
-bbmap, the statistics) is documented with commands in
-[`../docs/TOOLS_WALKTHROUGH.md`](../docs/TOOLS_WALKTHROUGH.md) but is not
-wrapped into standalone scripts: those stages need large reference databases
-(iPHoP ~900 GB, geNomad ~1.6 GB, CheckV, PHABOX) and realistically a cluster.
-Use the [phage-analysis](https://github.com/megjohnson1999/phage-analysis)
-pipeline for that half.
+These two scripts cover **QC only**. For everything after — assembly,
+identification, annotation, and the statistics and figures — see
+**[DOWNSTREAM.md](DOWNSTREAM.md)**, which sets out what each stage needs and
+what you can still run yourself.
+
+The short version: identification and annotation need ~385 GB of reference
+databases (iPHoP alone is 318 GB, and NCBI `nr` adds 2.5 TB), so a standalone
+script would promise something a laptop cannot deliver — use
+[phage-analysis](https://github.com/megjohnson1999/phage-analysis) on a cluster
+for that half. But **assembly, the statistics and all five figures are
+runnable**: MEGAHIT needs no database, and
+[`differential_abundance.py`](../scripts/differential_abundance.py) plus
+[`make_figures.py`](../scripts/make_figures.py) need only numpy and scipy.
 
 ## Tested
 

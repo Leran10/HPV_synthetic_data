@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="100%" role="img" aria-label="vOTU richness versus sequencing depth"><title>vOTU richness versus sequencing depth</title><text x="0.0" y="16.0" font-size="13" fill="#0b0b0b" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="600" opacity="1">Richness tracks sequencing depth</text><text x="0.0" y="34.0" font-size="11" fill="#7a7873" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="normal" opacity="1">Each point is a sample. The groups differ in depth, so richness differences are confounded by design.</text><line x1="221.1" y1="58.0" x2="221.1" y2="348.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="221.1" y="366.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">5k</text><line x1="406.9" y1="58.0" x2="406.9" y2="348.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="406.9" y="366.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">10k</text><line x1="592.6" y1="58.0" x2="592.6" y2="348.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="592.6" y="366.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">20k</text><line x1="56.0" y1="348.0" x2="744.0" y2="348.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="48.0" y="351.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">93</text><line x1="56.0" y1="275.5" x2="744.0" y2="275.5" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="48.0" y="278.5" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">193</text><line x1="56.0" y1="203.0" x2="744.0" y2="203.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="48.0" y="206.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">294</text><line x1="56.0" y1="130.5" x2="744.0" y2="130.5" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="48.0" y="133.5" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">395</text><line x1="56.0" y1="58.0" x2="744.0" y2="58.0" stroke="#e2e0da" stroke-width="1" stroke-dasharray="2,3"/><text x="48.0" y="61.0" font-size="10" fill="#7a7873" text-anchor="end" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-weight="normal" opacity="1">495</text><g><circle cx="344.6" cy="273.7" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_001 (HPV-)
+depth 7,927×
+richness 196 vOTUs</title></g><g><circle cx="483.3" cy="271.5" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_002 (HPV-)
+depth 13,300×
+richness 199 vOTUs</title></g><g><circle cx="338.3" cy="274.4" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_003 (HPV-)
+depth 7,743×
+richness 195 vOTUs</title></g><g><circle cx="323.1" cy="280.9" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_004 (HPV-)
+depth 7,316×
+richness 186 vOTUs</title></g><g><circle cx="226.6" cy="283.0" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_005 (HPV-)
+depth 5,103×
+richness 183 vOTUs</title></g><g><circle cx="215.7" cy="264.3" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_006 (HPV-)
+depth 4,900×
+richness 209 vOTUs</title></g><g><circle cx="277.6" cy="270.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_007 (HPV-)
+depth 6,174×
+richness 201 vOTUs</title></g><g><circle cx="482.1" cy="275.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_008 (HPV-)
+depth 13,240×
+richness 193 vOTUs</title></g><g><circle cx="516.2" cy="272.9" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_009 (HPV-)
+depth 15,036×
+richness 197 vOTUs</title></g><g><circle cx="195.4" cy="339.3" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_010 (HPV+)
+depth 4,543×
+richness 105 vOTUs</title></g><g><circle cx="84.2" cy="342.2" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_011 (HPV+)
+depth 3,001×
+richness 101 vOTUs</title></g><g><circle cx="178.1" cy="309.7" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_012 (HPV+)
+depth 4,259×
+richness 146 vOTUs</title></g><g><circle cx="431.5" cy="273.7" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_013 (HPV+)
+depth 10,963×
+richness 196 vOTUs</title></g><g><circle cx="205.0" cy="251.3" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_014 (HPV+)
+depth 4,709×
+richness 227 vOTUs</title></g><g><circle cx="88.7" cy="285.9" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_015 (HPV+)
+depth 3,052×
+richness 179 vOTUs</title></g><g><circle cx="222.6" cy="270.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_016 (HPV-)
+depth 5,028×
+richness 200 vOTUs</title></g><g><circle cx="250.3" cy="234.7" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_017 (HPV+)
+depth 5,577×
+richness 250 vOTUs</title></g><g><circle cx="212.5" cy="221.0" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_018 (HPV+)
+depth 4,843×
+richness 269 vOTUs</title></g><g><circle cx="200.8" cy="283.0" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_019 (HPV-)
+depth 4,635×
+richness 183 vOTUs</title></g><g><circle cx="87.4" cy="243.4" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_020 (HPV+)
+depth 3,036×
+richness 238 vOTUs</title></g><g><circle cx="154.6" cy="225.3" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_021 (HPV+)
+depth 3,902×
+richness 263 vOTUs</title></g><g><circle cx="657.5" cy="231.1" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_022 (HPV+)
+depth 25,476×
+richness 255 vOTUs</title></g><g><circle cx="471.5" cy="195.1" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_023 (HPV+)
+depth 12,728×
+richness 305 vOTUs</title></g><g><circle cx="364.3" cy="286.6" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_024 (HPV-)
+depth 8,533×
+richness 178 vOTUs</title></g><g><circle cx="435.8" cy="167.6" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_025 (HPV+)
+depth 11,140×
+richness 343 vOTUs</title></g><g><circle cx="470.3" cy="213.8" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_026 (HPV+)
+depth 12,670×
+richness 279 vOTUs</title></g><g><circle cx="435.8" cy="207.3" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_027 (HPV+)
+depth 11,140×
+richness 288 vOTUs</title></g><g><circle cx="383.1" cy="261.4" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_028 (HPV-)
+depth 9,151×
+richness 213 vOTUs</title></g><g><circle cx="420.0" cy="164.0" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_029 (HPV+)
+depth 10,504×
+richness 348 vOTUs</title></g><g><circle cx="387.7" cy="173.4" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_030 (HPV+)
+depth 9,311×
+richness 335 vOTUs</title></g><g><circle cx="263.4" cy="168.4" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_031 (HPV+)
+depth 5,855×
+richness 342 vOTUs</title></g><g><circle cx="730.9" cy="126.5" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_032 (HPV+)
+depth 33,507×
+richness 400 vOTUs</title></g><g><circle cx="275.9" cy="265.7" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_033 (HPV-)
+depth 6,134×
+richness 207 vOTUs</title></g><g><circle cx="394.2" cy="135.2" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_034 (HPV+)
+depth 9,537×
+richness 388 vOTUs</title></g><g><circle cx="488.9" cy="130.9" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_035 (HPV+)
+depth 13,581×
+richness 394 vOTUs</title></g><g><circle cx="357.3" cy="147.5" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_036 (HPV+)
+depth 8,314×
+richness 371 vOTUs</title></g><g><circle cx="355.5" cy="133.0" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_037 (HPV+)
+depth 8,255×
+richness 391 vOTUs</title></g><g><circle cx="446.2" cy="76.1" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_038 (HPV+)
+depth 11,580×
+richness 470 vOTUs</title></g><g><circle cx="501.9" cy="264.3" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_039 (HPV-)
+depth 14,257×
+richness 209 vOTUs</title></g><g><circle cx="280.9" cy="108.5" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_040 (HPV+)
+depth 6,252×
+richness 425 vOTUs</title></g><g><circle cx="327.3" cy="71.7" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_041 (HPV+)
+depth 7,431×
+richness 476 vOTUs</title></g><g><circle cx="295.3" cy="267.2" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_042 (HPV-)
+depth 6,596×
+richness 205 vOTUs</title></g><g><circle cx="234.9" cy="286.6" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_043 (HPV-)
+depth 5,264×
+richness 178 vOTUs</title></g><g><circle cx="184.8" cy="283.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_044 (HPV-)
+depth 4,368×
+richness 182 vOTUs</title></g><g><circle cx="352.0" cy="259.2" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_045 (HPV-)
+depth 8,149×
+richness 216 vOTUs</title></g><g><circle cx="254.9" cy="285.2" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_046 (HPV-)
+depth 5,672×
+richness 180 vOTUs</title></g><g><circle cx="709.7" cy="271.5" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_047 (HPV-)
+depth 30,959×
+richness 199 vOTUs</title></g><g><circle cx="320.5" cy="273.7" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_048 (HPV-)
+depth 7,244×
+richness 196 vOTUs</title></g><g><circle cx="474.9" cy="280.9" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_049 (HPV-)
+depth 12,888×
+richness 186 vOTUs</title></g><g><circle cx="224.7" cy="283.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_050 (HPV-)
+depth 5,068×
+richness 182 vOTUs</title></g><g><circle cx="260.7" cy="267.2" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_051 (HPV-)
+depth 5,796×
+richness 205 vOTUs</title></g><g><circle cx="198.9" cy="271.5" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_052 (HPV-)
+depth 4,603×
+richness 199 vOTUs</title></g><g><circle cx="299.9" cy="267.9" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_053 (HPV-)
+depth 6,710×
+richness 204 vOTUs</title></g><g><circle cx="252.0" cy="293.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_054 (HPV-)
+depth 5,612×
+richness 169 vOTUs</title></g><g><circle cx="411.0" cy="275.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_055 (HPV-)
+depth 10,156×
+richness 194 vOTUs</title></g><g><circle cx="458.2" cy="275.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_056 (HPV-)
+depth 12,113×
+richness 194 vOTUs</title></g><g><circle cx="209.9" cy="270.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_057 (HPV-)
+depth 4,796×
+richness 200 vOTUs</title></g><g><circle cx="385.3" cy="283.0" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_058 (HPV-)
+depth 9,229×
+richness 183 vOTUs</title></g><g><circle cx="332.9" cy="234.7" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_059 (HPV+)
+depth 7,590×
+richness 250 vOTUs</title></g><g><circle cx="245.3" cy="242.7" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_060 (HPV+)
+depth 5,472×
+richness 239 vOTUs</title></g><g><circle cx="225.2" cy="281.6" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_061 (HPV-)
+depth 5,077×
+richness 185 vOTUs</title></g><g><circle cx="245.2" cy="173.4" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_062 (HPV+)
+depth 5,471×
+richness 335 vOTUs</title></g><g><circle cx="550.5" cy="184.2" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_063 (HPV+)
+depth 17,090×
+richness 320 vOTUs</title></g><g><circle cx="168.3" cy="210.2" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_064 (HPV+)
+depth 4,107×
+richness 284 vOTUs</title></g><g><circle cx="359.6" cy="262.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_065 (HPV-)
+depth 8,382×
+richness 211 vOTUs</title></g><g><circle cx="565.8" cy="131.6" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_066 (HPV+)
+depth 18,095×
+richness 393 vOTUs</title></g><g><circle cx="268.4" cy="125.8" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_067 (HPV+)
+depth 5,966×
+richness 401 vOTUs</title></g><g><circle cx="373.2" cy="95.5" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_068 (HPV+)
+depth 8,819×
+richness 443 vOTUs</title></g><g><circle cx="407.4" cy="141.0" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_069 (HPV+)
+depth 10,020×
+richness 380 vOTUs</title></g><g><circle cx="441.7" cy="153.2" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_070 (HPV+)
+depth 11,391×
+richness 363 vOTUs</title></g><g><circle cx="396.0" cy="291.0" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_071 (HPV-)
+depth 9,602×
+richness 172 vOTUs</title></g><g><circle cx="281.4" cy="260.0" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_072 (HPV-)
+depth 6,262×
+richness 215 vOTUs</title></g><g><circle cx="394.0" cy="283.0" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_073 (HPV-)
+depth 9,530×
+richness 183 vOTUs</title></g><g><circle cx="229.9" cy="268.6" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_074 (HPV-)
+depth 5,167×
+richness 203 vOTUs</title></g><g><circle cx="307.6" cy="276.5" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_075 (HPV-)
+depth 6,905×
+richness 192 vOTUs</title></g><g><circle cx="325.3" cy="260.7" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_076 (HPV-)
+depth 7,377×
+richness 214 vOTUs</title></g><g><circle cx="238.8" cy="275.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_077 (HPV-)
+depth 5,342×
+richness 194 vOTUs</title></g><g><circle cx="347.2" cy="282.3" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_078 (HPV-)
+depth 8,004×
+richness 184 vOTUs</title></g><g><circle cx="207.5" cy="263.6" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_079 (HPV+)
+depth 4,753×
+richness 210 vOTUs</title></g><g><circle cx="485.8" cy="245.5" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_080 (HPV+)
+depth 13,426×
+richness 235 vOTUs</title></g><g><circle cx="433.6" cy="257.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_081 (HPV-)
+depth 11,049×
+richness 219 vOTUs</title></g><g><circle cx="204.2" cy="235.4" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_082 (HPV+)
+depth 4,696×
+richness 249 vOTUs</title></g><g><circle cx="162.9" cy="203.7" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_083 (HPV+)
+depth 4,025×
+richness 293 vOTUs</title></g><g><circle cx="301.2" cy="178.5" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_084 (HPV+)
+depth 6,742×
+richness 328 vOTUs</title></g><g><circle cx="214.6" cy="187.8" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_085 (HPV+)
+depth 4,880×
+richness 315 vOTUs</title></g><g><circle cx="253.4" cy="257.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_086 (HPV-)
+depth 5,640×
+richness 218 vOTUs</title></g><g><circle cx="245.2" cy="174.1" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_087 (HPV+)
+depth 5,471×
+richness 334 vOTUs</title></g><g><circle cx="571.8" cy="130.1" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_088 (HPV+)
+depth 18,505×
+richness 395 vOTUs</title></g><g><circle cx="403.1" cy="159.0" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_089 (HPV+)
+depth 9,860×
+richness 355 vOTUs</title></g><g><circle cx="370.5" cy="148.9" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_090 (HPV+)
+depth 8,731×
+richness 369 vOTUs</title></g><g><circle cx="629.5" cy="127.3" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_091 (HPV+)
+depth 22,950×
+richness 399 vOTUs</title></g><g><circle cx="493.7" cy="125.8" r="4.6" fill="#e34948" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_092 (HPV+)
+depth 13,830×
+richness 401 vOTUs</title></g><g><circle cx="546.3" cy="281.6" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_093 (HPV-)
+depth 16,823×
+richness 185 vOTUs</title></g><g><circle cx="247.5" cy="270.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_094 (HPV-)
+depth 5,517×
+richness 201 vOTUs</title></g><g><circle cx="240.5" cy="288.1" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_095 (HPV-)
+depth 5,375×
+richness 176 vOTUs</title></g><g><circle cx="212.9" cy="265.0" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_096 (HPV-)
+depth 4,849×
+richness 208 vOTUs</title></g><g><circle cx="246.2" cy="261.4" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_097 (HPV-)
+depth 5,492×
+richness 213 vOTUs</title></g><g><circle cx="444.8" cy="282.3" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_098 (HPV-)
+depth 11,522×
+richness 184 vOTUs</title></g><g><circle cx="433.9" cy="257.8" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_099 (HPV-)
+depth 11,062×
+richness 218 vOTUs</title></g><g><circle cx="204.1" cy="272.2" r="4.6" fill="#2a78d6" opacity="0.75" stroke="#ffffff" stroke-width="1.1"/><title>VIR_100 (HPV-)
+depth 4,693×
+richness 198 vOTUs</title></g><circle cx="61.0" cy="44.0" r="4.6" fill="#e34948" opacity="0.85"/><text x="71.0" y="48.0" font-size="11" fill="#52514e" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="normal" opacity="1">HPV+ (n=48)</text><circle cx="211.0" cy="44.0" r="4.6" fill="#2a78d6" opacity="0.85"/><text x="221.0" y="48.0" font-size="11" fill="#52514e" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="normal" opacity="1">HPV- (n=52)</text><text x="400.0" y="380.0" font-size="10" fill="#7a7873" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="normal" opacity="1">total coverage (log scale)</text><text transform="translate(14,203.0) rotate(-90)" font-size="10" fill="#7a7873" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">vOTU richness</text></svg>

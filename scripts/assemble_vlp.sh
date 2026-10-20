@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
 #SBATCH --time=8:00:00
-#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/asm_%A_%a.log
-#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/asm_%A_%a.err
+#SBATCH --output=${PROJECT_DIR}/data/vlp/logs/asm_%A_%a.log
+#SBATCH --error=${PROJECT_DIR}/data/vlp/logs/asm_%A_%a.err
 
 # Assemble the VLP cohort. The bulk cohort's assemblies came free from the
 # prophage-pipeline run (which died later, at binning); the VLP cohort has none,
@@ -19,7 +19,7 @@
 
 set -euo pipefail
 
-C=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp
+C=${PROJECT_DIR}/data/vlp
 READS=$C/READS
 OUT=$C/assemblies
 
@@ -35,14 +35,14 @@ r2=$READS/${s}_R2.fastq.gz
 final=$OUT/${s}.contigs_1000bp.fasta
 [ -s "$final" ] && { echo "SKIP: $s already assembled"; exit 0; }
 
-export PATH=/ref/sahlab/software/miniforge3/envs/smk_envs_prophage_pipeline/23e6050a730b5b5a42945305b9ffed01_/bin:$PATH
+export PATH=${CONDA_BASE}/envs/smk_envs_prophage_pipeline/23e6050a730b5b5a42945305b9ffed01_/bin:$PATH
 command -v megahit >/dev/null || {
     # fall back to any megahit on the share
-    p=$(ls -d /ref/sahlab/software/miniforge3/envs/*/bin/megahit 2>/dev/null | head -1)
+    p=$(ls -d ${CONDA_BASE}/envs/*/bin/megahit 2>/dev/null | head -1)
     [ -n "$p" ] && export PATH="$(dirname "$p"):$PATH"
 }
 command -v megahit >/dev/null || { echo "FATAL: megahit not on PATH" >&2; exit 1; }
-command -v seqkit  >/dev/null || export PATH=/ref/sahlab/software/miniforge3/envs/bbtools/bin:$PATH
+command -v seqkit  >/dev/null || export PATH=${CONDA_BASE}/envs/bbtools/bin:$PATH
 
 wd=$OUT/$s
 rm -rf "$wd"

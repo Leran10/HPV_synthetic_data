@@ -91,12 +91,32 @@ results/markers/             differential abundance output
 docs/                        ViroForge fragment-length issue report
 ```
 
-Data and pipeline outputs stay on HTCF under `/scratch/sahlab/leran/` and are
+Data and pipeline outputs stay on HTCF under `${SCRATCH}/` and are
 gitignored. **[docs/FILE_LOCATIONS.md](docs/FILE_LOCATIONS.md) is the full
 inventory** — every path with sizes, which output file holds what, the shared
 tool/database locations, the local pipeline patches that are not upstream, the
 purge-protection cron, and the key SLURM job ids. A copy of the scripts and tables also lives in
-`/scratch/sahlab/leran/HPV_synthetic_data/backup/`.
+`${PROJECT_DIR}/backup/`.
+
+
+## Paths in this repo
+
+Site-specific absolute paths have been replaced with placeholders so the scripts
+read as portable tutorial material. Set these for your own system before running
+anything:
+
+| placeholder | what it was | set it to |
+|---|---|---|
+| `${PROJECT_DIR}` | the project tree | wherever you put the cohorts |
+| `${SCRATCH}` | scratch root | your scratch space |
+| `${CONDA_BASE}` | a shared miniforge install | your conda/mamba base |
+| `${HECATOMB_ENV}` | Hecatomb v1.1.0 env | your Hecatomb env |
+| `${VIROFORGE_DIR}` / `${VIROFORGE_ENV}` | ViroForge source / env | your ViroForge checkout |
+| `${DB_DIR}` | shared reference databases | geNomad, CheckV, iPHoP, PHABOX, vConTACT3, GTDB |
+| `${SHARED}` | the lab's shared software tree | — |
+
+The SLURM directives (partition, memory, wall clock) are sized for one specific
+cluster and will need adjusting too.
 
 ## Pipeline notes, hard-won
 

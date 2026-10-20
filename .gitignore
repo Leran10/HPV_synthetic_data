@@ -1,4 +1,4 @@
-# Data and results live on HTCF (/scratch/sahlab/leran/) -- never commit them.
+# Data and results live on HTCF (${SCRATCH}/) -- never commit them.
 # This repo is code, configs, and small summary tables only.
 
 # cloned upstream pipelines -- they have their own repos

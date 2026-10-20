@@ -100,7 +100,7 @@ def main():
     ap.add_argument("-o", "--outdir", default=".")
     ap.add_argument("--label", default="cohort", help="name for output files")
     ap.add_argument("--envs",
-                    default="/ref/sahlab/software/anaconda3/envs/hecatomb_v1.1.0/"
+                    default="${HECATOMB_ENV}/"
                             "snakemake/workflow/envs",
                     help="Hecatomb conda env directory (for tool versions)")
     args = ap.parse_args()

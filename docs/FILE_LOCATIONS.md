@@ -6,7 +6,7 @@ Three locations, each with a different job:
 |---|---|---|
 | **GitHub** `Leran10/HPV_synthetic_data` (private) | code, configs, small result tables | yes, this is the backup |
 | **Local** `~/Documents/github_projects/HPV_synthetic_data` | working copy of the above | yes, via GitHub |
-| **HTCF** `/scratch/sahlab/leran/HPV_synthetic_data/` | ~230 GB of reads, assemblies, pipeline output | **no — scratch only** |
+| **HTCF** `${PROJECT_DIR}/` | ~230 GB of reads, assemblies, pipeline output | **no — scratch only** |
 
 The large data is gitignored and exists in one place. It is reproducible from the
 scripts, but the weekly purge-protection cron is what keeps it alive day to day
@@ -19,7 +19,7 @@ scripts, but the weekly purge-protection cron is what keeps it alive day to day
 ### VLP cohort — this is the one the analysis used
 
 ```
-/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/                       91G
+${PROJECT_DIR}/data/vlp/                       91G
 ├── VIR_001 … VIR_100/                 ViroForge output per sample
 │   ├── fastq/                           raw R1/R2 (uncompressed)
 │   ├── fasta/                           source genomes that went in
@@ -42,7 +42,7 @@ scripts, but the weekly purge-protection cron is what keeps it alive day to day
 ### Bulk cohort — superseded for phage work, kept for the QC lesson
 
 ```
-/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/                        122G
+${PROJECT_DIR}/data/bulk/                        122G
 ├── VIR_001 … VIR_100/                 ~40% host DNA version
 ├── READS/                                   staged reads
 ├── qc_hecatomb/                        18G  QC where host removal does real work
@@ -56,7 +56,7 @@ scripts, but the weekly purge-protection cron is what keeps it alive day to day
 ### Original September batch — superseded
 
 ```
-/scratch/sahlab/leran/HPV_synthetic_data/data/sept_batch/     19G
+${PROJECT_DIR}/data/sept_batch/     19G
 ├── healthy/      healthy_S101 … S125
 └── hpv_infected/ hpv_S201 … S225
 ```
@@ -64,7 +64,7 @@ scripts, but the weekly purge-protection cron is what keeps it alive day to day
 ### Backup of the small files
 
 ```
-/scratch/sahlab/leran/HPV_synthetic_data/backup/                      98K
+${PROJECT_DIR}/backup/                      98K
 ├── config/  docs/  scripts/  results/
 ```
 
@@ -100,15 +100,15 @@ README on why the `nr` search is skipped.
 
 | what | where |
 |---|---|
-| Hecatomb v1.1.0 + 73 GB databases | `/ref/sahlab/software/anaconda3/envs/hecatomb_v1.1.0` |
-| Snakemake 8.20.3 + SLURM plugin | `/ref/sahlab/software/miniforge3/envs/snakemake_v8.20.3` |
-| phage-analysis conda envs (24 GB, prebuilt) | `/ref/sahlab/software/miniforge3/envs/smk_envs_phage_pred` |
-| prophage-pipeline conda envs (18 GB) | `/ref/sahlab/software/miniforge3/envs/smk_envs_prophage_pipeline` |
-| ViroForge 0.20.0 env | `/scratch/sahlab/leran/miniforge3/envs/vf_benchmark` |
-| ViroForge source | `/scratch/sahlab/leran/viroforge` |
-| phage-analysis clone (patched) | `/scratch/sahlab/leran/HPV_synthetic_data/pipelines/phage-analysis` |
-| prophage-pipeline clone | `/scratch/sahlab/leran/HPV_synthetic_data/pipelines/prophage-pipeline` |
-| reference databases (geNomad, CheckV, iPHoP, PHABOX, vConTACT3, GTDB, nr) | `/ref/sahlab/data/` |
+| Hecatomb v1.1.0 + 73 GB databases | `${HECATOMB_ENV}` |
+| Snakemake 8.20.3 + SLURM plugin | `${CONDA_BASE}/envs/snakemake_v8.20.3` |
+| phage-analysis conda envs (24 GB, prebuilt) | `${CONDA_BASE}/envs/smk_envs_phage_pred` |
+| prophage-pipeline conda envs (18 GB) | `${CONDA_BASE}/envs/smk_envs_prophage_pipeline` |
+| ViroForge 0.20.0 env | `${VIROFORGE_ENV}` |
+| ViroForge source | `${VIROFORGE_DIR}` |
+| phage-analysis clone (patched) | `${PROJECT_DIR}/pipelines/phage-analysis` |
+| prophage-pipeline clone | `${PROJECT_DIR}/pipelines/prophage-pipeline` |
+| reference databases (geNomad, CheckV, iPHoP, PHABOX, vConTACT3, GTDB, nr) | `${DB_DIR}/` |
 
 **Local patches applied to the phage-analysis clone** — these are not upstream, so
 a fresh clone will fail the same way:
@@ -158,7 +158,7 @@ passes 7 days — roughly 21 days of margin.
 
 ```
 crontab -l                      # on HTCF
-0 3 * * 0 find /scratch/sahlab/leran/HPV_synthetic_data -type f -exec touch {} +
+0 3 * * 0 find ${PROJECT_DIR} -type f -exec touch {} +
 ```
 
 One entry now covers the whole project, replacing four separate ones from before

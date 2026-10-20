@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=7-00:00:00
-#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/phage_%j.log
-#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/phage_%j.err
+#SBATCH --output=${PROJECT_DIR}/data/bulk/logs/phage_%j.log
+#SBATCH --error=${PROJECT_DIR}/data/bulk/logs/phage_%j.err
 
 # phage-analysis driver for the jackalope BULK cohort.
 #
@@ -34,14 +34,14 @@
 
 set -euo pipefail
 
-PIPELINE=/scratch/sahlab/leran/HPV_synthetic_data/pipelines/phage-analysis
-SMK=/ref/sahlab/software/miniforge3/envs/snakemake_v8.20.3/bin/snakemake
+PIPELINE=${PROJECT_DIR}/pipelines/phage-analysis
+SMK=${CONDA_BASE}/envs/snakemake_v8.20.3/bin/snakemake
 CONFIG=${1:-$PIPELINE/config/my_config.yaml}
 
-export PATH=/ref/sahlab/software/miniforge3/bin:/ref/sahlab/software/miniforge3/condabin:$PATH
+export PATH=${CONDA_BASE}/bin:${CONDA_BASE}/condabin:$PATH
 command -v conda >/dev/null || { echo "FATAL: conda not on PATH" >&2; exit 1; }
 
-mkdir -p /scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs
+mkdir -p ${PROJECT_DIR}/data/bulk/logs
 cd "$PIPELINE"
 
 echo "=================================================================="

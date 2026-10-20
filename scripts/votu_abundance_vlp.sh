@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=24G
 #SBATCH --time=4:00:00
-#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/abund_%A_%a.log
-#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/abund_%A_%a.err
+#SBATCH --output=${PROJECT_DIR}/data/vlp/logs/abund_%A_%a.log
+#SBATCH --error=${PROJECT_DIR}/data/vlp/logs/abund_%A_%a.err
 
 # Per-sample vOTU abundance for the jackalope BULK cohort.
 #
@@ -25,11 +25,11 @@
 
 set -euo pipefail
 
-VOTU=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta
-READS=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/READS
-OUT=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/votu_abundance
+VOTU=${PROJECT_DIR}/data/vlp/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta
+READS=${PROJECT_DIR}/data/vlp/READS
+OUT=${PROJECT_DIR}/data/vlp/votu_abundance
 
-mkdir -p "$OUT" /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs
+mkdir -p "$OUT" ${PROJECT_DIR}/data/vlp/logs
 
 i=${SLURM_ARRAY_TASK_ID}
 s=$(printf "VIR_%03d" "$i")
@@ -43,7 +43,7 @@ cov=$OUT/${s}.cov_stats
 
 # bbmap.sh is NOT in the hecatomb env itself -- Hecatomb gets it from a per-rule
 # conda env that Snakemake builds. Use the standalone bbtools env on the share.
-export PATH=/ref/sahlab/software/miniforge3/envs/bbtools/bin:$PATH
+export PATH=${CONDA_BASE}/envs/bbtools/bin:$PATH
 command -v bbmap.sh >/dev/null || { echo "FATAL: bbmap.sh not on PATH" >&2; exit 1; }
 
 echo "=== $s ==="

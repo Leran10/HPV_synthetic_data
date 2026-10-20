@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=7-00:00:00
-#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/phage_vlp_%j.log
-#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/phage_vlp_%j.err
+#SBATCH --output=${PROJECT_DIR}/data/vlp/logs/phage_vlp_%j.log
+#SBATCH --error=${PROJECT_DIR}/data/vlp/logs/phage_vlp_%j.err
 
 # phage-analysis on the VLP cohort.
 #
@@ -31,11 +31,11 @@
 
 set -euo pipefail
 
-PIPELINE=/scratch/sahlab/leran/HPV_synthetic_data/pipelines/phage-analysis
-SMK=/ref/sahlab/software/miniforge3/envs/snakemake_v8.20.3/bin/snakemake
+PIPELINE=${PROJECT_DIR}/pipelines/phage-analysis
+SMK=${CONDA_BASE}/envs/snakemake_v8.20.3/bin/snakemake
 CONFIG=${1:?usage: sbatch run_phage_analysis_vlp.sh <configfile>}
 
-export PATH=/ref/sahlab/software/miniforge3/bin:/ref/sahlab/software/miniforge3/condabin:$PATH
+export PATH=${CONDA_BASE}/bin:${CONDA_BASE}/condabin:$PATH
 command -v conda >/dev/null || { echo "FATAL: conda not on PATH" >&2; exit 1; }
 
 # Put MMseqs2's temp dir on BeeGFS scratch, not node-local /tmp.
@@ -48,11 +48,11 @@ command -v conda >/dev/null || { echo "FATAL: conda not on PATH" >&2; exit 1; }
 # --tax-lineage output. Large concurrent split I/O is more predictable on
 # BeeGFS than on node-local disk, and TMPDIR is the one variable that is cheap
 # to change. Snakemake skips the 3 completed steps on resubmit.
-export TMPDIR=/scratch/sahlab/leran/tmp_mmseqs
+export TMPDIR=${PROJECT_DIR}/tmp_mmseqs
 mkdir -p "$TMPDIR"
 echo "TMPDIR=$TMPDIR  ($(df -h "$TMPDIR" | tail -1 | awk '{print $4}') free)"
 
-mkdir -p /scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs
+mkdir -p ${PROJECT_DIR}/data/vlp/logs
 cd "$PIPELINE"
 
 echo "=================================================================="

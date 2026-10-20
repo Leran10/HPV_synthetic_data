@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
 #SBATCH --time=24:00:00
-#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/gen_%A_%a.log
-#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk/logs/gen_%A_%a.err
+#SBATCH --output=${PROJECT_DIR}/data/bulk/logs/gen_%A_%a.log
+#SBATCH --error=${PROJECT_DIR}/data/bulk/logs/gen_%A_%a.err
 
 # Regenerate the jackalope cohort as a BULK metagenome (no VLP enrichment).
 #
@@ -33,8 +33,8 @@
 
 set -euo pipefail
 
-VIROFORGE=/scratch/sahlab/leran/viroforge
-VFENV=/scratch/sahlab/leran/miniforge3/envs/vf_benchmark
+VIROFORGE=${VIROFORGE_DIR}
+VFENV=${VIROFORGE_ENV}
 
 # Put the env's bin on PATH, not just call viroforge by absolute path:
 # viroforge shells out to InSilicoSeq (`iss`), which it looks up via PATH.
@@ -44,8 +44,8 @@ export PATH="$VFENV/bin:$PATH"
 VF="$VFENV/bin/viroforge"
 
 command -v iss >/dev/null || { echo "FATAL: iss not on PATH" >&2; exit 1; }
-METADATA=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/jackalope_clinical_metadata.csv
-OUTBASE=/scratch/sahlab/leran/HPV_synthetic_data/data/bulk
+METADATA=${PROJECT_DIR}/data/vlp/jackalope_clinical_metadata.csv
+OUTBASE=${PROJECT_DIR}/data/bulk
 
 # Same mapping the original cohort used (examples/batch_configs/jackalope_cohort.py)
 MIN_SIZE=8; MAX_SIZE=63

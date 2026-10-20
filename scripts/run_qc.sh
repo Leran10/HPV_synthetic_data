@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=16G
 #SBATCH --time=2-00:00:00
-#SBATCH --output=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/qc_%j.log
-#SBATCH --error=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp/logs/qc_%j.err
+#SBATCH --output=${PROJECT_DIR}/data/vlp/logs/qc_%j.log
+#SBATCH --error=${PROJECT_DIR}/data/vlp/logs/qc_%j.err
 
 # Hecatomb QC (preprocessing stage only) for the jackalope cohort.
 #
@@ -19,11 +19,11 @@
 
 set -euo pipefail
 
-COHORT=/scratch/sahlab/leran/HPV_synthetic_data/data/vlp
+COHORT=${PROJECT_DIR}/data/vlp
 CONFIG=$COHORT/hecatomb.qc.yaml
 OUT=$COHORT/qc_hecatomb
 
-source /ref/sahlab/software/anaconda3/bin/activate hecatomb_v1.1.0
+source ${CONDA_BASE}/bin/activate hecatomb_v1.1.0
 
 mkdir -p "$OUT" "$COHORT/logs"
 cd "$COHORT"

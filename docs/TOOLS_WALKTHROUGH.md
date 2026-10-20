@@ -130,9 +130,48 @@ trimming, no host removal — it uses reads only for coverage in Stage 6. (A thi
 pipeline we tried, `prophage-pipeline`, does bundle fastp, but that run was
 abandoned at binning and never fed anything.)
 
+#### The full rule list — nine steps, three of which remove reads
+
+"Three QC steps" is a simplification, and worth unpacking, because Hecatomb's
+`preprocessing` target actually ran **nine rules** per sample. Only three change
+the read count; the rest reshape the data. Counted from the run's own benchmark
+and log files:
+
+| # | Rule | Tool | Jobs | Effect on read count |
+|---|---|---|---|---|
+| 1 | `fastp_preprocessing` | fastp | 100 | **removes** — trim, filter, dedup |
+| 2 | `host_removal_mapping` | minimap2 + samtools | 300 | **removes** — drops host |
+| 3 | `nonhost_read_repair` | bbtools `reformat.sh` | 100 | re-pairs — splits singletons/orphans back into R1/R2 |
+| 4 | `nonhost_read_combine` | `cat` | 100 | re-joins paired + singleton streams per sample |
+| 5 | `cluster_similar_sequences` | MMseqs2 linclust | 100 | **collapses** — 0 reads lost, counts preserved |
+| 6 | `create_individual_seqtables` | seqkit + awk | 100 | reshapes to a per-sample sequence/count table |
+| 7 | `merge_seq_table` | `mergeSeqTable.py` | 1 | merges 100 tables into one cohort seqtable |
+| 8 | `calculate_gc` / `calculate_tet_freq` | — | 2 | annotates GC% and tetranucleotide frequency |
+| 9 | `seq_properties_table` | — | 1 | assembles the final properties table |
+
+Three observations for anyone reading this as a method:
+
+- **`host_removal_mapping` shows 300 jobs for 100 samples** because the rule is
+  three chained invocations (minimap2 → `samtools view` → `samtools fastq`), each
+  logging separately. One logical step, three processes.
+- **Steps 3–4 exist because host removal breaks pairing.** When one mate maps to
+  human and the other doesn't, you get an orphan. `reformat.sh` splits those back
+  into synchronised R1/R2 files and `cat` recombines them, so downstream
+  assembly gets valid pairs. Skip this and MEGAHIT will complain about mismatched
+  files. This is the step most hand-rolled QC scripts forget.
+- **Steps 6–9 are bookkeeping, not cleaning.** They build Hecatomb's seqtable —
+  the input to its taxonomic cascade, which we did not run. If you QC by hand for
+  an assembly-based workflow like ours, you stop after step 4 (or 5).
+
+A fourth note on the counts: `fastp_preprocessing` logged 87 jobs and
+`old_fastp_preprocessing` 100. Both appear because the workflow retains a legacy
+rule name; the 87 reflects a resumed run after a partial failure, not 13 skipped
+samples. All 100 samples have complete fastp output, which the attrition table
+below confirms.
+
 #### How many reads each step removed
 
-The point of the exercise, in one table. VLP cohort, 100 samples, read pairs:
+Of those nine rules, three move the number. VLP cohort, 100 samples, read pairs:
 
 | Step | Tool | Pairs in | Pairs out | Removed | % removed | % of raw left |
 |---|---|---|---|---|---|---|
@@ -222,13 +261,26 @@ minimap2 -ax sr -t 16 --secondary=no host.idx t_R1.fastq t_R2.fastq \
   | samtools view -f 4 -h \
   | samtools fastq -NO -1 clean_R1.fastq -2 clean_R2.fastq
 
-# 3. dereplication -- SKIP unless a huge database search follows (see below)
-mmseqs easy-linclust clean_R1.fastq VIR_041_rep tmp \
+# 3. REPAIR PAIRING -- do not skip this
+# host removal orphans reads whose mate mapped to human; re-synchronise R1/R2
+repair.sh in=clean_R1.fastq in2=clean_R2.fastq \
+          out=fixed_R1.fastq out2=fixed_R2.fastq \
+          outs=singletons.fastq repair -Xmx8g
+
+# 4. dereplication -- SKIP unless a huge database search follows (see below)
+mmseqs easy-linclust fixed_R1.fastq VIR_041_rep tmp \
     --kmer-per-seq-scale 0.3 -c 0.8 --cov-mode 1 \
     --min-seq-id 0.97 --alignment-mode 3 --threads 8
 ```
 
-Step 3 removed **0 reads** for us and changed nothing downstream — it exists to
+**Step 3 is the one people leave out.** `samtools view -f 4` filters reads
+independently, so a pair with one human mate becomes an orphan — the R1 and R2
+files end up different lengths and out of order. MEGAHIT and most aligners will
+either error or silently misinterpret that. Hecatomb handles it with
+`reformat.sh` + `cat` across two rules; `repair.sh` (same bbtools suite) does it
+in one. You can also use `seqkit pair` or `fastq_pair`.
+
+**Step 4 removed 0 reads** for us and changed nothing downstream — it exists to
 shrink the query set for Hecatomb's 73 GB taxonomic cascade, which we never ran.
 Skip it unless you are feeding a large protein database.
 

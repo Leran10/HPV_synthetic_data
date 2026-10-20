@@ -130,6 +130,78 @@ trimming, no host removal — it uses reads only for coverage in Stage 6. (A thi
 pipeline we tried, `prophage-pipeline`, does bundle fastp, but that run was
 abandoned at binning and never fed anything.)
 
+#### Where are adapter removal, PhiX removal, quality trimming?
+
+If you have run a QC pipeline before, you expect a list like *adapter removal →
+primer removal → vector/PhiX removal → quality trimming → length filter → host
+removal*. Only one of those appears as its own row in our tables, which looks
+like steps are missing. Two different reasons, and one is a genuine gap.
+
+**Most of them are inside fastp.** fastp is a single-pass tool that does what
+older pipelines spread across several programs. Mapping the classic list onto
+what ran:
+
+| Classic QC step | Did it happen? | Where |
+|---|---|---|
+| Adapter removal | **Yes** | fastp `--detect_adapter_for_pe` — 3,740,339 reads trimmed |
+| Quality trimming | **Yes** | fastp `--cut_tail` w=25, Q<15 — 418,402 reads discarded |
+| Length filter | **Yes** | fastp `--length_required 90` — 2,144,966 discarded |
+| Poly-G/X tail | **Yes** | fastp `--trim_poly_x` — 786,119 trimmed |
+| Ambiguous-base filter | **Yes** | fastp, >2 N — 3,346 discarded |
+| Duplicate removal | **Yes** | fastp `--dedup` — 34,359,370 discarded |
+| Host removal | **Yes** | minimap2 + samtools — 581,127 pairs |
+| **PhiX / vector removal** | **NO — skipped** | see below |
+| Primer removal (Round A/B) | **NO — not applicable** | see below |
+
+So the single `fastp` row in the attrition table is six classic steps collapsed
+into one pass. That is a reporting artefact of how fastp works, not missing QC —
+which is exactly why the per-flag breakdown below matters more than the per-step
+totals.
+
+**The real gap: PhiX and vector contamination.** Hecatomb *does* have this step,
+but only on its other preprocessing route. The two routes are not minor variants:
+
+| | `--preprocess paired` (what we ran) | `--preprocess roundAB` |
+|---|---|---|
+| Cleaning rules | **1** (`fastp_preprocessing`) | **6** discrete `bbduk.sh` passes |
+| 5′ primer removal | — | `remove_5prime_primer` |
+| 3′ contaminant | — | `remove_3prime_contaminant` |
+| Primer-free adapter | — | `remove_primer_free_adapter` |
+| Adapter-free primer | — | `remove_adapter_free_primer` |
+| **PhiX + UniVec** | — | `remove_vector_contamination` |
+| Quality/entropy | inside fastp | `remove_low_quality` (adds an entropy filter) |
+| Everything after | identical | identical |
+
+The `roundAB` route is built for Hecatomb's own Round A/B amplification protocol,
+and its primer files in this install are hand-edited for lab-specific primers.
+We chose `paired` because our reads are **simulated by InSilicoSeq** — they carry
+no Round A/B primers, no PhiX spike-in, and no vector sequence, so five of those
+six passes would have found nothing. The vector pass is the one that would be
+mandatory on real sequencer output.
+
+```bash
+# what roundAB runs and we did not -- PhiX + NCBI UniVec
+bbduk.sh in=R1.fastq in2=R2.fastq ref=vector_contaminants.fa \
+    out=clean_R1.fastq out2=clean_R2.fastq stats=vector.stats \
+    k=31 hammingdistance=1 ordered=t ow=t threads=16
+
+# roundAB's quality pass -- note the entropy filter fastp has no equivalent for
+bbduk.sh in=R1.fastq in2=R2.fastq qtrim=r maxns=2 \
+    trimq=${QSCORE} minlength=${READ_MINLEN} \
+    entropy=${ENTROPY} entropywindow=${ENTROPYWINDOW}
+```
+
+> **If you are adapting this to real data, add PhiX removal.** Illumina runs are
+> routinely spiked with PhiX as a sequencing control, and it is not removed by
+> every demultiplexer. It is cheap to screen for: `bbduk.sh` against the bundled
+> `phix174_ill.ref.fa.gz`, or `--preprocess roundAB` if your library used that
+> protocol. We skipped it because simulated reads cannot contain it — that
+> justification does not transfer to a real cohort.
+>
+> The **entropy filter** in `remove_low_quality` is also worth knowing about:
+> it discards low-complexity reads (homopolymer runs, simple repeats) that pass
+> a quality threshold perfectly well. fastp has no direct equivalent.
+
 #### The full rule list — nine steps, three of which remove reads
 
 "Three QC steps" is a simplification, and worth unpacking, because Hecatomb's
@@ -245,7 +317,7 @@ route you take.
 
 #### Running the same QC without the wrapper
 
-Per sample, this reproduces our steps:
+Per sample. Step 1b is marked because we skipped it and you probably should not:
 
 ```bash
 # 1. adapters, quality, length, poly-X, duplicates
@@ -255,9 +327,15 @@ fastp -i VIR_041_R1.fastq.gz -I VIR_041_R2.fastq.gz \
       --cut_tail --cut_tail_window_size 25 --cut_tail_mean_quality 15 \
       --dedup --dup_calc_accuracy 4 --trim_poly_x --thread 12
 
+# 1b. PhiX / vector screen -- WE SKIPPED THIS (simulated reads); add it for real data
+bbduk.sh in=t_R1.fastq in2=t_R2.fastq \
+         ref=phix174_ill.ref.fa.gz,vector_contaminants.fa \
+         out=nophix_R1.fastq out2=nophix_R2.fastq stats=phix.stats \
+         k=31 hammingdistance=1 ordered=t ow=t threads=16
+
 # 2. host removal -- index once, reuse
 minimap2 -t 16 -d host.idx GRCh38.fa.gz                      # once
-minimap2 -ax sr -t 16 --secondary=no host.idx t_R1.fastq t_R2.fastq \
+minimap2 -ax sr -t 16 --secondary=no host.idx nophix_R1.fastq nophix_R2.fastq \
   | samtools view -f 4 -h \
   | samtools fastq -NO -1 clean_R1.fastq -2 clean_R2.fastq
 
@@ -323,8 +401,9 @@ every flag.
 #### Two things specific to this install
 
 `--preprocess paired` runs one fastp call; the alternative `roundAB` route runs
-six sequential `bbduk.sh` passes targeting Round A/B primer artefacts, which
-simulated Illumina reads do not carry. And Hecatomb's per-step counting rules
+six sequential `bbduk.sh` passes (compared in full
+[above](#where-are-adapter-removal-phix-removal-quality-trimming)), including the
+PhiX/vector screen we skipped. And Hecatomb's per-step counting rules
 (`04_summaries_optional.smk`) are commented out in our version, so the attrition
 tables in [`results/qc/`](../results/qc) were rebuilt from the stats files by
 [`scripts/collect_qc_attrition.py`](../scripts/collect_qc_attrition.py).

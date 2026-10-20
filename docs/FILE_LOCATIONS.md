@@ -4,13 +4,58 @@ Three locations, each with a different job:
 
 | | holds | backed up? |
 |---|---|---|
-| **GitHub** `Leran10/HPV_synthetic_data` (private) | code, configs, small result tables | yes, this is the backup |
+| **GitHub** [`Leran10/HPV_synthetic_data`](https://github.com/Leran10/HPV_synthetic_data) (public) | code, configs, small result tables | yes, this is the backup |
 | **Local** `~/Documents/github_projects/HPV_synthetic_data` | working copy of the above | yes, via GitHub |
-| **HTCF** `${PROJECT_DIR}/` | ~230 GB of reads, assemblies, pipeline output | **no — scratch only** |
+| **HTCF** `/scratch/sahlab/leran/HPV_synthetic_data/` | ~230 GB of reads, assemblies, pipeline output | **no — scratch only** |
 
 The large data is gitignored and exists in one place. It is reproducible from the
 scripts, but the weekly purge-protection cron is what keeps it alive day to day
 (see the bottom of this file).
+
+## Quick reference — the sequencing data
+
+Everything below sits under `$PROJECT_DIR`, which throughout this repo means:
+
+```bash
+PROJECT_DIR=/scratch/sahlab/leran/HPV_synthetic_data
+```
+
+Requires an HTCF account with access to `sahlab`. These are **scratch** paths on
+a cluster, not public downloads — see "Getting the data" below if you are
+outside the lab.
+
+| What | Path | Size |
+|---|---|---|
+| **VLP reads** (the cohort analysed) | `$PROJECT_DIR/data/vlp/READS/VIR_###_R{1,2}.fastq.gz` | 15 G, 200 files |
+| **Bulk reads** (80% host, comparison) | `$PROJECT_DIR/data/bulk/READS/VIR_###_R{1,2}.fastq.gz` | 16 G, 200 files |
+| Sample sheet (blinded HPV labels) | `$PROJECT_DIR/data/vlp/jackalope_clinical_metadata.csv` | 3.5 K |
+| Ground truth per sample | `$PROJECT_DIR/data/vlp/VIR_###/metadata/*_composition.tsv` | — |
+| QC output (Hecatomb) | `$PROJECT_DIR/data/vlp/qc_hecatomb/` | 27 G |
+| Pooled contigs (17,046) | `$PROJECT_DIR/data/vlp/phage_analysis/all_samples_contigs.fasta` | 118 M |
+| **vOTU representatives** (2,921) | `$PROJECT_DIR/data/vlp/phage_analysis/out/02_clustering/vOTU_repSeqs.fasta` | 32 M |
+| Per-sample abundance (bbmap) | `$PROJECT_DIR/data/vlp/votu_abundance/VIR_###.cov_stats` | 35 M, 100 files |
+| vOTU matrices (also in this repo) | `$PROJECT_DIR/data/vlp/results/votu_*.tsv` | 3.7 M |
+
+The sample sheet and the four vOTU matrices are mirrored in this repo
+([`jackalope_clinical_metadata.csv`](../jackalope_clinical_metadata.csv),
+[`results/vlp/`](../results/vlp)), so the statistics and figures can be
+reproduced **without cluster access**. Only the reads and intermediates require
+HTCF.
+
+### Getting the data if you are not in the lab
+
+The reads are not publicly hosted. Three options, in order of effort:
+
+1. **You only want to rerun the analysis.** You do not need them — the vOTU
+   matrices and marker tables in this repo are enough for
+   [`differential_abundance.py`](../scripts/differential_abundance.py) and
+   [`make_figures.py`](../scripts/make_figures.py).
+2. **You want to practise QC.** Use your own paired-end reads with
+   [`tutorial/01_qc.sh`](../tutorial/README.md) — the scripts take any FASTQ pair.
+3. **You want this exact cohort.** Ask Leran; a ~31 GB subset (both READS
+   directories plus metadata) can be shared, or regenerated from scratch with
+   [`scripts/generate_bulk_cohort.sh`](../scripts/generate_bulk_cohort.sh) and
+   ViroForge 0.20.0 using collections 16 (healthy) and 24 (HPV-infected).
 
 ---
 

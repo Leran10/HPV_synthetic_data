@@ -174,6 +174,26 @@ Reusable pieces, all parameterised and runnable on your own data:
 | [scripts/differential_abundance.py](scripts/differential_abundance.py) | three-pass differential abundance (raw / rarefied / depth-adjusted) with BH correction |
 | [scripts/make_figures.py](scripts/make_figures.py) | regenerates all five report figures as SVG; numpy/scipy not even required |
 
+## Where the data lives
+
+The sequencing data is **not in this repo** — it is ~230 GB on HTCF scratch:
+
+```bash
+PROJECT_DIR=/scratch/sahlab/leran/HPV_synthetic_data
+
+$PROJECT_DIR/data/vlp/READS/      # 15 G, 200 files -- the cohort analysed
+$PROJECT_DIR/data/bulk/READS/     # 16 G, 200 files -- 80% host comparison
+```
+
+Requires an HTCF account with `sahlab` access.
+[docs/FILE_LOCATIONS.md](docs/FILE_LOCATIONS.md) has the full path table —
+every intermediate, with sizes — and what to do if you are outside the lab.
+
+**You do not need cluster access to reproduce the analysis.** The sample sheet
+and the vOTU matrices are mirrored here, so
+[`differential_abundance.py`](scripts/differential_abundance.py) and
+[`make_figures.py`](scripts/make_figures.py) run from a clone alone.
+
 ## Reference
 
 | file | what it covers |
